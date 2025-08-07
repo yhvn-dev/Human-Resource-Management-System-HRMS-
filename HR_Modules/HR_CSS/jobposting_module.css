@@ -1,0 +1,1818 @@
+
+:root{
+
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --gainsbro:#F5F5F5;
+    --fafafa:#fafafa;
+    --blue-white:#d0e3ec;
+    --floral-white:#fbf8f3;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);;
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+
+      /* PALLETE 2 */
+      --fairy-green-p2-c6:#c6fad2;
+      --foam-purple-p2-dd:#dd9bcf;
+      --white-in-p2-f6:#f6ffee;
+      --danger-in-p2-f4:#f48882;
+      --most-pink-p2-fad:#fad2cc;
+    
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --dark-shadow-friend:#404040;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+    --font-color-a:#B0B0B0;
+    --font-color-b:#E0E0E0;
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+    --grayple--: #9ba4d4;
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+    /* BOX SHADOWS */
+ 
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../Fonts/Quicksand/static/Quicksand-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Fonts/Roboto/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: 'Mokoto';
+    src: url('../../Fonts/Mokoto/Mokoto_Demo.ttf');
+}
+@font-face {
+    font-family: 'Neon_Club_Music';
+    src: url('../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto_Mono';
+    src: url('../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+p{
+    text-align: center;
+}
+span{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: var(--moon-phases-b);
+}
+
+svg{
+    width: 1rem;
+    height: 1rem;
+}
+
+
+body::-webkit-scrollbar{
+    width: 1rem;
+    padding: 0.5rem;
+    background-color: var(--gainsbro);
+}
+
+
+body::-webkit-scrollbar-track{
+    border-radius: 100vw;
+}
+
+
+body::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--gainsbro);
+
+}
+
+
+body.darkmode_popup::-webkit-scrollbar-track{
+    border-radius: 100vw;
+}
+
+
+body.darkmode_popup::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--lusion-dark-b);
+
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    
+    background-color: #fafafa;
+}
+
+
+.jp_db_wrapper{
+    display: grid;
+    grid-template-columns: 1.1fr 2fr 2fr 1fr;
+    grid-template-rows: 10vh 90vh 100vh;
+    width: 100%;
+    height: 205vh;
+    gap: 1rem;
+}
+
+
+    .jp_db_backdrop_wrapper{
+        display: grid;
+        grid-template-columns: 1.1fr 2fr 2fr 1fr;
+        grid-template-rows: 10vh 90vh 100vh;
+        grid-area: 1 / 1 / 4 / 11;
+        width: 100%;
+        height: 205vh;
+        gap: 1rem;
+    }
+
+
+    .jp_db_frontpage_wrapper{
+        display: grid;
+        grid-template-columns: 1.1fr 2fr 2fr 1fr;
+        grid-template-rows: 10vh 90vh 100vh;
+        width: 100%;
+        height: 205vh;  
+        grid-area: 1 / 1 /  5/ 11;
+        gap: 1rem;
+    }
+  
+   
+
+.jp_db_wrapper .jp_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius_10--);
+
+
+    background-color: var(--gainsbro);
+    box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*  CATEGORY DIV ============================================================================================================= */
+    .jp_container.jp_logo_div{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        grid-area: 1 / 1 / 1/ 1;
+        border-radius: 0;
+        
+        border-bottom-right-radius: var(--border-radius_10--);
+    }
+    
+    .logo_link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+    }
+
+    #db_logo{
+        margin-left: 1.5rem;          
+    }
+
+    #db_nodelab_text{
+        background-clip: text;
+        font-family: 'Mokoto';
+        letter-spacing: 0.1rem;
+        color: var(--moon-phases-b);
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+
+        background:
+        linear-gradient(
+        to left,
+        var(--color-dark-variant),
+        var(--moon-phases-c)
+        );
+
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+     
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  HEADER DIV ============================================================================================================= */
+    .jp_container.jp_header_div{
+        grid-area: 1 / 2 / 1 / 11;
+        border-radius: 0;
+        border-bottom-left-radius: var(--border-radius_10--);
+    }
+
+        .jp_left_header{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            height: 100%;
+          
+        }
+
+            .lh_buttons_div{
+                display: grid;
+                height: 100%;
+                width: 100%;
+                grid-template-columns: repeat(3,1fr);
+                column-gap: 0.5rem;
+                margin:0rem 0.5rem;
+                
+             
+            }
+
+                .sb_button_icons{
+                    width: 1rem;
+                    height: 1rem;
+                    margin-bottom: 0.1rem;
+                    margin-right: 0.3rem;
+                    
+                    fill: var(--lusion-dark-b);
+                }
+
+                .lh_buttons_div .lh_buttons_href {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    padding: 0rem 1rem; 
+                    color: var(--lusion-dark-b);
+                  
+                }
+                
+
+                .lh_buttons_div .lh_buttons_href:hover{
+                    background-color: var(--main-white--);
+                }
+
+                    .lh_buttons_href span {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-decoration: none;
+                        color: var(--lusion-dark-b);
+                        font-size: 0.9rem;
+                        
+                    }
+
+                    .lh_buttons_href::after{
+                        content: '';
+                        position: absolute;
+                        
+                        bottom: 0;
+                        width: 100%;
+                        height: 2px;
+                        
+                        transform: scale(0);
+                        background-color: var(--purpluish--);
+                        transform-origin: left;
+                        transition: transform 0.5s ease-in;
+                    }
+
+                    .lh_buttons_href:hover::after{
+                        transform: scaleX(1);
+                    }
+               
+                    #jp_table{
+                     
+                        border-bottom: 3px solid var(--purpluish--);
+                    }
+              
+
+        .jp_right_header{
+            width: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            flex-direction: row-reverse;
+            background-color: var(--mainblue--);
+        }
+
+            #right_header_profile{
+                width: 2rem;
+                height: 2rem;
+                margin-right: 1.5rem;
+            
+                border-radius: var(--border-radius_circle--);
+                background-color:var(--bluis--);
+            }
+                .darkmode_div{
+                 
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    overflow: hidden;
+                
+                    transition: 0.8s;
+                
+                    height: 1.7rem;
+                    width: 5rem;
+                    margin-right: 1.5rem;
+                    border-radius:  var(--border-radius_10--);
+
+                    box-shadow: inset 2px 2px 2px 2px rgba(53,53,53,0.2);
+                    background-color: var(--main-white--);    
+                }
+                    .darkmode_div.darkmode_popup{
+                        border: 1px solid gray;
+                        border-radius:  var(--border-radius_10--);
+
+                        /* box-shadow: inset  2px 2px 2px 2px rgba(0, 0, 0,0.5); */
+                        background-color: var(--lusion-dark-b);
+                    }
+
+
+                        .darkmode_div #sun_moon_toggle_button{
+                            cursor: pointer;
+                            position: relative;
+                            margin-left:  0.5rem;
+                            margin-right: 0.5rem;
+                            z-index: 1;
+                            transition: 0.8s;
+                            height: 1.3rem;
+                            width: 1.3rem;
+                            border-radius: var(--border-radius_circle--);
+                            background: linear-gradient(45deg, var(--lusion-dark-b),var(--moon-phases-c));
+                            box-shadow: 0 0 5px var(--moon-phases-c);
+                             
+                        }
+
+
+                   
+
+
+
+                        .container.header.darkmode_popup{
+                            background: linear-gradient(70deg,#141619,#2c2e3a); 
+                        }
+
+                     
+
+                #hd_role_div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                   
+                }
+
+                    #hr_name{
+                        margin-right: 0.5rem;
+                    }
+
+                    .user_role{
+                        margin-right: 0.5rem;
+                        padding: 0rem 0.3rem;
+                        border-left: 1px solid var(--blue-white);
+                         color: var(--color-warning);
+                    }
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NUMBERS DIV =============================================  ============================================= */
+
+
+
+
+
+
+.jp_container.jp_numbers_div{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10,1fr) ;
+    grid-area: 2 / 1 / 2 / 1;
+    gap: 1rem;
+    
+    box-shadow: none;
+    background-color: transparent;
+    margin-bottom: 2rem;
+}
+
+    .bdrop_jp_numbers_div{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5,1fr);
+        height: 100%;
+        width: 100%;
+        grid-area:  1 / 1/ 4/  1;
+        
+    }
+            .bd_number_card_div_a{
+                display: grid;
+                grid-template-columns: repeat(10,1fr);
+                grid-template-rows: repeat(6,1fr);
+               
+                width: 100%;
+                height:100%;
+                
+                grid-area:  1 / 1/ 1/ 1;
+                border-radius: var(--border-radius_10--);
+                
+             
+            }
+
+            
+                .card_circles{
+                    margin: 0.2rem 1rem;
+                    border-radius: var(--border-radius_circle--);
+                }
+                .bd_number_card_circle_a{
+                    grid-area:  3 / 7/ 5/ 11;
+                    background:linear-gradient(45deg,var(--color-success_b),var(--bluis--));
+                    box-shadow: 0px 0px 5px 2px var(--bluis--);
+                }
+                .bd_number_card_circle_b{
+                    grid-area:  2 / 5/ 6/ 10;
+                    background:linear-gradient(45deg,cyan,var(--bluis--));
+                    box-shadow: 0px 0px 5px 2px var(--bluis--);
+                }
+
+
+            .bd_number_card_div_b{
+                grid-area:  2 / 1/ 2/ 1;
+            
+            }
+            .bd_number_card_div_c{
+                grid-area:  3 / 1/ 3/ 1;
+            
+            }
+
+
+
+
+
+    .nc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        border-top-right-radius: var(--border-radius_10--);
+        border-bottom-right-radius: var(--border-radius_10--);
+      
+        box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+    }
+
+        .nc_text_div {
+            width: 80%;
+        }
+
+
+    .number_card_a{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+        grid-area: 1/ 1 / 3/ 1;
+        background:linear-gradient(45deg,var(--white-blple--),var(--color-success_b));
+      
+    }
+
+        .nca_txt_div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+           
+            width: 100%;
+         
+      
+        
+        }
+
+        
+        .nca_txt_div svg{
+            margin: 0.1rem 0.3rem;
+            fill: var(--main-white--); 
+        }
+        .nca_txt_div span{
+            color: var(--main-white--);
+         
+        }
+
+            .jp_count_holder{
+                color: var(--main-white--);
+                margin-top: 1rem;
+           
+            }
+
+
+
+    .number_card_b{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: 3/ 1 / 3/ 1;
+        background-color: var(--white-blple--);
+    }
+
+
+        .ncb_txt_div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            
+            width: 100%;
+     
+        }
+            #published_icon{
+                fill:var(--main-white--);
+                margin: 0.1rem 0.3rem;
+                margin-bottom: 0.2rem;
+            }
+            #published_text{
+                 margin-left: 0.3rem;
+                 color: var(--main-white--);
+            }
+
+            .published_count_holder{
+                margin-left: 3rem;
+                color: var(--main-white--);
+            }
+            
+
+
+
+    .number_card_c{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        grid-area: 4/ 1 / 4/ 1;
+        background-color: var(--white-blple--);
+    }
+
+
+
+    .ncb_txt_div{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        
+        width: 100%;
+ 
+    }
+        #draft_icon{
+            fill:var(--main-white--);
+            margin: 0.1rem 0.3rem;
+            margin-bottom: 0.2rem;
+        }
+        #draft_text{
+             margin-left: 0.3rem;
+             color: var(--main-white--);
+        }
+
+        .draft_count_holder{
+            margin-left: 3rem;
+            color: var(--main-white--);
+        }
+        
+
+
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* TABLE A ========================================= ========================================= ========================================= */
+   
+    .jp_joblist_table {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin-bottom: 2rem;
+      margin-right: 1rem;
+      grid-area: 2 / 2 / 3 / 11;
+      background-color: red;
+    
+    }
+
+        .jp_container.jp_joblist_table_labels_stuff{
+            box-shadow: none;
+            width: 96%;
+            height: 10%;
+            margin-bottom: 0.5rem;
+            border-radius: var(--border-radius_5--);
+            background-color: transparent;
+          
+        }
+        
+    
+            .tb_lbl_div{
+               
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+                
+            
+            }   
+
+            .left_tb_lbl_div{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+               
+            }
+
+            
+
+                    .jp_table_a_title{
+                        
+                        font-size: 1.3rem;
+                        font-family: 'Poppins-Medium';  
+                        color:rgba(44, 46, 58,0.8);
+                    }
+                    
+            
+                       
+
+                #jp_table_search_form_a{
+                    margin-left: 0.5rem;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 60%;
+                    
+              
+                }
+
+
+                    #jp_inp_search_a{
+                        
+                        width: 100%;
+                        padding: 0.1rem 0.5rem;
+                        margin-left: 1rem;
+                        border: 2px solid var(--white-blple--);
+                        border-radius: var(--border-radius_5--);
+                        outline: none;
+                        background-color: transparent;
+                    }
+
+                      #jp_table_search_form_a span{
+                            font-family: 'Roboto_Mono';
+                        }
+
+
+
+                        #jp_inp_search_a:focus + #jp_tp_search_lbl_a,
+                        #jp_inp_search_a:not(:placeholder-shown) + #jp_tp_search_lbl_a{
+                            transform: translateY(-12px);
+                            font-size: 0.5rem;
+                            transition: 0.5s;
+                            padding: 0rem 0.3rem;
+                        
+                        }
+
+                    #jp_tp_search_lbl_a{
+                        position: absolute;
+                        pointer-events: none;
+                        color: gray;
+                        font-size: 0.9rem;
+                        left: 1.5rem;
+                        background-color: var(--gainsbro);
+                        
+                    }
+                  
+
+                        #jp_tb_search-btn{
+
+                            display:flex;
+                            align-items: center;
+                            justify-content: center;
+                         
+                        
+                            margin-left: 0.5rem;
+                            border: 1px solid var(--white-blple--);
+                            border-radius: var(--border-radius_5--);
+                        
+                        
+                            box-shadow: 4px 4px 5px 2px rgba(0,0,0,0.1);
+                            font-size: 0.9rem;
+                            cursor: pointer; 
+                            background-color: var(--white-blple--);
+                        
+                            padding: 0.2rem 0.3rem;
+                          
+                            margin: 0.2rem 0.5rem;
+                           
+                        
+                        }
+                       
+                        #jp_tb_search-btn svg{
+                                height: 1.1rem;
+                                width: 1.1rem;
+                                fill:var(--main-white--);
+                            }
+                        #jp_tb_search-btn:hover{
+                                background:linear-gradient(45deg,var(--white-blple--),var(--color-success_b));
+                            }
+
+        
+            .tb_lbl_div.right_tb_lbl_div{
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                flex-direction: row-reverse;
+                width: 96%;
+             
+            }   
+
+         
+                .filter_status{
+                    border-radius: var(--border-radius_5--);
+                
+                    padding: 0rem;
+                    margin-right: 2rem;
+                    background-color:var(--gainsbro);
+                    padding: 0.1rem 0rem;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    border: 1px solid var(--moon-phases-c);
+                    box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+                    background-color: var(--main-white--);
+                   
+                }
+
+                .filter_status.darkmode_popup{
+                    background-color: var(--color-dark-variant);
+                    color: var(--main-white--);
+                    border: 2px solid var(--dark-shadow-friend);
+                    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);
+                }
+
+                
+        
+
+
+
+                .tb_lbl_div.right_tb_lbl_div .tb_add_jobpost_link{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 1rem;
+                    text-decoration: none;
+                    font-size: 1rem;
+                    padding: 0.5rem 1.5rem;
+                    border-radius: var(--border-radius_8--);
+                    cursor: pointer;
+                    box-shadow: 2px 2px 3px 2px rgba(53,53,53,0.2);
+
+                    background-color: var(--white-blple--);
+                    color: var(--lusion-dark-b);   
+                    
+             
+                }   
+
+                .tb_lbl_div.right_tb_lbl_div .tb_add_jobpost_link:hover{
+                    background:linear-gradient(to top right,var(--white-blple--),var(--white-blple--),var(--main-white--));
+                    
+                }   
+
+            .success_div{
+                
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0.5rem 0.7rem;
+            
+                width: 100%;
+                margin-bottom: 1rem;
+                border-radius: var(--border-radius_5--);
+                color: var(--moon-phases-b);
+                background-color: rgb(199, 224, 201);
+                border: 1px solid var(--color-success_a);
+
+            }
+              
+
+                .success_div span{
+                    margin-left: 2rem;
+                    padding: 0.1rem 0.7rem;
+                    border-radius: var(--border-radius_10--);
+                    cursor: pointer;
+                    background-color: rgba(65, 241, 83,0.2);
+                }
+                    .success_div span:hover{
+                        margin-left: 2rem;
+                        padding: 0.1rem 0.7rem;
+                        border-radius: var(--border-radius_10--);
+                        background:linear-gradient(45deg, rgb(65, 241, 83),var(--main-white--)); 
+                    }
+                        
+
+                    .validation_div{
+                    margin-top: 0;
+                        display: flex;
+                        align-items:center;
+                        justify-content: center;
+                        align-self: center;
+                        width: 50%;
+                     
+                    }
+
+        .joblist_content_div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 80%;
+            width: 96%;
+            margin-bottom: 2rem;
+         
+        }
+    
+            .joblist_content_div .table_div {
+                display: flex;
+                justify-content: start;
+                flex-direction: column;
+                overflow-y: auto;
+                overflow-x: hidden;
+                height: 100%;
+                width: 100%;
+            }
+
+
+            .table_div::-webkit-scrollbar{
+                width: 1rem;
+                padding: 0.5rem;
+                background-color: var(--gainsbro);
+            }
+
+            .table_div::-webkit-scrollbar-track{
+                border-radius: 100vw;
+            }
+
+
+            .table_div::-webkit-scrollbar-thumb{
+                cursor: pointer;
+                border-radius: 50px;
+                
+                background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+                border: solid 4px var(--gainsbro);
+                
+
+            }
+
+            
+                /* Normal Table Layout */
+                .table_div .jp_table {
+                    width: 100%;
+                    max-width: 100%;
+                    table-layout: fixed; 
+                    background-color: transparent;
+                    border-collapse: collapse; 
+                }
+                
+
+                    .jp_table .jp_tr{
+                        background:linear-gradient(45deg,#d0d7e6,var(--white-blple--));
+                    }
+                   
+                            
+                    /* Table Header Styles */
+                    .jp_table .jp_th {
+                        font-family: 'Poppins-Medium';  
+                        text-align: center;
+                        padding: 0.2rem; /* Adjust padding to ensure consistency */
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        position: relative;
+                        font-weight: normal;
+                        color: var(--lusion-dark-b);
+                        width: 25%; 
+                        background-color: transparent;
+                     
+                        box-sizing: border-box;
+                        word-wrap: break-word; 
+                        overflow-wrap: break-word; 
+                        white-space: normal; 
+                    }
+
+                    
+                    .jp_table .jp_th::after {
+                        content: '';
+                        position: absolute;
+                        width: 100%;
+                        height: 3px;
+                        transform-origin: left;
+                        transform: scaleX(0);
+                        bottom: 0px;
+                        left: 0;
+                        transition: 0.5s;
+                        background-color: var(--pure_white--);
+                    }
+
+
+                        #jp_th_id{width: 18%;}
+                        #jp_th_job_title{width: 30%;}
+                        #jp_th_job_description{width:30%;}
+                        #jp_th_field_category{width: 25%;}
+                        #jp_th_min_age{width: 12%;}
+                        #jp_th_max_age{width: 12%;}
+                        #jp_th_job_location{width: 30%;}
+                        #jp_th_status{width: 30%;}
+                        #jp_th_action{width: 55%;}
+
+                      
+                    
+                    .jp_table .jp_th:hover::after {
+                        transform: scaleX(1);   
+                    }
+
+
+                    .jp_table tr:nth-child(odd) {
+                        background-color: var(--main-white--);
+                    }
+                    
+                    .jp_table tr:nth-child(even) {
+                      
+                        background-color: var(--gainsbro);
+                    }
+
+                
+
+                    #noresults_td_a{
+                        padding: 5rem;
+                        
+                     }
+     
+                        
+                        /* Table Cell Styles */
+                        .jp_table td {
+                            width: 25%;  
+                            padding: 1rem;
+                            font-size: 0.8rem;
+                            word-wrap: break-word; 
+                            overflow-wrap: break-word; 
+                            white-space: normal; 
+                            text-align: center;
+                            
+                            box-sizing: border-box;              
+                            background-color: transparent;
+                         
+                        }
+
+                            .jp_table button{
+                                box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+                            }
+
+
+                            /* search result  */
+                      
+                            .jp_table .search-result-row:nth-child(odd){
+                                background-color: var(--main-white--);
+                                border: none;
+                            }
+                            .jp_table .search-result-row:nth-child(even){
+                                background-color: var(--main-white--);
+                                border: none;
+                            }
+                
+                            .search-result-row:hover {
+                                background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                            }
+
+                        
+                         
+
+
+
+                            .jp_table .tba_output_jp_tr:hover{
+                                background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                            }
+
+
+
+
+
+                            .tbl-a-btn-container{
+                                
+                                display: flex;
+                                justify-content: space-evenly;
+                               
+                                width: 100%;
+                             
+                              
+                            }.tbl-a-btn-container svg{
+                                pointer-events: none;
+                            }
+
+                            .tbl-a-btn-container .button_form {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;     
+                            }  
+
+
+                                .tbla-button{
+                                    cursor: pointer;
+                                    outline: none;
+                                    border: none;
+                                    border-radius: var(--border-radius_5--);
+                                    padding: 0.1rem 0.5rem;
+                                    color: var(--moon-phases-b);
+                                   
+                                }
+
+
+                                     /* post button */
+                                    .button_form .tbla-post-btn{
+                                        
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 0.5rem;
+                                        background-color: var(--color-success_b);
+                                      
+                                    } .button_form .tbla-post-btn:hover{
+                                            background:linear-gradient(45deg,var(--color-success_b),var(--main-white--));
+                                    }
+
+                                     
+
+
+                                    /* edit button */
+                                    .button_form .tbla-edit-btn{
+                                       
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        margin-right: 0.5rem;
+                                        background-color: var(--white-blple--);
+   
+                                    }.button_form .tbla-edit-btn:hover{
+                                        background:linear-gradient(45deg,var(--white-blple--),var(--main-white--));
+                                     }
+  
+
+
+
+                                    /* delete button */
+                                    .button_form .tbla-delete-btn{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        background-color: var(--color-danger-b);
+                                        
+
+                                    }.button_form .tbla-delete-btn:hover{
+                                        background:linear-gradient(45deg, var(--color-danger-b),var(--main-white--));
+                                     }
+
+                                      
+
+
+
+
+
+    /* TABLE B =========================================  ========================================= =========================================*/
+
+
+
+    .jp_container.jp_joblist_table_b{
+        
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        flex-direction: column;
+     
+        grid-area: 3 / 1 / 3 / 11;
+
+        margin: 1rem 1rem 0rem 1rem;
+        display: none;
+        
+    }
+
+        
+        .jp_joblist_table_labels_stuff_b{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 96%;
+            height: 13%;
+            margin-top: 1rem;
+           
+    }
+
+
+        .left_tb_lbl_div_b{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    
+        
+     
+
+        .jp_table_a_title_b{
+            font-size: 1.5rem;
+         
+            font-family: 'Poppins-Medium';  
+            color:rgba(44, 46, 58,0.8);
+        }
+
+           
+
+
+
+        .jp_joblist_table_b  .joblist_content_div_b{
+            margin:1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 96%;
+            height: 87%;
+       
+           
+        }
+
+            .table_div_b{
+                display: flex;
+                align-items: start;
+                justify-content: start;
+                overflow-y: auto;
+                overflow-x: hidden;
+                height: 100%;
+                width: 100%;
+
+            }
+
+                        
+            .table_div_b::-webkit-scrollbar{
+                width: 1rem;
+                padding: 0.5rem;
+                background-color: var(--gainsbro);
+            }
+
+            .table_div_b::-webkit-scrollbar-track{
+                border-radius: 100vw;
+            }
+
+
+            .table_div_b::-webkit-scrollbar-thumb{
+                cursor: pointer;
+                border-radius: 50px;
+                
+                background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+                border: solid 4px var(--gainsbro);
+                
+
+            }
+
+
+                .jp_table_b{
+                
+                    width: 100%;
+                    max-width: 100%;
+                    table-layout: fixed; 
+                    background-color: transparent;
+                    border-collapse: collapse; 
+                    
+                }
+    
+                    .jp_table_b{
+                    
+                        width: 100%;
+                        max-width: 100%;
+                        table-layout: fixed; 
+                        background-color: transparent;
+  
+                        border-spacing: 0;
+                      
+                    }
+
+                            .jp_table_b .jp_tr_b{
+                                background:linear-gradient(45deg,#d0d7e6,var(--white-blple--));
+
+                                border: none;
+                            }
+
+                    
+                            .jp_th_b{
+                    
+                                font-family: 'Poppins-Medium';  
+                                text-align: center;
+                                padding: 0.1rem 0.2rem;
+                                font-size: 0.9rem;
+                                cursor: pointer;
+                                position: relative;
+                                font-weight: normal;
+                                color: var(--lusion-dark-b);
+                            
+                                width: 25%; 
+                       
+                                box-sizing: border-box;
+                                word-wrap: break-word; 
+                                overflow-wrap: break-word; 
+                                white-space: normal; 
+                                border: none;
+                                
+                        
+                        }
+    
+                            .jp_th_b::after {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 3px;
+                                transform-origin: left;
+                                transform: scaleX(0);
+                                bottom: 0px;
+                                left: 0;
+                                transition: 0.5s;
+                                background-color: var(--pure_white--);
+                            }
+                            
+                            .jp_th_b:hover::after {
+                                transform: scaleX(1);
+                                                }
+
+                            #jp_th_b_id{width: 15%; }
+                            #jp_th_b_salary_range_from{width: 18%;}
+                            #jp_th_b_salary_range_to{width: 20%}
+                            #jp_th_b_employment{width: 35%;}
+                            #jp_th_b_req_qual{width: 45%;}
+                            #jp_th_b_pref_qual{width: 45%;}
+                            #jp_th_b_app_deadline{width: 30%;}
+                            #jp_th_b_posting_date{width: 25%;}
+                            #jp_th_b_contact_information{width: 40%;}
+                            #jp_th_b_status{width: 30%;}
+                            #jp_th_b_action{width: 70%;}
+                            #tbla-button-action-div_b{
+                                border: none;
+                            }
+
+                       
+                                  
+
+                            .jp_table_b tr:nth-child(odd) {
+                                background-color: var(--main-white--);  
+                            }
+                            
+                            .jp_table_b tr:nth-child(even) {
+                                z-index: 2;
+                                background-color: var(--gainsbro);
+                            }
+
+                            .jp_table_b td{
+                                
+                                width: 25%;  
+                                padding: 0.8rem;
+                                font-size: 0.8rem;
+                                word-wrap: break-word; 
+                                overflow-wrap: break-word; 
+                                white-space: normal; 
+                                text-align: center;
+                                                        
+                                box-sizing: border-box; 
+                               
+                                color: var(--lusion-dark-b);
+                                background-color: transparent;
+                            
+                            }
+
+                            .jp_table_b button{
+                                padding: 0.1rem 0.5rem;
+                                color: var(--moon-phases-b);
+                                box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+                                background-color: red;
+                            }
+
+                            #tblb-edit-button-form{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                     
+                            }
+                    
+                            .jp_table_b .tbb-result-row:hover{
+                                
+                                background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                            
+                            }
+
+                        
+                            .search-result-cell{
+                                width: 25%;  
+                                padding: 0.3rem;
+                                font-size: 0.9rem;
+                                word-wrap: break-word; 
+                                overflow-wrap: break-word; 
+                                white-space: normal; 
+                                text-align: center;
+                            
+                            
+                                box-sizing: border-box; 
+                            
+                                color: var(--lusion-dark-b);
+                                
+                            }
+
+                            .search-result-row_b{
+                                background: var(--main-white--);
+                            }
+                
+                            .search-result-row_b:hover{
+                                background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                            }
+
+
+
+                                #noresults_td_b{
+                                    padding: 5rem;
+                                    
+                                }
+                
+                    
+
+
+
+                                .tbl-b-btn-container_b{
+                                    display: grid;
+                                    grid-template-columns: repeat(3,1fr);
+                                    gap: 0.2rem;
+                                    
+                                }
+                        
+                                      
+                                        .search-result-row{
+                                            width: 25%;  
+                                            padding: 1rem;
+                                          
+                                            font-size: 0.9rem;
+                                            word-wrap: break-word; 
+                                            overflow-wrap: break-word; 
+                                            white-space: normal; 
+                                            text-align: center;
+                                            box-sizing: border-box; 
+                                            border-bottom: 1px solid var(--gray_1--);
+            
+                                            color: var(--lusion-dark-b);
+                                            background-color:var(--main-white--);
+                                        }
+
+                                        
+                                      
+
+            
+
+
+
+
+
+/* DARKMODE SECTION ===================== ===================== ===================== =====================*/
+
+
+
+    body.darkmode_popup::-webkit-scrollbar{
+        width: 1rem;
+        padding: 0.5rem;
+        background-color: var(--lusion-dark-b);
+    }
+
+
+    body.darkmode_popup::-webkit-scrollbar-track{
+        border-radius: 100vw;
+    }
+
+
+    body.darkmode_popup::-webkit-scrollbar-thumb{
+        cursor: pointer;
+        border-radius: 50px;
+        background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+        border: solid 4px var(--lusion-dark-b);
+
+    }
+
+
+    .jp_db_wrapper.darkmode_popup{
+        background-color: var(--lusion-dark-b);
+    }
+
+        .jp_logo_div.darkmode_popup{
+            background-color: var(--color-dark-variant);
+                box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+        }
+
+
+    
+        #db_nodelab_text.darkmode_popup{
+            background-clip: text;
+     
+            background:
+            linear-gradient(
+            to left,
+            var(--moon-phases-c),
+            var(--white-blple--)
+            );
+          
+            
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    
+         
+
+
+
+        .jp_header_div.darkmode_popup{
+            background-color: var(--color-dark-variant);
+                box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+        }
+
+            .jp_header_div a:hover.darkmode_popup{
+                background-color: var(--moon-phases-b);
+            }
+            .jp_header_div span.darkmode_popup{
+                color: var(--main-white--);       
+            }
+            .jp_header_div p.darkmode_popup{
+                color: var(--main-white--);       
+            }
+            .jp_header_div svg.darkmode_popup{
+                fill: var(--main-white--);
+            }
+            .jp_header_div #hd_role_type{
+                color: var(--color-danger);
+            }
+
+
+    .jp_header_div  #sun_moon_toggle_button.darkmode_popup{              
+        background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.3);
+        transform: translateX(200%);
+     
+    }
+
+    
+    .jp_header_div  .darkmode_div.darkmode_popup{   
+        box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+        0 0 30px rgba(0,0,0,0.5);           
+        border: 2px solid var(--color-dark-shadow);
+        background-color: var(--color-dark-variant);
+    }
+
+
+
+        .jp_numbers_div.darkmode_popup{
+            background-color:transparent;
+      
+        }
+            .number_card_div_a.darkmode_popup{
+                box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+            }
+
+
+
+
+
+        /* TABLE A DARK MODE ============  */
+        .jp_joblist_table.darkmode_popup{
+            background-color: var(--color-dark-variant);
+            box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+        }
+
+       
+            .table_div.darkmode_popup::-webkit-scrollbar{
+                width: 1rem;
+                padding: 0.5rem;
+                background-color: var(--color-dark-variant);
+            }
+
+
+            .table_div.darkmode_popup::-webkit-scrollbar-track{
+                border-radius: 100vw;
+            }
+
+
+            .table_div.darkmode_popup::-webkit-scrollbar-thumb{
+                cursor: pointer;
+                border-radius: 50px;
+                background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+                border: solid 4px var(--color-dark-variant);
+
+            }
+
+            .jp_joblist_table span.darkmode_popup{
+                color: var(--main-white--);      
+            }
+            .jp_table_search input.darkmode_popup{
+                color: var(--main-white--);
+            }
+            #jp_tp_search_lbl_a.darkmode_popup{
+                background-color: var(--color-dark-variant);
+            }
+            
+            .search_button_div.darkmode_popup{
+                background-color: var(--moon-phases-b);
+                box-shadow: 3px 3px 5px 2px rgba(0,0,0,0.2);
+            }
+
+
+            .noresults_td.darkmode_popup{
+                
+             background-color: var(--color-dark-variant);
+                color: var(--main-white--);
+            }
+
+          
+
+
+            .jp_table .jp_tr.darkmode_popup{
+                background:linear-gradient(to right,var(--moon-phases-c),var(--color-dark-variant));
+                color: var(--main-white--);
+            }
+
+                .jp_tr th.darkmode_popup{
+                    color: var(--main-white--);
+                }
+                    
+                .jp_table td.darkmode_popup{
+                    color: var(--main-white--);
+                }
+
+                .jp_table tr:nth-child(even).darkmode_popup {
+                    z-index: 1;
+                    background-color: var(--color-dark-shadow-alpha);
+                }
+                   
+                .jp_table tr:nth-child(odd).darkmode_popup {
+                    z-index: 2;
+                    background-color: var(--color-dark-shadow);
+                }
+
+            
+                .tba_output_jp_tr:hover.darkmode_popup{
+                    background:linear-gradient(to right,var(--moon-phases-b),
+                    var(--color-dark-variant));
+                }
+
+         
+            .search-result-row.darkmode_popup {
+                background:linear-gradient(to right,var(--lusion-dark-b),var(--color-dark-variant));
+                } 
+                 .search-result-row:hover.darkmode_popup {
+                    background:linear-gradient(to right,var(--moon-phases-b),
+                    var(--color-dark-variant));
+                    }
+
+                .search-result-row td.darkmode_popup {
+                        color: var(--main-white--)
+                        }
+        
+   
+    
+    
+
+               
+
+        /* TABLE B DARK MODE ============  */
+            
+
+
+        .jp_joblist_table_b.darkmode_popup{
+            background-color: var(--color-dark-variant);
+        }
+
+        .table_div_b.darkmode_popup::-webkit-scrollbar{
+            width: 1rem;
+            padding: 0.5rem;
+            background-color: var(--color-dark-variant);
+        }
+
+
+        .table_div_b.darkmode_popup::-webkit-scrollbar-track{
+            border-radius: 100vw;
+        }
+
+
+        .table_div_b.darkmode_popup::-webkit-scrollbar-thumb{
+            cursor: pointer;
+            border-radius: 50px;
+            background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+            border: solid 4px var(--color-dark-variant);
+
+        }
+        
+        .jp_joblist_table_b span.darkmode_popup{
+            color: var(--main-white--);
+        }
+
+        .jp_table_b .jp_tr_b.darkmode_popup{
+            background:linear-gradient(to right,var(--moon-phases-c),var(--color-dark-variant));
+        }
+
+        .jp_table_b .jp_tr_b th.darkmode_popup{
+            color: var(--main-white--);
+            
+        }
+      
+
+            .tbb-result-row td.darkmode_popup{
+                color: var(--main-white--);
+            }
+
+            .tbb-result-row:hover.darkmode_popup{
+                background:linear-gradient(to right,var(--moon-phases-b),
+                var(--color-dark-variant));
+            }
+
+            .jp_table_b tr:nth-child(even).darkmode_popup {
+                z-index: 1;
+                background-color: var(--color-dark-shadow-alpha);
+            }
+               
+            .jp_table_b tr:nth-child(odd).darkmode_popup {
+                z-index: 2;
+                background-color: var(--color-dark-shadow);
+            }
+
+
+        /* SEARCH RESULT */
+        .search-result-row_b td.darkmode_popup {
+            color: var(--main-white--);
+            } 
+               
+        .search-result-row_b.darkmode_popup {
+            background:linear-gradient(to right,var(--lusion-dark-b),var(--color-dark-variant));
+            } 
+             .search-result-row_b:hover.darkmode_popup {
+                background:linear-gradient(to right,var(--moon-phases-b),
+                var(--color-dark-variant));
+                }
+
+        #noresults_td_b.darkmode_popup{
+            background-color: var(--color-dark-variant);
+        }
+
+           
+
+/* END OF DARKMODE SECTION ===================== ===================== ===================== =====================*/;

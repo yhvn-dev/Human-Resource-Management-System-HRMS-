@@ -1,0 +1,912 @@
+
+
+:root{
+
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --gainsbro:#F5F5F5;
+    --fafafa:#fafafa;
+    --blue-white:#d0e3ec;
+    --floral-white:#fbf8f3;
+    --fafafa:#fafafa;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+
+      /* PALLETE 2 */
+      --fairy-green-p2-c6:#c6fad2;
+      --foam-purple-p2-dd:#dd9bcf;
+      --white-in-p2-f6:#f6ffee;
+      --danger-in-p2-f4:#f48882;
+      --most-pink-p2-fad:#fad2cc;
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --dark-shadow-friend:#404040;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+    --font-color-a:#B0B0B0;
+    --font-color-b:#E0E0E0;
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+    --grayple--: #9ba4d4;
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+   
+ 
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Fauna';
+    src: url('../../Fonts/Fauna/fauna-thin.ttf');
+}
+@font-face {
+    font-family: 'Mokoto';
+    src: url('../../Fonts/Mokoto/Mokoto_Demo.ttf');
+}
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+
+@font-face {
+    font-family: 'Roboto_Mono';
+    src: url('../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Fonts/Roboto/Roboto-Medium.ttf');
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+body{
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+a{
+    color: var(--moon-phases-b);
+}
+
+
+body::-webkit-scrollbar{
+    width: 1rem;
+    padding: 0.5rem;
+
+    
+}
+
+
+body::-webkit-scrollbar-track{
+    border-radius: 100vw;
+}
+
+
+body::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--gainsbro);
+
+}
+
+
+body.darkmode_popup::-webkit-scrollbar-track{
+    border-radius: 100vw;
+}
+
+
+body.darkmode_popup::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--lusion-dark-b);
+
+}
+
+
+
+
+svg{
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: var(--moon-phases-b);
+}
+
+
+.db_wrapper{
+
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 10vh 40vh 45vh;
+
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+    
+}
+
+
+
+
+    /* BACKDROP WRAPPER */
+    .bd_db{
+        display: grid;
+        grid-template-columns: repeat(10,1fr);
+        grid-template-rows: repeat(8,1fr);
+        grid-area: 1 / 1 / 4/ 5;
+    
+        gap: 1rem;
+    }
+
+        .bd_numbers_content_b{
+            position: relative;
+            overflow: hidden;
+            grid-area: 2/ 9/ 2 /11;
+            margin-right: 1rem;
+          
+            border-radius: var(--border-radius_10--);
+
+        }
+           
+
+    .fp_wrapper{
+
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 1fr;
+        grid-template-rows: 10vh 40vh 45vh;
+        grid-area: 1 / 1 / 4/ 5;
+        gap: 1rem;
+
+        transition: 1s;
+    }
+
+  
+  
+
+        .db_wrapper .container{
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--border-radius_10--);
+            background-color: var(--gainsbro);
+            box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+         
+        }
+
+
+
+            /* HEADER LOGO_________________________________________________________________________________________________________ */
+            .container.header_logo{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                grid-area: 1 / 1 / 1 / 1;
+                border-radius: 0px;
+                border-bottom-right-radius:var(--border-radius_10--);
+                text-decoration: none;
+                transition: 1s;
+            }
+                .container.header_logo img{
+                    margin-left: 1.5rem;
+                
+                }
+              
+
+                .container.header_logo .logo_text{
+                    background-clip: text;
+                    font-family: 'Mokoto';
+                    letter-spacing: 0.1rem;
+                    color: var(--moon-phases-b);
+                    margin-left: 0.5rem;
+                    font-size: 1.2rem;
+
+                    background:
+                    linear-gradient(
+                    to left,
+                    var(--color-dark-variant),
+                    var(--moon-phases-c)
+                    );
+        
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+   
+                }
+
+
+            .container.main_prompt_con{
+                box-shadow: none;
+                background-color: transparent;
+            }   
+
+                .main_prompt_con .text_a{
+                    font-family: 'Poppins-Medium';
+                    font-size: 1rem;
+                    padding: 0.2rem 0.5rem;
+                    letter-spacing: 1px;
+                    color: var(--moon-phases-b);
+                    border-right: 1px solid var(--gray_1--);      
+                }
+
+                .main_prompt_con .text_b{        
+                    padding: 0.2rem 1rem;
+                    font-size: 1rem;            
+                    background-color: var(--white-blple--);
+                    margin:1rem;
+                    border-radius: var(--border-radius_5--);      
+                }
+                
+                .main_prompt_con .text_c{        
+                    padding: 0.5rem;
+                    color: var(--gray_1--);
+           
+                }
+
+            
+
+
+            
+
+
+
+
+
+
+            /* SIDEBAR_________________________________________________________________________________________________________ */
+            .container.sidebar{
+
+                grid-area: 2 / 1 / 4 / 1;
+                z-index: 1;
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                flex-direction: column;
+            
+                border-radius: 0px;
+                border-top-right-radius:var(--border-radius_10--);
+                border-bottom-right-radius:var(--border-radius_10--);
+                transition: 1s;
+            }
+
+         
+
+               
+
+.sidebar .sidebar_buttons_div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ 
+    margin-top: 1.5rem;
+    height: 80%;
+    width: 80%;
+   
+   
+}
+
+
+.sidebar .sidebar_buttons_div button{
+   font-size: 0.9rem;   
+}
+
+
+    .sidebar .sidebar_buttons_div .sbuttons_div-href {
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--border-radius_8--);
+        width: 80%;
+        color: var(--color-dark-variant);
+      
+        cursor: pointer;
+     
+        text-decoration: none;
+
+    }
+
+
+    .sidebar .sbuttons_div-href:hover {
+        margin-left: 1.5rem;
+     
+        color: var(--alice-blue);
+        background:linear-gradient(45deg,#adbbda,#9ba4dd,#adbbda);
+        
+    }
+
+    
+
+            .btn_content_div{
+                display: flex;
+                align-items: center;
+                justify-content: start;
+              
+            }
+
+ 
+            .sidebar-lbtn{
+                all: unset;
+            }
+              
+            
+
+                .sidebar_buttons_div .sbuttons_div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center ;
+                
+                }
+        
+                    .sbuttons_div span{
+                        color: var(--lusion-dark-b);
+                        font-size: 0.9rem;
+                    }
+        
+                    .sb_button_icons{
+                        width: 1rem;
+                        height: 1rem;
+                        fill: var(--font-color-1-);
+                        
+                    }
+        
+                
+                    
+                    #edit-btn{
+                        margin-right: 3.2rem;
+                    }
+                    
+                    #btn_icon_edit_div{
+                        margin-right: 0.8rem;
+                    }
+
+
+        .sidebar_buttons_div #logout-btn-href{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+         
+            margin-left: 1rem;
+            padding: 0rem 0.5rem;
+            cursor: pointer;
+        }
+
+        
+        .sidebar_buttons_div #logout-btn-href:hover{
+            margin-left: 2rem;
+        }
+            #logout-btn-href #logout-btn{
+                margin-right: 2.2rem;
+            }
+
+
+                
+
+            .sidebar_buttons_div .logout-form-btn{
+                margin-left: 0.5rem;
+                cursor: pointer;
+                background-color: transparent;
+                outline: none;
+                border: none;
+            }
+                    
+    
+                    #logout_button_icon{
+                        margin-top: 0.5rem;
+                    }
+
+              
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* HEADER_________________________________________________________________________________________________________ */
+.container.db_header{
+    grid-area: 1 / 3 / 1 / 5;
+    
+    border-radius: 0px;
+    border-bottom-left-radius:var(--border-radius_10--);
+    transition: 1s;
+  
+}
+
+.header_div{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+   
+}
+
+
+
+
+
+
+
+
+
+.right_h_contents{
+    margin-left: 0.5rem;
+     text-decoration: none;
+    cursor: pointer;
+}
+
+
+.right_h_contents span,p{
+    color: var(--moon-phases-b);
+}
+
+#hd_role_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0rem 0.3rem;
+    border-left: 1px solid var(--blue-white);
+    cursor: pointer;
+    
+}
+
+.user_role{
+    color: var(--color-warning);
+}
+
+
+
+#right_header_div{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row-reverse;
+  
+  
+}
+
+
+#right_header_profile{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1.5rem;
+ 
+    border-radius: var(--border-radius_circle--);
+    border: 2px solid var(--white-blple--);
+   cursor: pointer; 
+}
+
+
+
+
+
+
+
+.darkmode_div{
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    overflow: hidden;
+  
+    transition: 0.8s;
+   
+    height: 1.7rem;
+    width: 5rem;
+    margin-right: 1.5rem;
+    border-radius:  var(--border-radius_10--);
+
+    box-shadow: inset 2px 2px 2px 2px rgba(53,53,53,0.2);
+    background-color: var(--main-white--);
+    
+}
+
+
+.darkmode_div #sun_moon_toggle_button{
+    cursor: pointer;
+    position: relative;
+    margin-left:  0.5rem;
+    margin-right: 0.5rem;
+    z-index: 1;
+    transition: 0.8s;
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: var(--border-radius_circle--);
+    background: linear-gradient(45deg, var(--lusion-dark-b),var(--moon-phases-c));
+    box-shadow: 0 0 5px var(--moon-phases-c);
+
+}
+
+
+#sun_moon_toggle_button.darkmode_popup{
+                                
+    background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+    background-color: gray;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.3);
+    
+    transform: translateX(200%);
+}
+
+.darkmode_div.darkmode_popup{   
+    box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+    0 0 30px rgba(0,0,0,0.5);           
+    border: 2px solid var(--color-dark-shadow);
+    background-color: var(--color-dark-variant);
+    
+}
+
+
+
+.container.header.darkmode_popup{
+    background: linear-gradient(70deg,#141619,#2c2e3a); 
+}
+
+
+
+/* END OF HEADER ======================= ================== ================== =============== ================ */
+
+
+
+
+
+
+.container.edit_form{
+    grid-area: 2 / 2 / 4 / 4;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    z-index: 1;
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    margin: 2rem;
+}
+
+    .edit_form_header{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        width: 90%;
+        height: 20%;
+      
+    }
+        
+        .edit_form_header span{
+            font-size: 1.3rem;
+            font-family: 'Poppins-Medium';  
+            color:rgba(44, 46, 58,0.8);
+        }
+        
+        .edit_form_main_contents{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr;
+            width: 90%;
+            height: 80%;
+            gap: 1rem;
+        
+        
+        }
+        
+        /* mc */
+        .lr_div {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+        .left_edit_form{
+          
+        }
+            .input_box {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                width: 100%;
+              
+            }
+                .input_box input {
+                    width: 98%;
+                    padding: 0rem 0.3rem;
+                    background-color: transparent;
+                    outline: none;
+                    border: none;
+                    border-bottom: 1px solid var(--white-blple--);
+                 
+                }
+                .edit-lbl{
+                    position: absolute;
+                    font-size: 0.9rem;
+                    color: gray;
+                    left: 0.3rem;
+                    pointer-events: none;
+                }
+
+
+
+                .input_box .edit_inp:focus + .edit-lbl,
+                .input_box .edit_inp:not(:placeholder-shown) + .edit-lbl{
+                    transform: translateY(-15px);
+                    transition: 0.8s;
+                    padding: 0rem 0.3rem;
+                    font-size: 0.6rem;
+                }     
+    
+
+
+
+
+        .button_div{
+            width: 90%;
+            height: 20%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          
+        }
+
+            .edit_form_buttons {
+                text-decoration: none;
+                
+                cursor: pointer;
+                outline: none;
+                border: none;
+                border-radius: var(--border-radius_8--);
+                margin: 1rem 0.5rem;
+                box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+                color: var(--moon-phases-b);
+
+            }
+
+                .edit_form_buttons.edit-btn{
+                    font-size: 0.9rem;
+                    padding: 3px 1rem;
+                    background-color: var(--white-blple--);
+                    
+                }
+    
+                .edit_form_buttons.discard-btn{
+                    font-size: 0.9rem;
+                    padding: 0.1rem 0.5rem;
+                    background-color: transparent;
+                    border: 1px solid var(--moon-phases-b);
+                }
+        
+                .edit_form_buttons.discard-btn:hover {
+                    background: linear-gradient(45deg,transparent 30%,var(--white-blple--));
+                    }
+
+
+
+
+                    .success_div{
+                                                            
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        
+                        padding: 0.5rem 0.7rem;
+                        margin: 1rem;
+                     
+                        border-radius: var(--border-radius_5--);
+                        color: var(--moon-phases-b);
+                        background-color: rgb(199, 224, 201);
+                        border: 1px solid var(--color-success_a);
+                        
+                    }
+            
+                        .success_div span{
+                            margin-left: 2rem;
+                            padding: 0.1rem 0.7rem;
+                            border-radius: var(--border-radius_10--);
+                            cursor: pointer;
+                            background-color: rgba(65, 241, 83,0.2);
+                        }
+            
+                            .success_div span:hover{
+                                margin-left: 2rem;
+                                padding: 0.1rem 0.7rem;
+                                border-radius: var(--border-radius_10--);
+                                background:linear-gradient(45deg, rgb(65, 241, 83),var(--main-white--)); 
+                            }
+            
+            
+            
+            
+
+                       .error_div{
+            
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.3rem 0.8rem;
+                color: var(--moon-phases-b);
+                border-radius: var(--border-radius_5--
+                );
+                background-color: rgb(231, 214, 216);
+                border: 1px solid rgb(232, 162, 168);
+                
+            }
+                .remove_error_prompt{
+                    cursor: pointer;
+                    padding: 0.1rem 0.7rem;
+                    margin-left: 2rem;
+                    border-radius: var(--border-radius_10--);
+                    background-color: rgb(231, 214, 216);
+                    
+                    font-weight: 700;
+                }
+                    .remove_error_prompt:hover{
+                        background:linear-gradient(45deg ,rgb(231, 214, 216),var(--main-white--));
+                     
+                    }
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+

@@ -1,0 +1,772 @@
+
+:root{
+
+    
+  
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --gainsbro:#F5F5F5;
+    --blue-white:#d0e3ec;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+
+
+
+    
+
+    --color-dark: #9ba4d4;
+
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+
+
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+
+}
+
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../../Fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Neon_Club_Music';
+    src: url('../.././../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
+}
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('../../../../Fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../../../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body::-webkit-scrollbar{
+   
+    width: 1rem;
+    padding: 0.5rem;
+    background-color: var(--gainsbro);
+}
+
+
+
+body::-webkit-scrollbar-track{
+    border-radius: 100vw;
+}
+
+
+body::-webkit-scrollbar-thumb{
+   
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--gainsbro);
+}
+
+body{
+
+
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+    background-color: var(--fafafa);
+    width: 100vw;
+    height: 100vh
+
+
+}
+
+span{
+    text-align: center;
+    text-overflow: break-word;
+}
+
+p{
+    text-overflow: break-word;
+    text-align: center;
+}
+
+.jpeed_val_wrapper{
+    display: grid;
+    grid-template-columns: 2fr 6fr 2fr;
+    grid-template-rows:100vh;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+    .bdjpfeed_val_wrapper{
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows:100vh;
+        grid-area: 1 / 1/ 3/ 4;
+    }
+
+    .fp_jpfed_val_wrapper{
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows:100vh;
+        grid-area: 1 / 1/ 3/ 4;
+        
+
+    }
+
+
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+
+
+
+        .val_feed_wrapper{
+            display: grid;
+            grid-template-columns: 2fr 6fr 2fr;
+            grid-template-rows: 1fr;
+            width: 100%;
+            height: 100%;
+
+
+            grid-area:  1 / 1 / 3 /4 ;
+            background-color: var(--gainsbro);
+        }
+
+
+        .darkmode_div{
+                        
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            overflow: hidden;
+        
+            transition: 0.8s;
+        
+            height: 1.7rem;
+            width: 5rem;
+            margin-right: 1.5rem;
+            border-radius:  var(--border-radius_10--);
+
+            box-shadow: inset 2px 2px 2px 2px rgba(53,53,53,0.2);
+            background-color: var(--main-white--);
+            display: none;
+        }
+
+
+        .darkmode_div #sun_moon_toggle_button{
+            cursor: pointer;
+            position: relative;
+            margin-left:  0.5rem;
+            margin-right: 0.5rem;
+            z-index: 1;
+            transition: 0.8s;
+            height: 1.3rem;
+            width: 1.3rem;
+            border-radius: var(--border-radius_circle--);
+            background: linear-gradient(45deg, var(--lusion-dark-b),var(--moon-phases-c));
+            box-shadow: 0 0 5px var(--moon-phases-c);
+       
+        }
+
+
+        #sun_moon_toggle_button.darkmode_popup{
+                                        
+            background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+            background-color: gray;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+            0 0 30px rgba(255, 255, 255, 0.3);
+        
+            transform: translateX(200%);
+        }
+
+        .darkmode_div.darkmode_popup{   
+            box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+            0 0 30px rgba(0,0,0,0.5);           
+            border: 2px solid var(--color-dark-shadow);
+            background-color: var(--color-dark-variant);
+        }
+
+
+
+
+
+    
+            .aside{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
+
+            .aside_left{
+                grid-area: 1/ 1/ 1/1  ;
+                box-shadow: 5px 10px 10px 2px  rgba(53,53,53,0.2);
+            }
+
+             .main_feed{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 100%;
+                height: 100%;
+                grid-area:  1/ 2  / 3 /2;
+          
+              
+            }
+
+                .jobpost_template{
+
+                    display: grid;
+                    grid-template-columns: repeat(10,1fr);
+                    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.8fr;
+                 
+                
+                    box-shadow: 0px 0px 5px 3px rgba(53,53,53,0.3);
+                    border-radius: var(--border-radius_15--);
+                    background-color: var(--gainsbro);
+
+                    height: 90%;
+                    width: 85%;
+                
+                 
+                }
+                
+
+                    .jp_div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                        .rsjp_header_div{
+                            display: grid;
+                            grid-template-columns: 4.5fr 1fr 4.5fr;
+                            grid-template-rows: 1fr;
+                  
+                            border-top-left-radius: var(--border-radius_10--);
+                            border-top-right-radius: var(--border-radius_10--);
+
+                            grid-area: 1 / 1 / 1 / 11;
+                            height: 100%;
+                           
+                           
+                            font-size: 1.2rem;
+                            font-weight: 700;
+                            text-align: center;
+                            
+                            color: var(--main-white--);
+                            background:linear-gradient(45deg,var(--moon-phases-b),var(--color-dark-variant),var(--moon-phases-c));
+                        }
+
+                        #header_logo{
+                            margin-left: 2rem;
+                        }
+
+                        .header_subdiv{
+                            height: 100%;
+                           
+                        }
+
+                        .jp_logo_div{
+                          
+                            margin: 1rem 0rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                         
+                            grid-area: 1 / 1/ 1 / 1; 
+                        
+                        }
+                        .jp_logo_div .jp_logo{
+                            margin-left: 1rem;
+                            
+                            white-space: nowrap;
+                            
+                        }
+                        
+
+                        .feed_id_holder_div{
+                            height: 100%;
+                            grid-area: 1 / 2/ 1 / 2;                                       
+                        }
+
+                        .back_link_div{
+                        
+                            display: flex;
+                            align-items: start;
+                            justify-content: end;
+                        
+                        }
+
+                        .back_link_div a{
+                            border-top-right-radius: var(--border-radius_10--);
+                            border-bottom-left-radius: var(--border-radius_10--);
+                            text-decoration: none;
+                            padding: 0.2rem 1rem;
+                            color: var(--main-white--);
+                            
+                            background-color: var(--color-dark-shadow);
+                        }
+                        .back_link_div a:hover{
+                               
+                            background:linear-gradient(45deg,var(--color-dark-shadow),var(--moon-phases-c));
+                        }
+
+
+
+
+                
+                     
+                    
+                        .rsjp_tag_div{
+                        
+                                display: grid;
+                                grid-template-columns: repeat(6,1fr);
+                                grid-template-rows: repeat(4,1fr);
+                                overflow-wrap: break-word;
+                                position: relative;  
+                            
+                                grid-area: 2 / 1 / 4 / 6;
+                                margin: 0rem 2.7rem;
+                        }
+                    
+                            .text_div{
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100%;
+                              
+                            }
+                          
+                            .text_a_div{
+                                position: relative;
+                            
+                                align-items: end;
+                                grid-area: 1 / 1/ 5 / 7;
+                                height: 100%;
+                                
+                            }
+
+                    
+                            .text_a{
+                          
+                                grid-area:  2 / 4 / 2 / 6;
+                                font-size: 2rem;
+                            }
+
+                            .text_b_main_div{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                grid-area: 5/ 1/ 11 / 7;
+                               
+                                height: 100%;
+                            }
+                                .text_b_div{
+                                    align-items: start;
+                                    
+                                    padding: 0rem 2rem;
+                                    height: 100%;
+                                 
+                                    border-radius: 3px 20px 3px 20px;
+                                    background-color: var(--main-white--);
+
+                                    
+                                }
+                                
+                                    .text_b{
+                                        font-family: 'Poppins-Medium';
+                                        font-size: 3.8rem;
+                                        background:
+                                        linear-gradient(
+                                        to right,var(--color-dark-variant),
+                                        var(--moon-phases-c));
+                                        
+                                        -webkit-background-clip: text;
+                                        -webkit-text-fill-color: transparent;
+                                        background-clip: text;
+
+                                    }
+                                
+                        /* skills required */
+                        .rsjp_skills_req_div{
+                            display: flex;
+                            align-items: start;
+                            justify-content: space-evenly;
+                            flex-direction: column;
+                            grid-area: 4 / 1 / 7 / 6;
+                            margin: 1rem 2.5rem;
+                          
+                        }
+
+                          
+                        .jobtitle_div{
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                            margin-top: 1rem;
+                            
+                            width: 98%;
+                            padding: 0.2rem 0.2rem;
+                            border-radius: 5px;
+                            background-color: var(--white-blple--);
+                        }
+
+                            .jobtitle_div .dec_check_div{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 100%;
+                                margin-right: 0.5rem;
+                            
+                                padding: 0rem 0.2rem;
+                                background-color: transparent;
+                            }
+
+                            .jpfeed_check_icon{
+                                border: 2px solid var(--moon-phases-b);
+                                border-radius: var(--border-radius_5--);
+
+                                width:  1rem;
+                                height: 1rem;
+                            }
+
+
+                            .jobtitle_div span{
+                                
+                                font-size: 1.3rem;
+                            }
+
+                                .qualifications_div{
+
+                                    display: flex;
+                                    align-items: start;
+                                    justify-content: space-evenly;
+                                    flex-direction: column;
+                                    height: 100%;
+                                    width: 100%;
+                                    border-bottom: 2px solid var(--moon-phases-b);
+                                }
+
+
+                                .qual_div{
+                                    
+                                    display: flex;
+                                    align-items: start;   
+                                    justify-content: start;
+                                    flex-direction: column;
+                                    margin: 1rem;
+                                    margin-left: 0.2rem;
+                                    width: 100%;
+                                  
+                                }
+
+                                    .qual_div label{
+                                        font-family: ''Satoshi-Regular';'
+                                    }
+                                    .inp_holder{   
+                                        all: unset;  
+                                        color: var(--color-dark-shadow);
+                                        padding: 0.1rem 0.3rem;   
+                                        width:95%;
+
+                                    }
+
+
+                        /* aplly button div */
+                        .rsjp_apply_button_div{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        
+                            grid-area:  7/ 1 / 8/ 6;
+                        }
+
+                            .apply_button {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+
+
+                                background:linear-gradient(
+                                45deg,var(--main-white--),
+                                var(--white-blple--),
+                                var(--color-success_b));
+                                
+                                box-shadow: 5px 5px 5px 1px rgba(53,53,53,0.2);
+                                border-radius: var(--border-radius_10--);
+                                padding: 0.5rem 1.5rem;
+                                margin-bottom: 1rem;
+                                color: var(--color-dark-variant);
+                                text-decoration: none;
+                            }
+
+
+                            .apply_button:hover{
+                                background:linear-gradient(
+                                    45deg,var(--main-white--),
+                                    var(--white-blple--),
+                                    var(--color-success_b),
+                                    var(--main-white--)
+                                    );
+                            }   
+
+                                .svg_apply_arrow_icon{
+                                    width: 1rem;
+                                    height: 1rem;
+                                }
+
+                                
+                            .apply_button span{
+                                margin-left: 0.5rem;
+                            }
+
+
+
+                        .rsjp_footer_div{
+                            display: grid;
+                            grid-template-columns: repeat(3,1fr) ;
+                            grid-template-rows: 1fr;
+
+                            grid-area: 8 / 1 / 9 / 11;
+
+                            border-bottom-left-radius: var(--border-radius_10--);
+                            border-bottom-right-radius: var(--border-radius_10--);
+                            background-color: var(--moon-phases-b);
+                        }
+
+                            .rsjp_footer_div span{
+                                color: var(--main-white--);
+                                margin: 0rem 1rem;
+                            }
+                            
+                                .ftr_div{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                    height: 100%;
+                                  
+                                }
+                                .contact_num_div{  
+                                    grid-area: 1 / 1/ 1/ 1 ;
+                                    justify-content: start;
+
+                                }
+
+                                .jobpost_save_btn_form{
+                                    justify-content: center;
+
+                                }
+                                    #post_button{
+                                        outline: none;
+                                        border: none;
+                                        border-radius: var(--border-radius_8--);
+                                        background-color: var(--white-blple--);
+                                        padding: 0.3rem 1rem;
+                                        font-size: 0.9rem;
+                                        cursor: pointer;
+                                        width: 50%;
+                                   
+                                    }
+                                        
+                                    #post_button:hover{
+                                        background:linear-gradient(45deg,var(--white-blple--),var(--main-white--));
+                                }
+
+
+                               
+
+                                .date_posted_div{
+                                    grid-area: 1 / 3 / 1 /3;
+                                    justify-content: end;                                                 
+                                }
+
+                                
+
+                        /* image vector div */
+                        .rsjp_image_vector_div{
+                            
+                            display: grid;
+                            grid-template-columns: repeat(11,1fr);
+                            grid-template-rows: repeat(10,1fr);
+                            width: 100%;
+                            height: 100%;
+                            grid-area: 2 / 6 / 8 / 11;
+                  
+                        }
+
+                            .job_category_holder_div{
+                              
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                gap: 1rem;
+                                margin:0rem 1rem;
+                                height: auto;
+                                
+                                grid-area:  3 / 1 / 4 / 12;
+                                background-color: var(--purpluish--);                                
+                                border-radius: var(--border-radius_10--);                            
+                            }
+
+                                .job_category_holder{
+                                    word-break: break-all;
+                                    text-align: center;
+                                    font-size: 2rem;
+                                }   
+                            
+                            .dec{
+                                width: 100%;
+                                height: 100%;
+                              
+                            }
+
+                    
+                                .arc_a{
+                                    border-top-left-radius: 100px;
+                                    grid-area: 6 / 5 / 11 / 12 ;
+                                    background:linear-gradient(
+                                    45deg,var(--main-white--),
+                                    var(--white-blple--),
+                                    var(--purpluish--),
+                                    var(--bluis--)
+                                    );
+                                }
+          
+               
+            
+            .aside_right{
+                grid-area: 1  / 3 / 3 / 3;
+                box-shadow: -5px 10px 10px 2px  rgba(53,53,53,0.2);
+            }
+
+
+/* DARKMODE FUNCTION ======================================================================= */
+           
+               
+                .aside.darkmode_popup{
+                    background-color: var(--color-dark-variant);
+                }
+                    .aside_left.darkmode_popup{
+                      
+                        filter: drop-shadow(7px 0px 2px rgba(0,0,0,0.5))
+                    }   
+                    .aside_right.darkmode_popup{
+                       
+                        box-shadow: -5px 0px 5px 2px rgba(0,0,0,0.5);
+                    }
+
+                    .main_feed.darkmode_popup{
+                        background-color: var(--lusion-dark-b);
+                    }
+                    
+                    .jobpost_template.darkmode_popup{
+                        background-color: var(--moon-phases-b);
+                    }
+            
+                    .rsjp_header_div.darkmode_popup{
+                        background:linear-gradient(45deg,var(--moon-phases-a),var(--moon-phases-a),var(--moon-phases-c));
+                    }
+            
+                    .rsjp_footer_div.darkmode_popup{
+                        background-color: var(--moon-phases-a);
+                    }
+                        .text_a.darkmode_popup{
+                            color: var(--main-white--);
+                        }
+                        .qualifications_div label.darkmode_popup{
+                            color: var(--main-white--);
+                        }
+                        .qualifications_div input.darkmode_popup{
+                            color: var(--white-blple--);
+                        }
+                        .job_category_holder.darkmode_popup{
+                            color: var(--main-white--);
+                        }
+            
+                        
+
+
+
+
+

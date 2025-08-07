@@ -1,0 +1,1040 @@
+
+:root{
+
+    
+  
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --gainsbro:#F5F5F5;
+    --blue-white:#d0e3ec;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+
+
+
+    
+
+    --color-dark: #9ba4d4;
+
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+
+
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+
+}
+
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../../Fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Neon_Club_Music';
+    src: url('../.././../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
+}
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('../../../../Fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../../../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+body{
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: 1s;
+}
+
+
+body::-webkit-scrollbar{
+    transition:none;
+    width: 1rem;
+    padding: 0.5rem;
+    background-color: var(--gainsbro);
+}
+
+
+
+body::-webkit-scrollbar-track{
+    transition:none;
+    border-radius: 100vw;
+}
+
+
+body::-webkit-scrollbar-thumb{
+    transition:none;
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--gainsbro);
+}
+
+
+span{
+    
+    text-align: center;
+    text-overflow: break-word;
+}
+
+p{
+   
+    text-overflow: break-word;
+    text-align: center;
+}
+
+
+    .jlp_main_wrapper{
+        display: grid;
+        grid-template-columns: 2fr 6fr 2fr;
+        grid-template-rows: 9vh 100vh;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+    }
+
+        .jlp_main_wrapper .jlp_bd_wrapper{
+            grid-area: 1 / 1 / 4 / 4;
+            display: grid;
+            grid-template-columns: 2fr 6fr 2fr; 
+            grid-template-rows: 9vh 100vh;
+            width: 100%;
+            height: 100%;
+            background-color: orange;
+        }
+
+        .jlp_main_wrapper .jlp_fp_wrapper{
+            grid-area: 1 / 1 / 3 / 4;
+            display: grid;
+            grid-template-columns: 2fr 6fr 2fr;
+            grid-template-rows: 9vh 100vh;
+            width: 100%;
+            height: 100%;
+            transition: 1s;
+       
+
+            background-color: var(--gainsbro);
+        }
+
+            
+
+                .logo_div span{
+                    margin-right: 10rem;
+                }
+                    
+                /* header */
+                .container.header{
+                    display: grid;
+                    grid-template-columns: 2fr 6fr 2fr;
+                    grid-template-rows: 1fr;
+                    grid-area: 1 /  1/ 1/  4;
+                    width: 100%;
+                    height: 100%;
+                   
+
+                    box-shadow: 5px 2px 5px 1px rgba(53,53,53,0.2);
+                    z-index: 1;
+                  
+                   
+                }
+
+                    .logo_div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: start;
+                        height: 100%;
+                     
+                        
+                  
+                    }
+
+                        .logo_div a{ 
+                            margin-left: 2rem;
+                            font-weight: 700;
+                            text-decoration: none;
+                            color: var(--moon-phases-b);
+                        }
+
+
+              
+                       .jpfeed_search{
+                            grid-area: 1/ 2 / 1 /2 ;
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                           
+                            margin: 0 10rem;
+                        
+                        }
+        
+        
+                            .jpfeed_inp_search{
+                                
+                                width: 100%;
+                                padding: 0.1rem 0.5rem;
+                             
+                                border: 2px solid var(--white-blple--);
+                                border-radius: var(--border-radius_5--);
+                                outline: none;
+                                background-color: transparent;
+                            }
+        
+                                .jpfeed_search span{    
+                                    font-family: 'RobotoMono';
+                                }
+        
+        
+        
+                                .jpfeed_inp_search:focus + #jpfeed_search_lbl,
+                                .jpfeed_inp_search:not(:placeholder-shown) + #jpfeed_search_lbl{
+                                    transform: translateY(-12px);
+                                    font-size: 0.5rem;
+                                    transition: 0.5s;
+                                    padding: 0rem 0.3rem;
+                                
+                                }
+        
+                         #jpfeed_search_lbl{
+                                position: absolute;
+                                pointer-events: none;
+                                color: gray;
+                                font-size: 0.9rem;
+                                left: 0.8rem;
+                                background-color: var(--gainsbro);
+                                
+                            }
+                    
+                           
+        
+                                #jp_tb_search-btn{
+
+                                    padding: 1rem;
+                                    background-color: red;
+
+                                }
+
+                                .search_button_icon{
+                                    width: 1rem;
+                                    height: 1rem;    
+                                    fill: var(--main-white--);
+                                }
+
+                               
+
+
+
+                    .header_div{
+                        grid-area: 1 / 3 / 1 /3;
+                        padding: 0rem 1rem;
+                        display: flex;
+                        align-items: center;    
+                        justify-content: end;
+                        
+                        width: 100%;
+                        height: 100%;
+                    
+                    }
+
+                    .h_button_div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: row-reverse;
+                    }
+                        .h_button_div *{
+                            cursor: pointer;
+                            margin-right: 2rem;
+                        }
+
+                        .h_button_links{
+                            position: relative;
+                            text-decoration: none;
+                        }
+
+                        .h_button_links::after{
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: -4px;
+                            height: 3px;
+                            width: 100%;
+                            transform: scaleX(0);
+                            background-color: var(--color-dark);
+                            border-radius: 5px;
+                            
+                            transform-origin: right;
+                            transform: scaleX(0);
+                            transition: transform .5s;
+            
+                        }
+                        .h_button_links:hover:after{
+
+                            transform: scaleX(1);
+            
+                        }
+            
+            
+                        #home-link{
+                            cursor: pointer;       
+                            padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+                            border: none;
+                            outline: none;
+                            border-radius: var(--border-radius_8--);
+                            text-decoration: none;
+                            color: var(--main-white--);
+                            background-color: var(--purpluish--);
+                        }
+
+                        #home-link:hover{
+                            background:linear-gradient(45deg,#8697c4,#adbbda);
+                        }
+
+
+                                                
+                        .darkmode_div{
+                        
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                            overflow: hidden;
+                        
+                            transition: 0.8s;
+                        
+                            height: 1.7rem;
+                            width: 5rem;
+                            margin-right: 1.5rem;
+                            border-radius:  var(--border-radius_10--);
+
+                            box-shadow: inset 2px 2px 2px 2px rgba(53,53,53,0.2);
+                            background-color: var(--main-white--);
+                            /* display: none; */
+                        }
+
+
+                        .darkmode_div #sun_moon_toggle_button{
+                            cursor: pointer;
+                            position: relative;
+                            margin-left:  0.5rem;
+                            margin-right: 0.5rem;
+                            z-index: 1;
+                            transition: 0.8s;
+                            height: 1.3rem;
+                            width: 1.3rem;
+                            border-radius: var(--border-radius_circle--);
+                            background: linear-gradient(45deg, var(--lusion-dark-b),var(--moon-phases-c));
+                            box-shadow: 0 0 5px var(--moon-phases-c);
+
+                        }
+
+
+                        #sun_moon_toggle_button.darkmode_popup{
+                                                        
+                            background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+                            background-color: gray;
+                            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+                            0 0 30px rgba(255, 255, 255, 0.3);
+                            
+                            transform: translateX(200%);
+                        }
+
+                        .darkmode_div.darkmode_popup{   
+                            box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+                            0 0 30px rgba(0,0,0,0.5);           
+                            border: 2px solid var(--color-dark-shadow);
+                            background-color: var(--color-dark-variant);
+                        }
+
+
+
+
+
+
+
+                .container.hero{
+                    grid-area:  2 /  1  /  2 /  4;
+                    background-color: var(--purpluish--)
+                }
+
+                .container.feed_wrapper{
+                    grid-area:  2 /  1  /  2 /  4;
+                    display: grid;
+                    grid-template-columns: 2fr 6fr 2fr;
+                    grid-template-rows: 1fr;
+                    width: 100%;
+                    height: 100%;
+                
+                    background-color: var(--gainsbro);
+                }
+
+                    .feed_container{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        height: 100%;
+                       
+                    }
+
+                    .feed_container.aside{
+                        background-color: var(--gainsbro);
+                    }
+
+                    .feed_wrapper .aside_left{
+                      
+                        grid-area:  1/ 1 / 1 /1;
+                        box-shadow: 5px 10px 10px 2px  rgba(53,53,53,0.2);
+                      
+                    }
+                    .feed_wrapper .main_feed{
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+                        width: 100%;
+                        height: 100%;
+                        grid-area:  1/ 2  / 1 /2;
+                        
+                    }
+
+                        .mf_con{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            height: 100%;
+                        }
+
+                    
+                        
+                        .main_feed 
+                                .mf_con.scroll_div{
+                                    grid-area: 1 / 1/ 1 / 1;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    height: 100%;
+                                 
+                                    max-height:100vh;
+                                    border-top-left-radius: var(--border-radius_10--);
+                                    border-top-right-radius: var(--border-radius_10--);
+                                    margin: 0rem 2rem;
+                                
+                        }
+
+                            .table_div{
+                                display:  flex;
+                                align-items: center;
+                                justify-content: start;
+                                flex-direction: column;
+                                overflow-y: auto;
+                                overflow-x: hidden;
+                                height: 100%;
+                                max-height:90vh;
+                                width: 100%;
+                            }
+
+                            
+                            .table_div::-webkit-scrollbar{
+                                border-radius: 30px;
+                                width: 1rem;
+                                padding: 0.5rem;
+                                background-color: transparent;
+                            }
+
+
+
+                            .table_div::-webkit-scrollbar-track{
+                                border-radius: 100vw;
+                            }
+
+                            .table_div::-webkit-scrollbar-thumb{
+                            
+                                cursor: pointer;
+                                border-radius: 50px;
+                                background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+                                border: solid 4px var(--gainsbro);
+                            }
+
+                            .jpfeed_table{
+                                width: 100%;
+                                max-width: 100%;
+                              
+                                table-layout: fixed; 
+                    
+                            }
+
+
+                                .no_sr_div{
+                                    margin: 40vh 10%;
+                                    width: 90%;
+                                    padding: 1rem;
+                                    border-radius: var(--border-radius_10--);
+                                }
+
+                               
+
+                                
+                                
+                                
+                            
+                                .jpfeed_table td{ 
+                                
+                                    display: grid;
+                                    grid-template-columns: repeat(10,1fr);
+                                    grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.8fr;
+                                 
+                                    margin-bottom: 2rem;
+                                    box-shadow: 0px 0px 5px 3px rgba(53,53,53,0.3);
+                                    border-radius: var(--border-radius_15--);
+                                    background-color: var(--gainsbro);
+                                    
+                                    
+                                }
+                                    .jp_div{
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                    }
+                                        .rsjp_header_div{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: end;
+                                            border-top-left-radius: var(--border-radius_10--);
+                                            border-top-right-radius: var(--border-radius_10--);
+
+                                            grid-area: 1 / 1 / 1 / 11;
+                                            padding: 1rem;
+                                            font-size: 1.2rem;
+                                            font-weight: 700;
+                                            text-align: center;
+                                            padding: 1rem;
+                                    
+                                            color: var(--main-white--);
+                                            background:linear-gradient(45deg,var(--moon-phases-b),var(--color-dark-variant),var(--moon-phases-c));
+                                        }
+
+
+
+                                        .rsjp_header_div .jp_logo{
+                                          
+                                            margin-right: 1rem;
+                                            white-space: nowrap;
+                                        }
+                                
+                                     
+                                    
+                                        .rsjp_tag_div{
+                                        
+                                                display: grid;
+                                                grid-template-columns: repeat(6,1fr);
+                                                grid-template-rows: repeat(4,1fr);
+                                                overflow-wrap: break-word;
+                                                position: relative;  
+                                            
+                                                grid-area: 2 / 1 / 4 / 6;
+                                                margin: 0rem 2.7rem;
+                                        }
+                                    
+                                            .text_div{
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                height: 100%;
+                                              
+                                            }
+                                          
+                                            .text_a_div{
+                                                position: relative;
+                                            
+                                                align-items: end;
+                                                grid-area: 1 / 1/ 5 / 7;
+                                                height: 100%;
+                                                
+                                            }
+
+                                    
+                                            .text_a{
+                                          
+                                                grid-area:  2 / 4 / 2 / 6;
+                                                font-size: 2rem;
+                                            }
+
+                                            .text_b_main_div{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                grid-area: 5/ 1/ 11 / 7;
+                                               
+                                                height: 100%;
+                                            }
+                                                .text_b_div{
+                                                    align-items: start;
+                                                    
+                                                    padding: 0rem 2rem;
+                                                    height: 100%;
+                                                 
+                                                    border-radius: 3px 20px 3px 20px;
+                                                    background-color: var(--main-white--);
+
+                                                    
+                                                }
+                                                
+                                                    .text_b{
+                                                        font-family: 'Poppins-Medium';
+                                                        font-size: 3.8rem;
+                                                        background:
+                                                        linear-gradient(
+                                                        to right,var(--color-dark-variant),
+                                                        var(--moon-phases-c));
+                                                        
+                                                        -webkit-background-clip: text;
+                                                        -webkit-text-fill-color: transparent;
+                                                        background-clip: text;
+
+                                                    }
+                                                
+                                        /* skills required */
+                                        .rsjp_skills_req_div{
+                                            display: flex;
+                                            align-items: start;
+                                            justify-content: space-evenly;
+                                            flex-direction: column;
+                                            grid-area: 4 / 1 / 7 / 6;
+                                            margin: 1rem 2.5rem;
+                                          
+                                        }
+
+                                          
+                                        .jobtitle_div{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: start;
+                                            margin-top: 1rem;
+                                            
+                                            width: 98%;
+                                            padding: 0.2rem 0.2rem;
+                                            border-radius: 5px;
+                                            background-color: var(--white-blple--);
+                                        }
+
+                                            .jobtitle_div .dec_check_div{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                height: 100%;
+                                                margin-right: 0.5rem;
+                                            
+                                                padding: 0rem 0.2rem;
+                                                background-color: transparent;
+                                            }
+
+
+
+                                            .jpfeed_check_icon{
+                                                border: 2px solid var(--moon-phases-b);
+                                                border-radius: var(--border-radius_5--);
+
+                                                width:  1rem;
+                                                height: 1rem;
+                                            }
+
+
+                                            .jobtitle_div span{
+                                                
+                                                font-size: 1.3rem;
+                                            }
+
+                                                .qualifications_div{
+
+                                                    display: flex;
+                                                    align-items: start;
+                                                    justify-content: space-evenly;
+                                                    flex-direction: column;
+                                                    height: 100%;
+                                                    width: 100%;
+                                                    border-bottom: 2px solid var(--moon-phases-b);
+                                                }
+
+
+                                                .qual_div{
+                                                    
+                                                    display: flex;
+                                                    align-items: start;   
+                                                    justify-content: start;
+                                                    flex-direction: column;
+                                                    margin: 1rem;
+                                                    margin-left: 0.2rem;
+                                                    width: 100%;
+                                                  
+                                                }
+
+                                                    .qual_div label{
+                                                        font-family: ''Satoshi-Regular';'
+                                                    }
+                                                    .inp_holder{   
+                                                        all: unset;  
+                                                        color: var(--color-dark-shadow);
+                                                        padding: 0.1rem 0.3rem;   
+                                                        width:95%;
+
+                                                    }
+
+    
+                                        /* aplly button div */
+                                        .rsjp_apply_button_div{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content: center;
+                                        
+                                            grid-area:  7/ 1 / 8/ 6;
+                                        }
+
+                                            .apply_button {
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+
+                                                background:linear-gradient(
+                                                45deg,var(--main-white--),
+                                                var(--white-blple--),
+                                                var(--color-success_b));
+                                                
+                                                box-shadow: 5px 5px 5px 1px rgba(53,53,53,0.2);
+                                                border-radius: var(--border-radius_10--);
+                                                padding: 0.5rem 1.5rem;
+                                                margin-bottom: 1rem;
+                                                color: var(--color-dark-variant);
+                                                text-decoration: none;
+                                            }
+
+
+                                            .apply_button:hover{
+                                                background:linear-gradient(
+                                                    45deg,var(--main-white--),
+                                                    var(--white-blple--),
+                                                    var(--color-success_b),
+                                                    var(--main-white--)
+                                                    );
+                                            }   
+
+                                                .svg_apply_arrow_icon{
+                                                    width: 1rem;
+                                                    height: 1rem;
+                                                }
+
+                                                
+                                            .apply_button span{
+                                                margin-left: 0.5rem;
+                                            }
+
+
+
+                                        .rsjp_footer_div{
+                                            display: grid;
+                                            grid-template-columns: 4.5fr 1fr 4.5fr;
+                                            grid-template-rows: 1fr;
+
+                                            grid-area: 8 / 1 / 9 / 11;
+
+                                            border-bottom-left-radius: var(--border-radius_10--);
+                                            border-bottom-right-radius: var(--border-radius_10--);
+                                            background-color: var(--moon-phases-a);
+                                        }
+
+                                            .rsjp_footer_div span{
+                                                color: var(--main-white--);
+                                                margin: 0rem 1rem;
+                                            }
+                                            
+                                                .ftr_div{
+                                                    display: flex;
+                                                    align-items: center;
+                                                    justify-content: center;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                  
+                                                }
+                                                .contact_num_div{  
+                                                    grid-area: 1 / 1/ 1/ 1 ;
+                                                    justify-content: start;
+
+                                                }
+
+                                                .feed_id_holder_div{
+                                                    grid-area: 1 / 2/ 1 / 2;                                             
+                                                }
+
+                                                .date_posted_div{
+                                                    grid-area: 1 / 3 / 1 /3;
+                                                    justify-content: end;
+                                                                                           
+                                                }
+
+                                                
+
+
+
+
+                                        /* image vector div */
+                                        .rsjp_image_vector_div{
+                                            
+                                            display: grid;
+                                            grid-template-columns: repeat(11,1fr);
+                                            grid-template-rows: repeat(10,1fr);
+                                            width: 100%;
+                                            height: 100%;
+                                            grid-area: 2 / 6 / 8 / 11;
+                                           
+                                         
+                                        }
+
+                                            .job_category_holder_div{
+                                              
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                width: 100%;
+                                                height: 100%;
+
+                                                grid-area:  3 / 3 / 4 / 9;
+                                            
+                                                border-radius: var(--border-radius_15--);
+                                                
+                                            }
+
+                                            .job_category_holder{
+                                                font-size: 2rem;
+                                            }   
+
+                                          
+                                           
+                                            
+                                            .dec{
+                                                width: 100%;
+                                                height: 100%;
+                                              
+                                            }
+
+                                            
+                                    
+                                                .arc_a{
+                                                    border-top-left-radius: 100px;
+                                                    grid-area: 6 / 5 / 11 / 12 ;
+                                                    background:linear-gradient(
+                                                    45deg,var(--main-white--),
+                                                    var(--white-blple--),
+                                                    var(--purpluish--),
+                                                    var(--bluis--)
+                                                    );
+                                                }
+
+                                                
+
+
+                    .feed_wrapper .aside_right{
+                        grid-area:  1/ 3  / 1 /3;
+                        box-shadow: -5px 10px 10px 2px  rgba(53,53,53,0.2);
+                    }
+
+               
+
+/* DARKMODE ===================================================================== */
+
+  
+#sun_moon_toggle_button.darkmode_popup{
+                                
+    background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+    background-color: gray;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 255, 0.3);
+    
+    transform: translateX(200%);
+}
+
+
+.darkmode_popup::-webkit-scrollbar{
+
+    background-color: var(--color-dark-variant)
+}
+
+body.darkmode_popup::-webkit-scrollbar{
+    border-radius: 0;
+    width: 1rem;
+    padding: 0.5rem;
+    background-color: var(--color-dark-variant)
+}
+
+
+body.darkmode_popup::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--color-dark-variant);
+}
+
+
+.darkmode_div.darkmode_popup{   
+    box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+    0 0 30px rgba(0,0,0,0.5);           
+    border: 2px solid var(--color-dark-shadow);
+    background-color: var(--color-dark-variant);
+}
+
+.container.header.darkmode_popup{
+
+    color: var(--main-white--);
+    background-color: var(--color-dark-variant);
+    box-shadow: 0px 3px 5px 2px rgba(0,0,0,0.5);
+}   
+
+.container.header a.darkmode_popup{
+
+    color: var(--main-white--);
+   
+}   
+
+    #jpfeed_inp_search.darkmode_popup{
+        color: var(--main-white--);
+    }
+
+    #jpfeed_search_lbl.darkmode_popup{
+        background-color: var(--color-dark-variant);
+    }
+
+    .aside.darkmode_popup{
+        background-color: var(--color-dark-variant);
+    }
+        .aside_left.darkmode_popup{
+          
+            filter: drop-shadow(7px 0px 2px rgba(0,0,0,0.5))
+        }   
+        .aside_right.darkmode_popup{
+           
+            box-shadow: -5px 0px 5px 2px rgba(0,0,0,0.5);
+        }
+    .main_feed.darkmode_popup{
+        
+        background-color: var(--lusion-dark-b);
+    }
+
+    .table_div.darkmode_popup::-webkit-scrollbar{
+       
+        background-color: transparent;
+    }
+
+    .table_div.darkmode_popup::-webkit-scrollbar-thumb{
+        border: 4px solid var(--lusion-dark-b);
+    }
+
+    .no_sr_text.darkmode_popup{
+        color: var(--main-white--);
+    }
+
+      .result_jobpost.darkmode_popup{
+          
+            background-color: var(--moon-phases-b);
+            box-shadow: 0px 10px 5px 2px rgba(0,0,0,0.5);
+         
+        }
+        
+        .rsjp_header_div.darkmode_popup{
+            background:linear-gradient(45deg,var(--moon-phases-a),var(--moon-phases-a),var(--moon-phases-c));
+        }
+
+        .rsjp_footer_div.darkmode_popup{
+            background-color: var(--moon-phases-a);
+        }
+            .text_a.darkmode_popup{
+                color: var(--main-white--);
+            }
+            .qualifications_div label.darkmode_popup{
+                color: var(--main-white--);
+            }
+            .qualifications_div input.darkmode_popup{
+                color: var(--white-blple--);
+            }
+            .job_category_holder.darkmode_popup{
+                color: var(--main-white--);
+            }
+
+            
+            
+            

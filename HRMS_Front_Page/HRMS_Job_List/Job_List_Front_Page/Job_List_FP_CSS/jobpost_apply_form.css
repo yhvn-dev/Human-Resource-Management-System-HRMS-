@@ -1,0 +1,933 @@
+
+:root{
+
+    
+  
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --gainsbro:#F5F5F5;
+    --blue-white:#d0e3ec;
+    --white-f7--:#F7F7F7;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+    --color-dark: #9ba4d4;
+
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+
+
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+
+}
+
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../../../Fonts/Poppins/Poppins-Regular.ttf');
+}
+@font-face {
+    font-family: 'Neon_Club_Music';
+    src: url('../.././../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
+}
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Satoshi-Regular';
+    src: url('../../../../Fonts/Satoshi_Complete/Fonts/OTF/Satoshi-Regular.otf');
+}
+
+@font-face {
+    font-family: 'RobotoMono';
+    src: url('../../../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+body{
+
+    box-sizing: border-box;    
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    transition: 1s;
+}
+
+
+
+body::-webkit-scrollbar{
+    transition:none;
+    width: 1rem;
+    padding: 0.5rem;
+    background-color: var(--gainsbro);
+}
+
+
+
+body::-webkit-scrollbar-track{
+    transition:none;
+    border-radius: 100vw;
+}
+
+
+body::-webkit-scrollbar-thumb{
+    transition:none;
+    cursor: pointer;
+    border-radius: 50px;
+    background:linear-gradient(45deg,var(--moon-phases-b),var(--moon-phases-c));
+    border: solid 4px var(--gainsbro);
+}
+
+
+
+
+span,p,label{
+    flex-wrap: wrap;
+    text-wrap: wrap;
+    text-align: start;
+    text-overflow: break-word;
+    
+    word-break: break-all;
+}
+
+.jp_apply_form_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100vw;
+    height: auto;
+   
+}
+
+    .template{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: 100vw;
+        height: auto;
+    }
+
+        .template.bd_jp_apply_form_wrapper{
+            grid-area: 1/ 1/ 5 / 1;
+            background: linear-gradient(
+            to bottom,var(--blue-white),
+            var(--gainsbro));
+            background-color: var(--color-dark-variant);
+        }
+
+        
+        .template.fp_jp_apply_form_wrapper{
+            grid-area: 1/ 1/ 5 / 1;
+            backdrop-filter: blur(50px);
+            background-color: transparent;
+        }
+
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+             
+            }
+
+            .container.header{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: transparent;
+                grid-area:  1/ 1/1/ 1;
+                height: 9vh;
+                
+              
+            }
+
+            #jpapply_logo{
+                margin-left: 2rem;
+               
+            }
+                
+        
+                .h_button_div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row-reverse;
+
+                    margin-right: 2rem;
+                 
+                }
+  
+                    .h_button_link {
+                        position: relative;
+                        cursor: pointer;
+                        margin-right: 2rem;
+                        color: var(--moon-phases-b);
+                        text-decoration: none;
+                       
+                    }
+
+                        #home-link{
+                            font-size: 0.9rem;
+                            cursor: pointer;       
+                            padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+                            border-radius: var(--border-radius_8--);
+                            text-decoration: none;
+                            color: var(--main-white--);
+                            background-color: var(--white-blple--);
+                        }
+
+                        .h_button_link::after{
+
+                            content: '';
+                            position: absolute;
+                            left: 0;
+                            bottom: -4px;
+                            height: 3px;
+                            width: 100%;
+                            transform: scaleX(0);
+                            background-color: var(--color-dark);
+                            border-radius: 5px;
+                            
+                            transform-origin: right;
+                            transform: scaleX(0);
+                            transition: transform .5s;
+            
+                        }
+                        .h_button_link:hover:after{
+
+                            transform: scaleX(1);
+            
+                        }
+          
+                            #home-link:hover{
+                                
+                                background:linear-gradient(45deg,
+                                var(--white-blple--),
+                                var(--white-blple--),
+                                var(--white-blple--),
+                                var(--main-white--));
+                            }
+
+                     
+                                                
+                        .darkmode_div{
+                        
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                            overflow: hidden;
+                        
+                            transition: 0.8s;
+                        
+                            height: 1.7rem;
+                            width: 5rem;
+                            margin-right: 1.5rem;
+                            border-radius:  var(--border-radius_10--);
+
+                            box-shadow: inset 2px 2px 2px 2px rgba(53,53,53,0.2);
+                            background-color: var(--main-white--);
+                            display: none;
+                        }
+
+
+                        .darkmode_div #sun_moon_toggle_button{
+                            cursor: pointer;
+                            position: relative;
+                            margin-left:  0.5rem;
+                            margin-right: 0.5rem;
+                            z-index: 1;
+                            transition: 0.8s;
+                            height: 1.3rem;
+                            width: 1.3rem;
+                            border-radius: var(--border-radius_circle--);
+                            background: linear-gradient(45deg, var(--lusion-dark-b),var(--moon-phases-c));
+                            box-shadow: 0 0 5px var(--moon-phases-c);
+                        }
+
+
+
+
+
+
+
+
+
+
+
+
+            .container.fp_wrapper{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                grid-area: 2 / 1/ 4 / 1;    
+                backdrop-filter: blur(50px);
+                background-color: transparent;
+               
+            }
+
+                .container.fp_wrapper .main_apply_div{
+                    display: grid;
+                    grid-template-columns: 4.5fr 5.5fr;
+                    grid-template-rows: 0.8fr 9fr;
+                    height: auto;
+                    width: 95%;
+                    overflow: hidden;
+                    border-radius: var(--border-radius_15--);
+                    box-shadow: 3px 3px 5px 2px rgba(53,53,53,0.4);
+                    /* background-color: blue; */
+                }
+
+                .jpdata_div_header{
+                    display: grid;
+                    grid-template-columns: 4.5fr 5.5fr;
+                    grid-template-rows: 1fr;
+                    background-color: var(--moon-phases-b);
+                  
+                    grid-area: 1 / 1 / 1 / 3;
+                  
+                }
+                        .header_subdiv {
+                            
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: start;
+                        }
+                            .jp_data_header{
+                               /* background-color: red; */
+                            }
+                       
+                            .jp_form_header{
+                                color: var(--main-white--);
+                                justify-content: center;
+                                      
+                            }
+
+                           
+
+
+                .main_file{
+                    grid-area: 2 / 1/ 2 /1;
+                    /* background-color: cyan; */
+                }
+            
+
+                    .jb_data_box{
+                        display: flex;
+                        align-items: start;
+                        justify-content: start;
+                        flex-direction: column;
+                        margin-top: 2rem;
+                     
+                    }
+
+                
+
+                    .x-directiondata-box{
+
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr;
+                        width: 100%;
+
+                    }
+    
+                 
+                    
+
+                    .jb_data_box p{
+                        font-size: 0.9rem;
+                        color: var(--color-dark-shadow);
+                    }
+                    
+                        .job_title_hl{
+                            position: relative;
+                            margin-left: 0.1rem;
+                            padding: 0.1rem 0.5rem;
+                        
+                            border-radius: var(--border-radius_8--);
+                          
+                       
+                            background:linear-gradient(to right,var(--bluis--),var(--purpluish--))
+                        }
+
+                        .left_right_divs{
+                            margin: 0rem 1rem;
+                     
+                        }
+
+
+
+
+
+
+                        .apply_div{
+                            grid-area: 2 / 2 / 2/ 2;
+                            /* background-color: red; */
+                        }
+
+                        .jobseekers_form{
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: repeat(5,1fr) 0.8fr;
+
+                            margin:1rem 0rem;
+                         
+                        }
+                                .jps_rows{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    margin: 1rem;
+                                    background-color: var(--pure_white--);
+                                    border-radius: var(--border-radius_10--);
+                                    box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+                                  
+                                }   
+                                    .row_1_jps_form{
+                                        grid-area: 1 / 1 / 1 /1;
+                                    
+                                    }
+                                    
+
+
+                             
+                     
+                        .jp_apply_parent_form_input_box{
+                            margin-top: 2rem;
+                        }
+
+                            
+                            
+
+                            .jp_apply_form_input_box {
+                                position: relative;
+                            } 
+                            
+                            .jp_apply_form_input_box input {
+                                width: 95%;
+                                              
+                                padding: 0rem 0.3rem;
+                                outline: none;
+                                border: none;
+                                background-color: transparent;
+                                border-bottom: 1px solid var(--white-blple--);
+                                border-right: 1px solid var(--white-blple--);
+                            } 
+                            
+                                        .full_name_input_box{    
+                                            display: grid;
+                                            grid-template-columns: 1fr 1fr 1fr;
+                                            grid-template-rows: 1fr 1fr;
+                                            width: 95%;
+                                        
+                                        }   
+
+                                            .full_name_input_box input{
+                                                
+                                                width: 92%;
+                                            
+                                            }   
+                                            
+                                                .firstname{
+                                                grid-area: 1 / 1/ 1/1 ;                                          
+                                                }
+                                                .lastname{
+                                                    grid-area: 1 / 2/  1/2 ;            
+                                                } 
+                                                .middle_name{
+                                                    grid-area: 1 /3/ 1/3 ;
+                                                }
+
+
+
+
+
+                                    .row_2_jps_form{
+                                        display: grid;
+                                        grid-template-columns: 1fr 1fr;
+                                        grid-template-rows: 1fr;
+                                        flex-direction: column;
+                                        padding: 0rem 1rem;
+                                        grid-area: 2 /1 / 2/ 1;
+                                     
+                                    }
+                                        .contact_information{
+                                            display: grid;
+                                            grid-area: 1 / 1 / 1 / 3;
+                                            grid-template-columns: 1fr 1fr;
+                                            grid-template-rows: 1fr;
+                                    
+                                         
+                                        }   
+                                            
+                                     
+
+
+
+
+
+
+
+                                        .contact_information input{
+                                            width: 94%;
+                                        }   
+                                            .email{ 
+                                                grid-area: 1/ 1/1/1 ;
+                                            }                                       
+                                            .phone_number{
+                                                grid-area: 1 /2 1/ 2;
+                                              
+                                            }
+
+                                    /* row 3 */
+                                    .row_3_jps_form{
+                                    
+                                        grid-area: 3 / 1 / 3 / 1;
+                                    }
+                                            .upload_resume{
+                                                display: flex;
+                                                align-items: start;
+                                                justify-content: center;
+                                                flex-direction: column;
+                                                width: 95%; 
+                                                height: 80%;    
+                                            
+                                                border: none;  
+                                            
+                                                outline: none;
+                                             
+                                                border-bottom: 0px solid gainsboro;
+                                            }
+
+                                                .upload_resume input{
+                                                    cursor: pointer;
+                                                    width: 50%;
+                                                    padding: 1rem 0rem;
+                                                    margin-bottom: 2rem;
+                                                }
+
+                                                .upload_resume input:hover{
+                                                    cursor: pointer;
+                                                    background-color: var(--gainsbro);
+                                                }
+
+                                                .upload_resume span {
+                                                    margin-top: 1rem;
+                                                }
+
+
+
+
+                                     /* row 4 */
+                                    .row_4_jps_form{                                        
+                                        grid-area: 4 / 1 / 4 / 1;
+                                        justify-content: center;
+                                        
+                                     }
+                                        .cover_letter{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content:center;
+                                            width: 95%;
+                                            height: 70%;
+                                        
+                                        }   
+                                            .cover_letter textarea{
+                                                border: 2px solid var(--white-blple--);
+                                                border-radius: var(--border-radius_8--);
+                                                padding: 0.3rem;
+                                                height: 100%;
+                                                width: 100%;
+                                            }
+
+
+                                            .cover_letter #cl_label{
+                                                position: absolute;
+                                                bottom: 4rem;
+                                            }
+
+
+                                            #af_cl_inpn{
+                                                background-color: transparent;
+                                            }
+
+
+
+
+
+                                            /* row 5 */
+                                        .row_5_jps_form{
+                                            display: flex;
+                                            align-items: center;
+                                            justify-content:space-evenly;
+                                            flex-direction: column;
+                                            grid-area: 5 / 1 / 5 / 1;
+                                        }
+
+                                        .question_div{
+                                            display:  flex;
+                                            align-items: center;
+                                            justify-content: start;
+                                            width: 95%;
+                                        
+                                        }
+
+                                        
+                                        .question_div label{
+                                            top: 3rem;
+                                        
+                                        }
+                                        .row_5_jps_form span{
+                                            text-align:center;
+
+                                        }
+                                            .additional_questions{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content:center;
+                                           
+                                                width: 95%;
+                                                height: 50%;
+                                              
+                                            }
+                                            .additional_questions textarea{
+                                                border: 2px solid var(--white-blple--);
+                                                border-radius: var(--border-radius_8--);
+                                                padding: 0.3rem;
+                                                height: 90%;
+                                                width: 100%;
+                                                background-color: transparent;
+                                            }
+
+
+                                            #af_questions_inpn{
+                                                background-color: transparent;
+                                            }
+
+
+                                          
+                                            #addit_que_label{
+                                                padding: 0rem 0.3rem;
+                                              
+                                           
+                                                position: absolute;  
+                                                left: 0.5rem;
+                                                top: 0.4rem;
+                                                font-size: 0.9rem;
+                                                color: var(--gray_1--);
+                                                pointer-events: none;   
+                                                
+                                            }
+                    
+                                            .additional_questions #af_questions_inpn:focus + #addit_que_label,
+                                            .additional_questions #af_questions_inpn:not(:placeholder-shown) + #addit_que_label{
+                                                transform:translateY(-20px);
+                                                transition: 0.5s;
+                                                font-size: 0.7rem;
+                                              
+                                                }
+                                        
+
+
+
+
+
+
+
+
+                                                
+  
+                                        .row_6_jps_form{
+                                            height: 100%;
+                                            flex-direction: column;
+                                            
+                                        }
+                                            #af_apply_button{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                outline: none;
+                                                border: none;
+                                                cursor: pointer;
+                                                background:linear-gradient(
+                                                45deg,var(--main-white--),
+                                                var(--white-blple--),
+                                                var(--color-success_b));
+                                                
+                                                box-shadow: 5px 5px 5px 1px rgba(53,53,53,0.2);
+                                                border-radius: var(--border-radius_10--);
+                                                padding: 0.5rem 1.5rem;
+                                                margin-bottom: 1rem;
+                                                color: var(--color-dark-variant);
+                                                text-decoration: none;
+                                                margin-top: 1rem;
+                                            }
+
+                                            .row_6_jps_form .validation_div{
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+
+                                                
+                                                width: 80%;
+                                            }
+
+                                             #af_apply_button:hover{
+                                                background:linear-gradient(
+                                                    45deg,var(--main-white--),
+                                                    var(--white-blple--),
+                                                    var(--color-success_b),
+                                                    var(--main-white--)
+                                                    );
+                                            }   
+                          
+                                            .success_div{
+                                                
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                              
+                                                
+                                                padding: 0rem 3rem;
+                                                margin: 0 1rem;
+                                                margin-bottom: 1rem;
+                                                border-radius: var(--border-radius_5--);
+                                                color: var(--moon-phases-b);
+                                                background-color: rgb(199, 224, 201);
+                                                border: 1px solid var(--color-success_a);
+
+                                            }
+                                                .success_div span{
+                                                    margin-left: 2rem;
+                                                    padding: 0.1rem 0.7rem;
+                                                    border-radius: var(--border-radius_10--);
+                                                    cursor: pointer;
+                                                    background-color: rgba(65, 241, 83,0.2);
+                                                }
+                                                    .success_div span:hover{
+                                                        margin-left: 2rem;
+                                                        padding: 0.1rem 0.7rem;
+                                                        border-radius: var(--border-radius_10--);
+                                                        background:linear-gradient(45deg, rgb(65, 241, 83),var(--main-white--)); 
+                                                    }
+
+
+
+
+
+                                            /* error designs  */
+                                            .error_div{
+                                                color: var(--moon-phases-b);
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: space-between;
+                                                border-radius: var(--border-radius_5--);
+                                                padding: 0.1rem 0.8rem;
+                                                margin: 1rem;
+                                                background-color: rgb(231, 214, 216);
+                                                border: 1px solid rgb(232, 162, 168);
+                                               
+                                            }
+                                                .remove_error_prompt{
+                                                    cursor: pointer;
+                                                    padding: 0.1rem 0.7rem;
+                                                    margin-left: 2rem;
+                                                    border-radius: var(--border-radius_circle--);
+                                                    background-color: rgb(231, 214, 216);
+                                                    border: 1px solid rgb(232, 162, 168);
+                                                    font-weight: 700;
+                                                }
+                                                    .remove_error_prompt:hover{
+                                                        background:linear-gradient(45deg ,rgb(231, 214, 216),var(--main-white--));
+                                                     
+                                                    }
+
+
+                                            .text_error_div{
+                                                background-color: red;
+                                                width: 95%;
+                                            }
+
+
+
+
+
+
+
+
+
+
+            
+                        .jp_apply_form_input_box .jp_af_label{
+                            padding: 0rem 0.3rem;
+
+                            background-color: var(--pure_white--);
+                            position: absolute;  
+                            left: 0.5rem;
+                            bottom:0.2rem;
+                            font-size: 0.9rem;
+                            color: var(--gray_1--);
+                            pointer-events: none;                         
+                        }
+    
+                        
+
+                        .jp_apply_form_input_box .apply_form_inp:focus + .jp_af_label,
+                        .jp_apply_form_input_box .apply_form_inp:not(:placeholder-shown) + .jp_af_label{
+                            transform:translateY(-23px);
+                            transition: 0.5s;
+                            font-size: 0.7rem;
+
+                        }
+                        
+                       
+                        
+
+
+
+
+
+
+
+/* DARKMODE SECTION ============================== ====================== ================= */
+
+.template.bd_jp_apply_form_wrapper.darkmode_popup{
+    background:linear-gradient(to top,var(--lusion-dark-b),var(--moon-phases-b));
+}
+
+    #sun_moon_toggle_button.darkmode_popup{
+                                
+        background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+        background-color: gray;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 30px rgba(255, 255, 255, 0.3);
+        
+        transform: translateX(200%);
+    }
+
+    
+    
+    #jpfeed_link.darkmode_popup{
+        color: var(--main-white--);
+    }
+
+
+    
+    .container.fp_wrapper .main_apply_div.darkmode_popup {
+        background-color: var(--color-dark-variant);
+        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+        color: var(--main-white--);
+    }
+
+
+
+    .jpdata_div_header.darkmode_popup{
+        background-color: var(--color-dark-shadow);
+    }
+
+    label.darkmode_popup{
+        color: var(--white-f7--);
+        background-color: var(--color-dark-variant);
+    }
+    
+    input.darkmode_popup{
+        color: var(--main-white--);
+    }
+    textarea.darkmode_popup{
+        color: var(--main-white--);
+    }
+
+    p.darkmode_popup{
+        color: var(--white-blple--);
+    }
+
+    .af_resume_inp:hover.darkmode_popup{
+        background-color: var(--color-dark-shadow);
+    }
+
+
+
+
+    .jps_rows.darkmode_popup{
+        background-color: var(--color-dark-variant);
+        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+    }
+
+        .jps_rows label.darkmode_popup{
+            background-color: var(--color-dark-variant);
+        }
+        .jps_rows label{
+           background-color: var(--pure_white--);
+        }
+        

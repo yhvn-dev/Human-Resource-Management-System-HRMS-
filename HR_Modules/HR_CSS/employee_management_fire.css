@@ -1,0 +1,437 @@
+
+:root{
+
+    --pure_white--: #fff;
+    --main-white--:#ede8f5;
+    --white-blple--:#adbbda;
+    --gainsbro:#F5F5F5;
+    --fafafa:#fafafa;
+    --blue-white:#d0e3ec;
+    --floral-white:#fbf8f3;
+    --purpluish--:#8697c4;
+    --bluis--:#7091e6;
+    --mainblue--:#3d52a0;
+    --color-dark--blue: #363949;
+  
+    /* FONT COLOR */
+    --font-color-1-:#2e3944;
+  
+    /* SIGNS */
+    --color-danger: #ff7782;
+    --color-danger-b: rgb(232, 162, 168);
+    --color-danger-c:rgb(231, 214, 216);;
+    --color-success_a: #41f153;
+    --color-success_b: #64e4b9;
+    --color-warning: #ffbb55;
+
+    --gray_1--:gray;
+    --color-jk-dark:#212A31;
+    --color-jk-dgray:#f6fbff;
+  
+    --color-dark-variant: #2c2f31;
+    --dark-shadow-friend:#404040;
+    --color-dark-shadow: rgb(53,53,53);
+    --color-dark-shadow-alpha: rgba(53,53,53,0.5);
+    --color-dark-blue:#1f2833;
+
+    /* LUSION */
+    --lusion-dark-a:#141619;
+    --lusion-dark-b:#2c2e3a;
+
+    /* MOON PHASES */
+    --moon-phases-a:#212a31;
+    --moon-phases-b:#2e3944;
+    --moon-phases-c:#748d92;
+
+    --font-color-a:#B0B0B0;
+    --font-color-b:#E0E0E0;
+
+    /* HELLO */
+    --hello-a:#0b0c10;
+    --hello-b:#000428;
+
+    /* ISOLATED BLUE */
+    --isolated-blue:#274d60;
+    --isolated-orange:#f1916d;
+
+    --grayple--: #9ba4d4;
+
+    /* GRADIENT COLORS */
+    --unique-gradeint-violet: rgb(199, 12, 246);
+    --unique-light-blue: cyan;
+    --unique-aqua-marine:aquamarine;
+    --unique-green:rgb(9, 240, 98);
+  
+    /* BORDER RADIUS */
+    --border-radius_5--:5px;
+    --border-radius_8--:8px;
+    --border-radius_10--:10px;
+    --border-radius_15--:15px;
+    --border-radius_20--:20px;
+    --border-radius_30--:30px;
+
+    --border-radius_circle--:50%;
+
+    /* BOX SHADOWS */
+ 
+
+
+}
+
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../../Fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../../Fonts/Quicksand/static/Quicksand-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../../Fonts/Roboto/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Neon_Club_Music';
+    src: url('../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
+}
+
+@font-face {
+    font-family: 'Poppins-Medium';
+    src: url('../../Fonts/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto_Mono';
+    src: url('../../Fonts/Roboto_Mono/static/RobotoMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Mokoto';
+    src: url('../../Fonts/Mokoto/Mokoto\ Demo.ttf');
+}
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+
+p,span{
+    text-align: center;
+    word-break: break-all;
+    color: var(--moon-phases-b);
+}
+
+svg{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+
+
+body{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 100vw;
+    height: auto;
+  
+    background-color: var(--fafafa); 
+   
+}
+
+.fire_val_wrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  
+    width: 100vw;
+    height: 100vh;
+  
+}
+
+    .bd_fire_val_wrapper{
+        grid-area: 1/ 1/1/1 ;
+        background:linear-gradient(to top left,var(--fafafa),var(--fafafa),var(--color-warning));
+    }
+
+
+    
+    .fp_fire_val_wrapper{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 8.5fr;
+        grid-area:  1/1/1/ 1;
+        gap: 1rem;
+        background-color: transparent;
+        backdrop-filter: blur(50px);
+    }
+
+        .container{
+            background-color: var(--gainsbro);
+            border-radius: var(--border-radius_10--);
+        }
+
+
+
+        .jobssekers_text_div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin: 1rem 1rem 0rem 1rem;
+            box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+          
+        }
+
+            .jobssekers_text_div img{
+                margin-left: 1rem;
+            }
+
+            #fire-text_main_text{
+                color: var(--moon-phases-b);
+                font-size: 1.2rem;
+                margin-left: 2rem;
+            }
+
+                .fire-text_js_name{
+                    margin: 0.3rem;
+                    font-size: 1.2rem;
+                    padding: 0 0.5rem;
+                    border-radius: var(--border-radius_8--);
+                    background:linear-gradient(to right,var(--color-warning),var(--color-warning),var(--isolated-orange));
+                }
+         
+
+
+
+
+
+
+
+
+
+
+        .js_main_data_div{
+            display: grid;
+            grid-template-rows: 1fr 7fr  2fr;
+            grid-template-columns: 1fr;
+            margin: 0rem 1rem 1rem 1rem;
+            box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+            overflow: hidden;          
+        }
+
+            .header_div{
+                display: grid;
+                background-color:var(--main-white--);
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 1fr;
+               
+            }
+
+                .attachment_icon_div{
+                    grid-area: 1 / 3 / 1 /3;
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                   
+                }
+                .attachment_icon_div img{
+                    margin-right: 2rem;
+                    filter: drop-shadow(3px 5px 3px rgba(53,53,53,0.3));
+                }
+
+        
+
+            .data_div{
+                display: grid;
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 1fr;
+            
+            }
+
+                .lr_data_div {
+                    display: flex;
+                    align-items: start;
+                    justify-content: space-evenly;
+                    flex-direction: column;
+                    padding: 1rem;
+                    border-radius: var(--border-radius_8--);
+                }
+
+                /* left part */
+                    .lr_data_div.left_data_div{
+                        margin: 2rem;
+                        box-shadow: 0px 5px 10px 5px rgba(128, 128, 128,0.1);
+     
+                   
+                    }
+
+                        .lr_data_div.left_data_div span,p{
+                          font-size: 0.9rem;
+                        }
+    
+
+                    .data_name_box{
+                        display: flex;
+                        align-items:start;
+                        justify-content: center;
+                        flex-direction: column;
+                        width: 100%;
+                        margin-top: 2rem;
+                        border-radius: var(--border-radius_5--);
+                        height: 20%;
+                    
+                        
+                    }
+                    
+                    .data_name_box label{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        
+                    }
+                        .data_name_box label svg{
+                            margin-right: 0.5rem;
+                            width: 1.1rem;
+                            height: 1.1rem;
+                            fill: var(--moon-phases-b);
+                        }
+
+
+            
+                        .full_name_div{
+                           display: grid;
+                           grid-template-columns: 1fr 1fr 1fr;
+                           grid-template-rows: 1fr;
+                           width: 100%;
+                           margin-top: 0.2rem;
+                          
+                           
+                        }
+
+                        .contact_info_div{
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                           
+                            width: 100%;
+                        }
+
+                        .pnum_holder{
+                            grid-area: 1/ 2/ 1 / 2;
+                        }
+
+
+
+                    
+
+                            .data_holder{
+                                text-align: start;
+                            }
+
+                            .fname_holder{
+                                grid-area: 1 / 2/ 1 /2 ;   
+                            }   
+                            .lname_holder{
+                                grid-area: 1/ 1/ 1/ 1;
+                              
+                            }
+                            .mname_holder{
+                                grid-area: 1 /3 /1 /3;
+                                
+                 
+                            }
+
+                /* right part */
+
+
+                    .lr_data_div.right_data_div{
+                        margin: 2rem;
+                        box-shadow: 0px 5px 10px 5px rgba(128, 128, 128,0.1);
+
+                    }
+
+
+                    .dept_role_div{
+                      display: grid;
+                      grid-template-columns: 1fr 1fr;
+                      width: 100%;
+                    
+                    }
+
+                    .role_holder{
+                     
+                       grid-area: 1/ 2/ 1/ 2;
+                    }
+
+
+
+
+                    .button_form{
+                        grid-area: 3 /1 / 3 / 1;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                    }
+
+
+                    .button_div{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;               
+                    }
+
+                    .fire_emp_btn{
+                        text-decoration: none;
+                        cursor: pointer;
+                        outline: none;
+                        border: none;
+                        border-radius: var(--border-radius_8--);
+                        margin: 0rem 1rem;
+                        box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+                        color: var(--moon-phases-b);
+                    }
+    
+              
+                .button_div #fire_button {
+                    padding: 5px 1rem;
+                    background-color: var(--color-warning);
+                }
+
+                        .button_div #fire_button:hover {
+                            background:linear-gradient(45deg,var(--color-warning),var(--color-warning),var(--main-white--));;
+                        }
+
+         
+                    
+
+                    .button_div #discard-btn{
+                        padding: 3px 1rem;
+                        border: 1px solid var(--gray_1--);
+                        font-size: 0.9rem;
+                        background-color: transparent;
+                    }
+                        .button_div  #discard-btn:hover {
+                            background: linear-gradient(45deg,transparent 30%,var(--white-blple--));
+                        }
+
+
+
+
+
+
+
