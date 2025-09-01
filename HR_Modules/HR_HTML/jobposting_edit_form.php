@@ -156,7 +156,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
           ];
 
           $SESSION["id"] = $jobpost_id;
-          header("Location: ../HR_HTML/jobposting_edit_form.php?id=$jobpost_id");
+          header("Location: ../HR_HTML/jobposting_db_form.php?id=$jobpost_id");
           die();
       }
 
@@ -205,7 +205,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if ($result) {
             $_SESSION["jobpost_form_success"] = ["Job post updated successfully"];
-            header("Location: jobposting_module.php?status=jobpost_updated_successfully");
+            header("Location: jobposting_db.php?status=jobpost_updated_successfully");
             exit;
         } else {
             $errors[] = "Failed to update the job post. " . implode(" ", $stmt->errorInfo());
@@ -217,8 +217,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -273,7 +271,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                     <span class="jp_button_lbl" id="jpf_dashboard_lbl">Dashboard</span>
                                 </a>
 
-                                <a href="jobposting_module.php" class="lh_buttons_href" id="jpf_table">
+                                <a href="jobposting_db.php" class="lh_buttons_href" id="jpf_table">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="sb_button_icons" 
                                     id="table_button_icon"   viewBox="0 0 24 24" fill="currentColor"><path d="M15 21H9V10H15V21ZM17 21V10H22V20C22 20.5523 21.5523 21 21 21H17ZM7 21H3C2.44772 21 2 20.5523 2 20V10H7V21ZM22 8H2V4C2 3.44772 2.44772 3 3 3H21C21.5523 3 22 3.44772 22 4V8Z"></path></svg>
                                     <span class="jp_button_lbl" id="jpf_table_lbl">Joblist</span>

@@ -690,23 +690,21 @@
                                         die("Database connection is not established.");
                                     }
                          
-                                  
-                                  $jobposts_b =   populate_with_jobposts_b(
-                                      $pdo, 
-                               $jobpost_id = 0,
-                        $salary_range_from = 0,
-                $salary_range_to = 0,
-                $employment_type = '',
-                $required_qualifications = '',
-                $preferred_qualifications = '',
-                $application_deadline = '',
-                            $posting_date = '',
-                $contact_information = ''
-                                ); 
-                            ?>
+                                    
+                                    $jobposts_b =   populate_with_jobposts_b(
+                                        $pdo, 
+                                $jobpost_id = 0,
+                            $salary_range_from = 0,
+                    $salary_range_to = 0,
+                    $employment_type = '',
+                    $required_qualifications = '',
+                    $preferred_qualifications = '',
+                    $application_deadline = '',
+                                $posting_date = '',
+                    $contact_information = ''
+                                    ); 
+                                ?>
                                                 
-
-
 
                                     <table class="jp_table_b">
 
@@ -729,7 +727,6 @@
                                         </tr>
 
 
-                                        </tr>
 
 
                                             <?php 
@@ -737,14 +734,15 @@
 
                                             //SEARCH RESULTS FOR TABLE B
                                             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                                    if (empty($search_results)) { // Check if search results are empty
-                                                        echo '<td colspan="11" class="noresults_td" id="noresults_td_b"><p class="table_noresult">No Results Found</p></td>';
-                                                    } else {
-                                                    
+
+                                                if (empty($search_results)) { // Check if search results are empty
+                                                    echo '<td colspan="11" class="noresults_td" id="noresults_td_b"><p class="table_noresult">No Results Found</p></td>';
+                                                } else {
+                                                
                                                         
-                                                        usort($search_results, function($a, $b) {
-                                                            return $b['jp_id'] - $a['jp_id']; 
-                                                        });
+                                                    usort($search_results, function($a, $b) {
+                                                        return $b['jp_id'] - $a['jp_id']; 
+                                                    });
 
 
                                                         foreach ($search_results as $job_b_search) {
@@ -760,9 +758,7 @@
                                                                 echo '<td class="search-result-cell sr_posting_date "> ' . htmlspecialchars( $job_b_search['posting_date']) . '</td>';
                                                                 echo '<td class="search-result-cell sr_contact_information "> ' . htmlspecialchars( $job_b_search['contact_information']) . '</td>';
                                                                 echo '<td class="search-result-cell sr_status "> ' . htmlspecialchars( $job_b_search['status']) . '</td>';
-                                                          
-
-                                                            
+                                                                                                                      
                                                             echo '
                                                             
                                                           <td class="tbl-button-action-div_b" id="tbla-button-action-div_b">
@@ -791,9 +787,7 @@
 
                                                                     </a>
                     
-                                                                  
-                                 
-                                                                    
+                                                                                                                             
                                                                     <a href="jobposting_delete.php?id='. $job_b_search['jp_id'] . '" class="button_form" id="tbl-delete-button-form">
 
 
@@ -878,15 +872,9 @@
                                  
                                                                     <!-- Delete Button -->
                                                                     <a href="jobposting_delete.php?id='. $job_b['jp_id'] .'" class="button_form" id="tbl-delete-button-form">
-
-
                                                                         <button type="submit" class="tbla-button tbla-delete-btn" id="tblb-delete-btn">
-
                                                                              Delete
-
                                                                         </button>
-
-
                                                                     </a>                                 
                                                             
 
@@ -919,15 +907,11 @@
 
                         </div>
 
-
                     <!-- END OF JOBPOST LIS TABLE B -->
-
-
-
                     </div>
 
-                    <!-- END OF FRONT PAGE WRAPPER -->
 
+                    <!-- END OF FRONT PAGE WRAPPER -->
             </div>
 
          

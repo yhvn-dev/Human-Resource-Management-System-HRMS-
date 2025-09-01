@@ -83,7 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
     }
 
-
    
     $errors = [];
     $empl_id_errors = [];
@@ -147,8 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         header("Location: ../../HR_HTML/create_employee_acc.php?id=$jobseekers_id&status=error");
         exit;
 
-
-        
 
     }
 

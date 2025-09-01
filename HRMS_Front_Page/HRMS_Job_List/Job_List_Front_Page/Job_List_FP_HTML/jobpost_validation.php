@@ -136,8 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                                         <div class="feed_container aside aside_left" id="aside_left">
 
                                              
-
-
                                         </div>
 
 
@@ -164,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
                                                         <div class="header_subdiv back_link_div">
 
-                                                                <a href="../../../../HR_Modules/HR_HTML/jobposting_module.php">x</a>
+                                                                <a href="../../../../HR_Modules/HR_HTML/jobposting_db.php">x</a>
 
                                                         </div>
 

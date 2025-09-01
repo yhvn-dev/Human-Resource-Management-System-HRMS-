@@ -308,8 +308,8 @@ require_once '../../Includes/Login_Functions/login_view.inc.php';
 
                                         <?php 
                                         
-                                            check_login_empty_field_errors();
-                                            check_credential_errors();
+                                            // check_login_empty_field_errors();
+                                            // check_credential_errors();
                                             
                                         ?>
 

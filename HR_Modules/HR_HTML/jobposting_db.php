@@ -23,12 +23,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jobpost Dashboard</title>
 
     <link rel="stylesheet" href="../HR_CSS/jobposting_db.css">
-
 
 </head>
         <body>
@@ -197,7 +197,31 @@
 
                 <!-- CONTAINER JP NUMBER FRAME -->
                 <div class="container jp_number_frame">
-                    jp_number_frame
+
+                    <ul class="nc number_card">a</ul>
+                    <ul class="nc number_card">b</ul>
+                    <ul class="nc number_card total_jobpost">
+                        
+                        <ol class="total_boxes label_box">
+                                <svg id="draft_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M4 19H20V12H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V12H4V19ZM13 9V16H11V9H6L12 3L18 9H13Z"></path></svg> 
+                                <span id="draft_text">Draft</span>
+                        </ol>
+                        
+                        <div class="total_boxes nc_text_div total_jobpost_txt_div">
+
+                            <span class="draft_count_holder" id="draft_count_holder">  
+                                <?php  
+                                    $total_draft = paste_total_jobposts_count($pdo,"draft");
+                                    echo $total_draft   
+                                ?>  
+                            </span>
+                                
+                        </div>
+
+
+
+                    </ul>
+
                 </div>
 
 
@@ -207,11 +231,8 @@
 
 
 
-
-
-
                 <!-- CONTAINER TABLE A WORKSPACE -->
-                <div class="container table_a_workspace">
+                <div class="container table_a_workspace" id="table_a_workspace">
                                 
                 
                     <div class="jp_container jp_joblist_table_labels_stuff" id="jp_joblist_table_labels_stuff">
@@ -294,14 +315,13 @@
 
                                 <div class="tb_lbl_div right_tb_lbl_div">
 
-                                        <a class="tb_add_jobpost_link" href="jobposting_form.php">
-
+                                        <!-- add -->
+                                        <a class="right_tb_box tb_add_jobpost_link" href="jobposting_form.php">
                                               + New Jobpost
-
                                         </a>
 
-
-                                        <form action="" class="filter_form" method="POST">
+                                        <!-- filter -->
+                                        <form action="" class="right_tb_box filter_form" method="POST">
 
                                             <select class="filter_status select_rj_appr" name="filter_status_inp" id="" onchange="this.form.submit()">
 
@@ -311,39 +331,33 @@
 
                                                 <option value="published" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'published') ? 'selected' : '' ?>>Publish</option>
 
-
                                             </select>
 
                                         </form>
 
+                                        <!-- switch -->
+                                        <div class="right_tb_box table_switch_frame">
+                                            
+                                            <button class="table_switch" id="table-a-switch"><</button>
+                                            <button class="table_switch" id="table-b-switch">></button>
 
-
-
-
-
-
+                                        </div>
 
                                 </div>
 
                                 
-
-
-
                             </div>
 
                         
                            
 
-                
-
-                            <div class="joblist_content_div">
-
+            
+                            <div class="joblist_content_div" id="table_a_cd">
                       
 
                                 <div class="table_div">
 
-                          
-
+                        
                                    <?php 
 
                             
@@ -369,7 +383,7 @@
 
                                         <tr class="jp_tr" id="jp_tr"> 
 
-                                            <th class="jp_th jp_th_id" id="jp_th_id">ID</th>
+                                 
                                             <th class="jp_th jp_th_job_title" id="jp_th_job_title">Job Title</th>
                                             <th class="jp_th jp_th_job_description" id="jp_th_job_description">Job Description</th>
                                             <th class="jp_th jp_th_field_category" id="jp_th_field_category">Field Category</th>
@@ -384,7 +398,7 @@
                                         <div class="validation_div">
 
                                             <?php check_jp_form_errors() ?>
-                                            <?php   check_delete_success() ?>
+                                            <?php check_delete_success() ?>
 
                                         </div>
 
@@ -405,8 +419,8 @@
 
                                                             // Loop through sorted results
                                                             foreach ($search_results as $job_a_search) {
-                                                                echo '<tr class="search-result-row" data-id="' . htmlspecialchars($job_a_search['jp_id']) . '"> 
-                                                                    <td class="search-result-cell search-result_jp_id">' . htmlspecialchars($job_a_search['jp_id']) . '</td>
+                                                                echo '
+
                                                                     <td class="search-result-cell search-result_job_title">' . htmlspecialchars($job_a_search['job_title']) . '</td>
                                                                     <td class="search-result-cell search-result_job_description ">' . htmlspecialchars($job_a_search['job_description']) . '</td>
                                                                     <td class="search-result-cell search-result_field_category ">' . htmlspecialchars($job_a_search['field_category']) . '</td>
@@ -418,11 +432,13 @@
                                                                         <div class="tbl-a-btn-container">
                                                                         
                                                                             <!-- Post Button -->
+
                                                                             <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id='. $job_a_search['jp_id'] .'" class="button_form  tbl-post-button-form" id="tbl-post-button-form' . $job_a_search['jp_id'] . 'class="button_form" id="tbl-post-button-form">
                                                                                 <button type="submit" class="tbla-button tbla-post-btn" id="tbla-search-post-btn">
                                                                                     Publish
                                                                                 </button>
                                                                             </a>
+
                                                                             <!-- Edit Button -->
                                                                             <a href="jobposting_edit_form.php?id='.$job_a_search['jp_id'].'" class="button_form tbl-edit-button-form" id="tbl-edit-button-form">
                                                                                 <button class="tbla-button tbla-edit-btn" id="tbl-edit-btn">
@@ -431,14 +447,17 @@
                                                                                     
                                                                                 </button>
                                                                             </a>
+
                                                                             <!-- Delete Button -->
                                                                             <a href="jobposting_delete.php?id=' . $job_a_search['jp_id'] . '" class="button_form" id="tbl-delete-button-form">
                                                                                 <button type="submit" class="tbla-button tbla-delete-btn" id="tbla-delete-btn">
                                                                                    Delete
                                                                                 </button>
                                                                             </a>
+
                                                                         </div>
                                                                     </td>
+
                                                                 </tr>';
                                                             }
                                                         }
@@ -446,8 +465,7 @@
 
                                             
                                             // OUTPUT JOB POSTS
-
-                                                      
+                                         
                                             usort($jobposts_a, function($a, $b) {
                                                 return $b['jp_id'] - $a['jp_id'];  
                                             });  
@@ -460,10 +478,7 @@
                                                 
                                                     echo '<tr class="tba_output_jp_tr" id="tba_output_jp_tr">
 
-                                                        <td class="output_jp_tba_data tba_data_jp_id" id="tba_data_jp_id">' . 
-                                                         htmlspecialchars($job_a['jp_id']) . 
-                                                        '</td>
-
+                                                      
                                                         <td class="output_jp_tba_data tba_data_job_title editable" id="tba_data_job_title">' .
                                                          htmlspecialchars($job_a['job_title']) .
                                                         '</td>
@@ -496,41 +511,41 @@
 
                                                          <td class="tbl-button-action-div" id="tbla-button-action-div">
 
-                                                                <div class="tbl-a-btn-container">
+                                                            <div class="tbl-a-btn-container">
 
-                                                                   <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id='.$job_a['jp_id'] .'" class="button_form  tbl-post-button-form" id="tbl-post-button-form' . $job_a['jp_id'] . ' " >
-                                                                        
-                                                                        <button type="submit" class="tbla-button tbla-post-btn" id="tbl-post-btn" >        
-
-                                                                         Publish
-                                                                        
-                                                                        </button>
-                                                                        
-                                                                    </a>
-                                        
-                                                                   <a href="jobposting_edit_form.php?id='. $job_a['jp_id'] . '" class="button_form tbl-edit-button-form">
-                                                                        <button class="tbla-button tbla-edit-btn" id="tbl-edit-btn">
-                                                                            Edit
-                                                                        </button>
-                                                                    </a>
-
+                                                                <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id='.$job_a['jp_id'] .'" class="button_form  tbl-post-button-form" id="tbl-post-button-form' . $job_a['jp_id'] . ' " >
                                                                     
-                                                                    <a href="jobposting_delete.php?id='. $job_a['jp_id'] .' " class="button_form tbl-delete-button-form" id="tbl-delete-button-form ' . $job_a['jp_id'] . ' " >
-                                                                        
-                                                                        <button type="submit" class="tbla-button tbla-delete-btn" id="tbl-delete-btn" >        
+                                                                    <button type="submit" class="tbla-button tbla-post-btn" id="tbl-post-btn" >        
 
-                                                                      Delete
-
-                                                                        </button>
+                                                                        Publish
                                                                     
-                                                                    </a>
+                                                                    </button>
+                                                                    
+                                                                </a>
+                                    
+                                                                <a href="jobposting_edit_form.php?id='. $job_a['jp_id'] . '" class="button_form tbl-edit-button-form">
+                                                                    <button class="tbla-button tbla-edit-btn" id="tbl-edit-btn">
+                                                                        Edit
+                                                                    </button>
+                                                                </a>
 
-                                                                   
-                                                                </div>
+                                                                
+                                                                <a href="jobposting_delete.php?id='. $job_a['jp_id'] .' " class="button_form tbl-delete-button-form" id="tbl-delete-button-form ' . $job_a['jp_id'] . ' " >
+                                                                    
+                                                                    <button type="submit" class="tbla-button tbla-delete-btn" id="tbl-delete-btn" >        
+
+                                                                    Delete
+
+                                                                    </button>
+                                                                
+                                                                </a>
+
+                                                                
+                                                            </div>
 
                                                            
 
-                                                            </td>';
+                                                         </td>';
 
                                             
                                                 }
@@ -540,38 +555,218 @@
                                                     echo '</tr>';
                                             }
                                             
-                                        
-                                        
+                                                                      
                                         ?>        
 
+                                    </table>
+
+                                </div>
+
+                            </div>
+                            <!-- END OF TABLE A CONTENT DIV -->
+
+                        
+
+
+
+
+                            <!-- TABLE B CONTENT  -->
+                            <div class="table_b_content_div" id="table_b_cd">
+
+                                 <div class="table_div">
+
+                        
+                                   <?php 
+
+                            
+                                    if ($pdo === null) {
+                                        die("Database connection is not established.");
+                                    }
+                                        if ($pdo === null) {
+                                        die("Database connection is not established.");
+                                    }
+                                          
+                                         $jobposts_b =   populate_with_jobposts_b(
+                                    $pdo, 
+                             $jobpost_id = 0,
+                      $salary_range_from = 0,
+                        $salary_range_to = 0,
+                        $employment_type = '',
+                $required_qualifications = '',
+               $preferred_qualifications = '',
+                   $application_deadline = '',
+                           $posting_date = '',
+                    $contact_information = ''
+                                        ); 
+                                  
+                                    ?>
+                                                                    
+                                    <table class="jp_table_b">
+
+                                        <tr class="jp_tr" id="jp_tr"> 
+
+                                            <th class="jp_th_b jp_th_b_salary_range_from" id="jp_th_b_salary_range_from">Salary Range From</th>
+                                            <th class="jp_th_b jp_th_b_salary_range_to" id="jp_th_b_salary_range_to">Salary Range To</th>
+                                            <th class="jp_th_b jp_th_b_employment" id="jp_th_b_employment">Employment Type</th>
+                                            <th class="jp_th_b jp_th_b_req_qual" id="jp_th_b_req_qual">Required Qualifications</th>
+                                            <th class="jp_th_b jp_th_b_pref_qual" id="jp_th_b_pref_qual">Preferred Qualificaitons</th>
+                                            <th class="jp_th_b jp_th_b_app_deadline" id="jp_th_b_app_deadline">Application Deadline</th>
+                                            <th class="jp_th_b jp_th_b_posting_date" id="jp_th_b_posting_date">Posting Date</th>
+                                            <th class="jp_th_b jp_th_b_contact_information" id="jp_th_b_contact_information">Contact Information</th>
+                                            <th class="jp_th_b jp_th_b_status" id="jp_th_b_status">Status</th>                                          
+                                            <th class="jp_th_b jp_th_b_action" id="jp_th_b_action">Action</th>
+                                        
+                                        </tr>     
+                                        
+                                        <div class="validation_div">
+
+                                            <?php check_jp_form_errors() ?>
+                                            <?php check_delete_success() ?>
+
+                                        </div>
+
+                                        <?php   
+
+                                          if (empty($search_results)) {
+                                                echo '<tr><td colspan="10" class="noresults_td" id="noresults_td_b">
+                                                        <p class="table_noresult">No Results Found</p>
+                                                    </td></tr>';
+                                            } else {
+                                                usort($search_results, function($a, $b) {
+                                                    return $b['jp_id'] - $a['jp_id'];
+                                                });
+
+                                            foreach ($search_results as $job) {
+
+                                                echo '<tr class="search-result-row_b">';
+                                                echo '<td>' . htmlspecialchars($job['salary_range_from']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['salary_range_to']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['employment_type']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['req_qual']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['pref_qual']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['appl_deadline']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['posting_date']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['contact_information']) . '</td>';
+                                                echo '<td>' . htmlspecialchars($job['status']) . '</td>';
+
+                                                echo '<td class="tbl-button-action-div_b">
+
+                                                    <div class="tbl-b-btn-container_b">
+
+                                                        <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id='.$job['jp_id'] .'" class="button_form  tbl-post-button-form" id="tblb-post-button-form' . $job['jp_id'] . ' " >
+                                                            <button type="submit" class="tbla-button tbla-post-btn" id="tblb-post-btn" >        
+                                                                Publish                                                           
+                                                            </button>                                                 
+                                                        </a>
+
+                                                        
+                                                        <a href="jobposting_edit_form.php?id='. $job['jp_id'] .'" class="button_form tbl-edit-button-form" id="tblb-edit-button-form">
+                                                            <button class="tbla-button tbla-edit-btn" id="tblb-edit-btn">        
+                                                                Edit
+                                                            </button>
+                                                        </a>
+            
+                                    
+                                                        <a href="jobposting_delete.php?id='. $job['jp_id'] .'" class="button_form" id="tbl-delete-button-form">
+                                                            <button type="submit" class="tbla-button tbla-delete-btn" id="tblb-delete-btn">
+                                                                Delete
+                                                            </button>
+                                                        </a>       
+                                                        
+                                                    </div>
+                                                    
+                                                    </td>';
+
+
+                                                echo '</tr>';
+                                                }
+                                        }
+                                        ?>
+
+                                        <?php
+
+                                            usort($jobposts_b, function($a, $b) {
+                                            return $b['jp_id'] - $a['jp_id'];  
+                                            });
+
+                                        ?>
+
+                                        <tbody id="job-table-body">
+
+                                        
+                                        <?php 
+                                 
+                                            if ($jobposts_b && count($jobposts_b) > 0) {
+                                      
+                                                foreach ($jobposts_b as $job_b) {
+                                                    
+                                                    echo '<tr class="tbb-result-row">';
+
+                                                        echo '<td class="output_jp_tbb_data tbb_data_salary_range_from "> ' . htmlspecialchars($job_b['salary_range_from']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_salary_range_to"> ' . htmlspecialchars($job_b['salary_range_to']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_employment_type "> ' . htmlspecialchars($job_b['employment_type']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_req_qual "> ' . htmlspecialchars($job_b['req_qual']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_pref_qual "> ' . htmlspecialchars($job_b['pref_qual']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_appl_deadline "> ' . htmlspecialchars($job_b['appl_deadline']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_posting_date "> ' . htmlspecialchars($job_b['posting_date']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_contact_information "> ' . htmlspecialchars($job_b['contact_information']) . '</td>';
+                                                        echo '<td class="output_jp_tbb_data tbb_data_status"> ' . htmlspecialchars( $job_b['status']) . '</td>';
+                                           
+                                                
+                                                        echo'   <td class="" id="tbla-button-action-div_b">
+
+                                                        <div class="tbl-b-btn-container_b">
+
+                                                            <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id='.$job_b['jp_id'] .'" class="button_form  tbl-post-button-form" id="tblb-post-button-form' . $job_b['jp_id'] . ' " >
+                                                                <button type="submit" class="tbla-button tbla-post-btn" id="tblb-post-btn" >        
+                                                                    Publish                                                           
+                                                                </button>
+                                                            </a>
+
+                                                            <a href="jobposting_edit_form.php?id='. $job_b['jp_id'] .'" class="button_form tbl-edit-button-form" id="tblb-edit-button-form">                                                            
+                                                                <button class="tbla-button tbla-edit-btn" id="tblb-edit-btn">        
+                                                                    Edit
+                                                                </button>
+                                                            </a>
+            
+                                                            <a href="jobposting_delete.php?id='. $job_b['jp_id'] .'" class="button_form" id="tbl-delete-button-form">
+                                                                <button type="submit" class="tbla-button tbla-delete-btn" id="tblb-delete-btn">
+                                                                    Delete
+                                                                </button>
+                                                            </a>                                 
+
+                                                        </div>
+
+
+                                                        </td>';
+
+                                                       
+                                                    echo  '</tr>';
+                                                }
+                                                
+                                            } else {
+                                                  echo '<tr><td colspan="7">No job posts found</td>';
+                                            echo '</tr>';
+                                            }
+                                        
+                                        ?>
+
+                                     </tbody>
+
+
+                                                                                                     
                                     </table>
 
 
 
                                 </div>
-
+                                                
                             </div>
+                            
 
                             
                         </div>
                         <!-- END OF JOB LIST TABLE DIV ==========================================================  -->
-
-
-
-
-
-
-
-                        <!-- COMMITING THIS CHANGES -->
-                        <div class="container table_b_workspace">
-
-
-                                table_b_workspace
-                                
-
-                        
-                        </div>
-
 
 
 
@@ -597,5 +792,6 @@
         </body>
 
 
-
+        <script src="../HR_JS/jp_darkmode.js"></script>
+        <script src="../HR_JS/jp_functions.js"></script>
 </html>
