@@ -710,6 +710,73 @@ span,p{
                     color:rgba(44, 46, 58,0.8);
                   }
                
+
+        #rc_table_search_form_a{
+            margin-left: 0.5rem;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60%;        
+        }
+            #rc_inp_search_a{
+                
+                width: 100%;
+                padding: 0.1rem 0.5rem;
+                margin-left: 1rem;
+                border: 2px solid var(--white-blple--);
+                border-radius: var(--border-radius_5--);
+                outline: none;
+                background-color: transparent;
+            }
+
+
+
+        #rc_inp_search_a:focus + #rc_tp_search_lbl_a,
+        #rc_inp_search_a:not(:placeholder-shown) + #rc_tp_search_lbl_a{
+            transform: translateY(-12px);
+            font-size: 0.5rem;
+            transition: 0.5s;
+            padding: 0rem 0.3rem;                      
+        }
+
+            #rc_tp_search_lbl_a{
+                position: absolute;
+                pointer-events: none;
+                color: gray;
+                font-size: 0.9rem;
+                left: 1.5rem;
+                background-color: var(--gainsbro);                
+            }
+            
+
+                #rc_tb_search-btn{
+                    display:flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 0.5rem;
+                    border: 1px solid var(--white-blple--);
+                    border-radius: var(--border-radius_5--);
+                
+                    box-shadow: 4px 4px 5px 2px rgba(0,0,0,0.1);
+                    font-size: 0.9rem;
+                    cursor: pointer; 
+                    background-color: var(--white-blple--);
+                    padding: 0.2rem 0.3rem;                          
+                    margin: 0.2rem 0.5rem;
+                }
+                
+                #rc_tb_search-btn svg{
+                        height: 1.1rem;
+                        width: 1.1rem;
+                        fill:var(--main-white--);
+                    }
+                    #rc_tb_search-btn:hover{
+                            background:linear-gradient(45deg,var(--white-blple--),var(--color-success_b));
+                            }
+                            
+
+
                .mcd_div.mcdiv_right{
                     justify-content: end;
                }
@@ -1002,8 +1069,12 @@ span,p{
 
 
     
-
+/* --------------------------------------------------------------------- --------------------------  */
 /*  DARKMODE CLASS FUNCTIONS --------------------------------------------------------------------- */
+/* --------------------------------------------------------------------- --------------------------  */
+
+
+
 .main_recq_wrapper.darkmode_popup{
     background-color: var(--color-dark-variant);
 }
@@ -1016,22 +1087,14 @@ span,p{
     }
 
     .logo_div.darkmode_popup{
-    background-color: var(--color-dark-variant);
-    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
-}
+        background-color: var(--color-dark-variant);
+        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+    }
 
 
     .logo_div #db_nodelab_text.darkmode_popup{
             background-clip: text;
-        
-            background:
-            linear-gradient(
-            to left,
-            var(--moon-phases-c),
-            var(--white-blple--)
-
-            );
-
+            background:linear-gradient(to left,var(--moon-phases-c),var(--white-blple--));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;   
     }

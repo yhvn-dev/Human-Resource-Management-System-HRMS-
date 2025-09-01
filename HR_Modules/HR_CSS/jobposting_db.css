@@ -83,6 +83,7 @@
 }
 
 
+
 @font-face {
     font-family: "Poppins";
     src: url("../../Fonts/Poppins/Poppins-Regular.ttf");
@@ -103,6 +104,10 @@
     margin: 0rem;
     font-family: "Poppins";
     color: var(--moon-phases-a);
+}
+
+svg{
+    fill: var(--main-white--);
 }
 
 a{
@@ -191,10 +196,9 @@ a{
     margin-top: 1.5rem;
     height: 80%;
     width: 80%;
-   
-   
 }
 
+    
     .sidebar .sidebar_buttons_div .sbuttons_div-href {
         
         display: flex;
@@ -212,6 +216,9 @@ a{
 
     }
 
+    .sidebar_buttons_div svg{
+        fill: var(--moon-phases-b);
+    }
 
     .sidebar .sbuttons_div-href:hover {
         margin-left: 1.5rem;
@@ -224,12 +231,12 @@ a{
     
 
 
-            .btn_content_div{
-                display: flex;
-                align-items: center;
-                justify-content: start;
-              
-            }
+        .btn_content_div{
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            
+        }
 
                 
 
@@ -259,6 +266,7 @@ a{
                 #btn_lbl_jp_div{
                     margin-left: 0.2rem;
                 }
+
 
         .sidebar_buttons_div #logout-btn-href{
             display: flex;
@@ -416,12 +424,13 @@ a{
                 align-items: center;
                 justify-content: center;
             }
-
+            
             
             #hr_name{
                 padding: 0rem 0.5rem;
                 border-right: 1px solid var(--blue-white);
                 margin-right: 0.5rem;
+                color:var(--color-dark-variant);
                 
             }
 
@@ -443,7 +452,6 @@ a{
     gap: 1rem;
     box-shadow: none;
     background-color: transparent;
-  
 }
 
     .nc{
@@ -453,7 +461,7 @@ a{
         flex-direction: column;
         height: 100%;
         border-radius: 8px;
-        box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+        box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.2);
     }
         .nc_text_div {
             width: 80%;
@@ -472,7 +480,7 @@ a{
       
     }
     .number_card.draft_jobpost_card{
-          grid-area: 1/ 3 / 1/ 3;
+        grid-area: 1/ 3 / 1/ 3;
         background-color: var(--white-blple--);
     }
     
@@ -491,7 +499,7 @@ a{
                 .label_box svg{
                     width: 1rem;
                     height: 1rem;
-                    fill:var(--color-dark-blue);
+                 
                     margin: 0.1rem 0.3rem;
                     margin-bottom: 0.4rem;  
                 }
@@ -571,8 +579,7 @@ a{
                     justify-content: center;
                     width: 60%;        
                 }
-                    #jp_inp_search_a{
-                        
+                    #jp_inp_search_a{                
                         width: 100%;
                         padding: 0.1rem 0.5rem;
                         margin-left: 1rem;
@@ -655,13 +662,6 @@ a{
                    
                 }
 
-                .filter_status.darkmode_popup{
-                    background-color: var(--color-dark-variant);
-                    color: var(--main-white--);
-                    border: 2px solid var(--dark-shadow-friend);
-                    box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);
-                }
-
                 
 
 
@@ -675,7 +675,7 @@ a{
                     padding: 0.5rem 1.5rem;
                     border-radius: var(--border-radius_8--);
                     cursor: pointer;
-                   box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+                    box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
                     background-color: var(--white-blple--);
                     color: var(--lusion-dark-b);   
                 }   
@@ -903,7 +903,7 @@ a{
                             }
 
                         
-                        
+                            /* output data hover */
                             .jp_table .tba_output_jp_tr:hover{
                                 background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
                             }
@@ -977,11 +977,10 @@ a{
                                      }
 
                             
-                        
-                                            
-        /* ====================================================================================================== */
-        /* TABLE B CONTENT_DIV ====================================================================================================== */
-        /* ====================================================================================================== */
+                                                            
+            /* ====================================================================================================== */
+            /* TABLE B CONTENT_DIV ====================================================================================================== */
+            /* ====================================================================================================== */
 
                 .table_b_content_div{
                     display: none;
@@ -1005,7 +1004,11 @@ a{
                     .table_div table{
                         border-spacing: 0rem;
                     }
-    
+                     
+                    /* output data hover */
+                    .jp_table_b .tbb_output_jp_tr:hover{
+                        background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                    }
 
                             .jp_th_b#jp_th_b_action{
                                 width: 100%;
@@ -1031,5 +1034,105 @@ a{
                                 }
 
 
-    
+
+
+
+        /* DARKMODE SECTION ================================================================ */
+        body.darkmode_popup{
+            background-color:var(--color-dark-blue);
+        }
         
+        body.darkmode_popup .container{
+            background-color: var(--color-dark-variant);     
+            box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+        }
+
+
+            .darkmode_popup span{
+                color: var(--main-white--);
+            }
+
+            .darkmode_popup .right_header #hr_name{
+                color: var(--main-white--);
+            }
+    
+
+            .darkmode_popup svg{
+                fill: var(--main-white--);
+            }
+            .darkmode_popup #db_nodelab_text{
+                    background-clip: text;
+                    background:linear-gradient(to left,var(--moon-phases-c),var(--white-blple--));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent; 
+            }
+            
+
+
+            /* header */
+            .darkmode_popup #sun_moon_toggle_button{
+                transform: translateX(200%);
+                background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
+            }
+            .darkmode_popup #darkmode_div{
+                background-color: var(--color-dark-variant);
+                box-shadow: inset 0px 4px 5px 3px rgba(0,0,0,0.5),
+                0 0 30px rgba(0,0,0,0.5);           
+                border: 2px solid var(--color-dark-shadow);
+            }
+        
+    
+
+
+            /* number frame */
+            .darkmode_popup .jp_number_frame{
+                background-color: transparent;
+                box-shadow: none;
+            }
+            .darkmode_popup .number_card{
+                box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+            }   
+            
+      
+
+
+            /* search */
+            .darkmode_popup  #jp_table_search_form_a label{
+                background-color: var(--color-dark-variant);
+            }
+            
+            .darkmode_popup  #jp_table_search_form_a label,span,input{
+                color: var(--main-white--);
+            }
+            /* filter */
+
+            .darkmode_popup .select_rj_appr{ 
+                background-color: var(--color-dark-variant);
+                color: var(--main-white--);
+                border: 2px solid var(--dark-shadow-friend);
+                box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);
+            }
+            .darkmode_popup .right_tb_box.tb_add_jobpost_link{
+                box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);       
+            }
+            .darkmode_popup .table_switch{
+                 box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);       
+            }
+
+
+            
+            .darkmode_popup .tba_output_jp_tr:nth-child(odd){
+                    background-color: var(--color-dark-shadow-alpha);
+            }  
+            .darkmode_popup .tba_output_jp_tr:nth-child(even){
+                background-color: var(--color-dark-shadow);
+             }
+            .darkmode_popup .tba_output_jp_tr:hover{
+              background:linear-gradient(to right,var(--moon-phases-b),
+            var(--color-dark-variant));
+            }
+
+                .darkmode_popup td{
+                    color: var(--main-white--);
+                }
+            

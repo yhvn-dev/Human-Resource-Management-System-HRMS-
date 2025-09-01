@@ -646,7 +646,6 @@ svg{
 #sun_moon_toggle_button.darkmode_popup{
                                 
     background: radial-gradient(circle at center, #f5f5f5, #d0d0d0 70%, #b0b0b0);
-    background-color: gray;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.5),
     0 0 30px rgba(255, 255, 255, 0.3);
     
@@ -1186,8 +1185,7 @@ svg{
                     font-weight: normal;
                     color: var(--lusion-dark-b);
                     width: 25%; 
-                    background-color: transparent;
-                
+                    background-color: transparent;          
                     box-sizing: border-box;
                     word-wrap: break-word; 
                     overflow-wrap: break-word;  

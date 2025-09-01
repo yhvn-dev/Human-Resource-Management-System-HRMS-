@@ -22,8 +22,6 @@ function addClass(elements, className) {
 
 const FP_SUN_MOON_DARKMODE_BUTTON = document.getElementById("sun_moon_toggle_button");
 
-
-
 // Grouped Elements for Dark Mode
 const darkModeElements = [
     FP_SUN_MOON_DARKMODE_BUTTON,

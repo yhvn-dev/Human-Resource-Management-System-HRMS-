@@ -31,12 +31,12 @@
     <link rel="stylesheet" href="../HR_CSS/jobposting_db.css">
 
 </head>
-        <body>
+        <body id="body">
 
 
             <div class="jp_wrapper">
 
-                <a href="" class="container logo_frame">
+                <a href="" class="container logo_frame" id="logo_frame">
 
                     <img src="../../HRMS_Images/NodeLab LOGO 1.png"
                         class="logo" id="db_logo" width="60">
@@ -45,7 +45,7 @@
 
                 </a>
 
-                <div class="container sidebar">
+                <div class="container sidebar" id="sidebar">
                     
                     <div class="sidebar_buttons_div">
 
@@ -150,9 +150,6 @@
 
 
 
-    
-
-
 
                      
                     </div>
@@ -164,7 +161,7 @@
 
 
                 <!-- CONTAINER HEADER -->
-                <div class="container header">
+                <div class="container header" id="header">
 
                     <div class="header_parts left_header">
                     </div>
@@ -173,11 +170,11 @@
 
                         <img class="right_h_contents profile_pic" id="right_header_profile" src="../../HRMS_Images/FEMALE_VECTOR_A_WHITE.png">
                 
-                        <div class="right_h_contents " id="hd_role_div">
+                        <div class="right_h_contents" id="hd_role_div">
                             <span id="hd_role_type"><?php output_role()?></span>        
                         </div>
                     
-                        <p class="right_h_contents " id="user_greetings"><span id="hr_name" name="hr_name"><?php output_username()?></span></p>
+                        <span id="hr_name" name="hr_name"><?php output_username()?></span>
 
                         <div class="darkmode_div" id="darkmode_div">
 
@@ -196,13 +193,13 @@
 
 
                 <!-- CONTAINER JP NUMBER FRAME -->
-                <div class="container jp_number_frame">
+                <div class="container jp_number_frame" id="jp_number_frame">
 
                     <!--total  -->
                     <ul class="nc number_card total_jobpost_card">
 
                         <ol class="total_boxes label_box">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="sb_button_icons"
+                                <svg xmlns="http://www.w3.org/2000/svg" 
                                 id="jobpost_icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 5V2H10V5H4C3.44772 5 3 5.44772 3 6V14C3 14.5523 3.44772 15 4 15H17.4142L21.7071 10.7071C22.0976 10.3166 22.0976 9.68342 21.7071 9.29289L17.4142 5H12ZM12 17H10V22H12V17Z"></path></svg>
                                 <span id="jobpost_text">Total</span>
                         </ol>
@@ -391,9 +388,6 @@
 
                                      
 
-
-
-
                                         <!-- switch -->
                                         <div class="right_tb_box table_switch_frame">
                                             
@@ -441,8 +435,7 @@
                                     <table class="jp_table">
 
                                         <tr class="jp_tr" id="jp_tr"> 
-
-                                 
+                 
                                             <th class="jp_th jp_th_job_title" id="jp_th_job_title">Job Title</th>
                                             <th class="jp_th jp_th_job_description" id="jp_th_job_description">Job Description</th>
                                             <th class="jp_th jp_th_field_category" id="jp_th_field_category">Field Category</th>
@@ -558,29 +551,26 @@
                                  <div class="table_div">
 
                         
-                                   <?php 
-
-                            
-                                    if ($pdo === null) {
-                                        die("Database connection is not established.");
-                                    }
+                                   <?php             
                                         if ($pdo === null) {
-                                        die("Database connection is not established.");
-                                    }
-                                            
-                                        $jobposts_b =   populate_with_jobposts_b(
-                                    $pdo, 
-                            $jobpost_id = 0,
-                    $salary_range_from = 0,
-                        $salary_range_to = 0,
-                        $employment_type = '',
-                $required_qualifications = '',
-                $preferred_qualifications = '',
-                    $application_deadline = '',
-                            $posting_date = '',
-                    $contact_information = ''
-
-                                    ); 
+                                            die("Database connection is not established.");
+                                        }
+                                            if ($pdo === null) {
+                                            die("Database connection is not established.");
+                                        }
+                                                
+                                            $jobposts_b =   populate_with_jobposts_b(
+                                        $pdo, 
+                                $jobpost_id = 0,
+                        $salary_range_from = 0,
+                            $salary_range_to = 0,
+                            $employment_type = '',
+                    $required_qualifications = '',
+                    $preferred_qualifications = '',
+                        $application_deadline = '',
+                                $posting_date = '',
+                        $contact_information = ''
+                                        ); 
                                 
                                    ?>
                                                                     
@@ -622,19 +612,22 @@
                                                 // Sort descending by jp_id
                                                 usort($display_jobs, function($a, $b) {
                                                     return $b['jp_id'] - $a['jp_id'];
-                                                });
-                                            
-                                        ?>   
+                                                });     
+                                                                                       
+                                        ?>      
+                                        z
+
+
+
+
 
                                         <?php
-
-
                                             if(count($display_jobs) > 0){
                                                         
            
                                                 foreach ($jobposts_b as $job_b) {
                                                     
-                                                    echo '<tr class="tbb-result-row">';
+                                                    echo '<tr class="tbb_output_jp_tr">';
 
                                                         echo '<td class="output_jp_tbb_data tbb_data_salary_range_from "> ' . htmlspecialchars($job_b['salary_range_from']) . '</td>';
                                                         echo '<td class="output_jp_tbb_data tbb_data_salary_range_to"> ' . htmlspecialchars($job_b['salary_range_to']) . '</td>';
@@ -708,11 +701,6 @@
                         </div>
                         <!-- END OF JOB LIST TABLE DIV ==========================================================  -->
 
-
-
-
-
-                
                 </div>
 
 

@@ -369,6 +369,57 @@
 
                                     <span class="mc_header_text" id="mc_header_jstbl_txt">Jobseekers Table</span>
 
+                                      <?php 
+
+                                        $search_results = [];
+                                        $hr_search = isset($_POST["rc_jobseekers_inp"]) ? htmlspecialchars(trim($_POST["rc_jobseekers_inp"])) : ''; 
+                                                                       
+                                        if (!isset($pdo)) {
+                                            die("Database connection is not established.");
+                                        }
+
+                                            try {
+                                                
+                                                $query = "SELECT * FROM jobseekers_ WHERE 1=1";
+
+                                                if (!empty($hr_search)) {
+                                                    $query .= " AND job_title LIKE :job_title";
+                                                }
+
+                                       
+                                                $stmt = $pdo->prepare($query);
+
+                                                // Bind parameters dynamically
+                                                if (!empty($hr_search)) {
+                                                    $hr_search = "%" . $hr_search . "%";
+                                                    $stmt->bindParam(":job_title", $hr_search);
+                                                }
+                                            
+                                                $stmt->execute();
+                                                $search_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                $stmt = null;
+
+                                            } catch (PDOException $e) {
+                                                die("Query Failed: " . $e->getMessage());
+                                            }
+
+                                        ?>
+
+                                        
+                                    <form class="rc_table_search" id="rc_table_search_form_a" method="POST">
+
+                                        <input type="text"  class="rc_tb_inp_search" id="rc_inp_search_a" name="rc_jobseekers_inp" placeholder="">
+                                        <label for="rc_inp_search_a" class="rc_tb_search_lbl" id="rc_tp_search_lbl_a">Search by <span class="hl_text rc_tb_search_lbl" id="hl_field_category">Applied Job</span></label>
+
+                                        <button type="submit" class="search-btn" id="rc_tb_search-btn">
+                                            
+                                            <svg xmlns="http://www.w3.org/2000/svg" id="search-btn-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.8675 18 18 14.8675 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z"></path></svg>
+                                        
+                                        </button>
+
+                                    </form>
+
+
                                 </div>
 
 
@@ -377,28 +428,25 @@
                                 <?php  if(isset($_POST))?>
 
 
-                                <div class="mcd_div mcdiv_right">
+                                    <div class="mcd_div mcdiv_right">
 
 
-                                    <form action="" class="filter_form" method="POST">
+                                        <form action="" class="filter_form" method="POST">
 
-                                            <select class="filter_status select_rj_appr" name="filter_status_inp" id="" onchange="this.form.submit()">
+                                                <select class="filter_status select_rj_appr" name="filter_status_inp" id="" onchange="this.form.submit()">
 
-                                                <option value="none" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'none') ? 'selected' : '' ?>>Filter</option>
+                                                    <option value="none" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'none') ? 'selected' : '' ?>>Filter</option>
+                                                    <option value="recruited" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'recruited') ? 'selected' : '' ?>>Recruited</option>
+                                                    <option value="approved" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'approved') ? 'selected' : '' ?>>Approved</option>
+                                                    <option value="employee" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'employee') ? 'selected' : '' ?>>Employee</option>
 
-                                                <option value="recruited" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'recruited') ? 'selected' : '' ?>>Recruited</option>
+                                                </select>
 
-                                                <option value="approved" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'approved') ? 'selected' : '' ?>>Approved</option>
-
-                                                <option value="employee" <?= (isset($_POST['filter_status_inp']) && $_POST['filter_status_inp'] == 'employee') ? 'selected' : '' ?>>Employee</option>
-
-                                            </select>
-
-                                    </form>
+                                        </form>
 
 
 
-                                </div>
+                                    </div>
 
                             </div>
 
@@ -408,42 +456,36 @@
 
                                     <div class="mc_table_div">
 
-
-
                                          <!-- GET JOBSEEKERS OVERVIEW -->
 
-                                                                        <?php
-                                        if ($pdo === null) {
-                                            die("Database connection is not established.");
-                                        }
+                                    <?php
 
-
+                                            if ($pdo === null) {
+                                                die("Database connection is not established.");
+                                            }
 
                                         
+                                            $filter_status = isset($_POST['filter_status_inp']) ? $_POST['filter_status_inp'] : 'none';
 
+                                    
+                                            $query = "SELECT * FROM jobseekers_";
 
-                                        // Get the filter status from the POST data
-                                        $filter_status = isset($_POST['filter_status_inp']) ? $_POST['filter_status_inp'] : 'none';
+                                            // If a status is selected, add a WHERE condition to the query
+                                            if ($filter_status != 'none') {
+                                                $query .= " WHERE status = :status";
+                                            }
 
-                                   
-                                        $query = "SELECT * FROM jobseekers_";
+                                            // Prepare and execute the query
+                                            $stmt = $pdo->prepare($query);
+                                            if ($filter_status != 'none') {
+                                                $stmt->bindParam(':status', $filter_status, PDO::PARAM_STR);
+                                            }
+                                            $stmt->execute();
 
-                                        // If a status is selected, add a WHERE condition to the query
-                                        if ($filter_status != 'none') {
-                                            $query .= " WHERE status = :status";
-                                        }
+                                            // Fetch all jobseekers data
+                                            $jobseekers = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-                                        // Prepare and execute the query
-                                        $stmt = $pdo->prepare($query);
-                                        if ($filter_status != 'none') {
-                                            $stmt->bindParam(':status', $filter_status, PDO::PARAM_STR);
-                                        }
-                                        $stmt->execute();
-
-                                        // Fetch all jobseekers data
-                                        $jobseekers = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-                                
+                                    
                                         ?>
 
 
@@ -464,104 +506,66 @@
                                             </tr>
 
                                             <!-- FILTER  -->
+                             
 
 
-                                            
+
+
+
                                             <?php
+
                                             usort( $jobseekers, function ($a, $b) {
                                                 return $b['js_id'] - $a['js_id'];
                                             });
 
+                                            $filtered_jobseekers = array_filter($jobseekers,function($js){
 
+                                                return in_array($js["status"],["Approved,Recruited"]);
 
-                                            if ( $jobseekers && count( $jobseekers) > 0)  {
-                                                foreach ( $jobseekers as $js) {
-                                                    echo '
-                                                        <tr class="mc_data_tr">
-                                                            <td class="mc_tb_data td_output_js_firstname">' . htmlspecialchars($js["firstname_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_lastname">' . htmlspecialchars($js["lastname_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_job_title">' . htmlspecialchars($js["job_title"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_email">' . htmlspecialchars($js["email_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_resume">' . htmlspecialchars($js["resume_path_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_recruitment_date">' . htmlspecialchars($js["recruitment_date"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_status">' . htmlspecialchars($js["status"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_action">
-                                                                <div class="tb_button_div">
-                                                                    ' . ($js["status"] === "Approved" ? '<a href="jobseekers_validation_recruit.php?id=' . $js["js_id"] . '" class="mc_tb_btn recruit-button">Recruit</a> ' : '') . '
-                                                                    <a href="jobseekers_validation_reject.php?id=' . $js["js_id"] . '" class="mc_tb_btn reject-button">Reject</a>
-                                                                    ' . ($js["status"] === "Recruited" ? '<a href="create_employee_acc.php?id=' . $js["js_id"] . '" class="mc_tb_btn create-account-button">Create</a> ' : '') . '
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    ';
-                                                }
-                                            } else {
-                                                echo '<tr class="no_jobpost_found_tr">
-                                                    <td class="no_jobpost_found" colspan="9">No jobseekers found</td>
-                                                </tr>';
-                                            }
-                                            ?>
-
-
-
-
-
-
-                                                                <?php   $approved_and_recruited_js = populate_table_with_approved_jobseekers(
-                                                                            $pdo,
-                                                                            $jobseekes_id = 0,
-                                                                        $firstname = "",
-                                                                        $lastname = "",
-                                                                        $job_title = "",
-                                                                            $email = "",
-                                                                    $phone_number = "",
-                                                                        $resume = "",
-                                                                        $status = "");
-                                                                        
-                                                                        
-                                                                        ?>
-
-
-
-                                            <?php
-                                            usort( $approved_and_recruited_js, function ($a, $b) {
-                                                return $b['js_id'] - $a['js_id'];
                                             });
 
-                                            if ( $approved_and_recruited_js && count( $approved_and_recruited_js) > 0 )  {
-                                                foreach ( $approved_and_recruited_js as $js) {
-                                                    echo '
-                                                        <tr class="mc_data_tr">
-                                                            <td class="mc_tb_data td_output_js_firstname">' . htmlspecialchars($js["firstname_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_lastname">' . htmlspecialchars($js["lastname_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_job_title">' . htmlspecialchars($js["job_title"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_email">' . htmlspecialchars($js["email_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_resume">' . htmlspecialchars($js["resume_path_"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_recruitment_date">' . htmlspecialchars($js["recruitment_date"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_status">' . htmlspecialchars($js["status"]) . '</td>
-                                                            <td class="mc_tb_data td_output_js_action">
-                                                                <div class="tb_button_div">
-                                                                    ' . ($js["status"] === "Approved" ? '<a href="jobseekers_validation_recruit.php?id=' . $js["js_id"] . '" class="mc_tb_btn recruit-button">Recruit</a> ' : '') . '
-                                                                    <a href="jobseekers_validation_reject.php?id=' . $js["js_id"] . '" class="mc_tb_btn reject-button">Reject</a>
-                                                                    ' . ($js["status"] === "Recruited" ? '<a href="create_employee_acc.php?id=' . $js["js_id"] . '" class="mc_tb_btn create-account-button">Create</a> ' : '') . '
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    ';
+                                            if(count($jobseekers) > 0){
+
+                                                foreach ( $jobseekers as $js) {
+                                                echo '
+                                                    <tr class="mc_data_tr">
+                                                        <td class="mc_tb_data td_output_js_firstname">' . htmlspecialchars($js["firstname_"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_lastname">' . htmlspecialchars($js["lastname_"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_job_title">' . htmlspecialchars($js["job_title"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_email">' . htmlspecialchars($js["email_"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_resume">' . htmlspecialchars($js["resume_path_"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_recruitment_date">' . htmlspecialchars($js["recruitment_date"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_status">' . htmlspecialchars($js["status"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_action">
+                                                            <div class="tb_button_div">
+                                                                ' . ($js["status"] === "Approved" ? '<a href="jobseekers_validation_recruit.php?id=' . $js["js_id"] . '" class="mc_tb_btn recruit-button">Recruit</a> ' : '') . '
+                                                                <a href="jobseekers_validation_reject.php?id=' . $js["js_id"] . '" class="mc_tb_btn reject-button">Reject</a>
+                                                                ' . ($js["status"] === "Recruited" ? '<a href="create_employee_acc.php?id=' . $js["js_id"] . '" class="mc_tb_btn create-account-button">Create</a> ' : '') . '
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                ';
                                                 }
-                                            } else {
-                                                echo '<tr class="no_jobpost_found_tr">
-                                                    <td class="no_jobpost_found" colspan="9">No jobseekers found</td>
+
+                                            }else{
+                                                echo '
+                                                <tr class="no_jobpost_found_tr">
+                                                        <td class="no_jobpost_found" colspan="9">No jobseekers found</td>
                                                 </tr>';
                                             }
+                                       
+                                           
                                             ?>
 
+                                           
 
 
 
-                                                                                </table>                                                            
+
+
+
+                                        </table>                                                            
                                                             
 
 
@@ -573,14 +577,6 @@
 
                             </div>
                             <!-- END OF   <!-- MAIN CONTENTS  -->
-
-
-                            <div class="aside_div">
-
-
-
-                            </div>
-
 
 
                 </div>
