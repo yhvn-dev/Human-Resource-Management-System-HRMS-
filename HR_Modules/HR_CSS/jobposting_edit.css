@@ -109,7 +109,10 @@
     src: url('../../Fonts/Neon_Club_Music/NCM/NEON\ CLUB\ MUSIC_medium.otf');
 }
 
-
+@font-face {
+    font-family: "Mokoto";
+    src: url("../../Fonts/Mokoto/Mokoto_Demo.ttf");
+}
 
 
 *{
@@ -166,9 +169,9 @@ body{
 
             .jpf_logo_div{
                 z-index: 2;
-                width: 98%;
-              
+                width: 98%;              
                 border-bottom-right-radius: var(--border-radius_10--);
+             
             }
        
 
