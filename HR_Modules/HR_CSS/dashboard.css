@@ -1030,12 +1030,8 @@ svg{
                 font-size: 0.9rem;
                 cursor: pointer; 
                 background-color: var(--white-blple--);
-            
                 padding: 0.2rem 0.3rem;
-            
-                margin: 0.2rem 0.5rem;
-            
-            
+                margin: 0.2rem 0.5rem;     
             }
         
             #db_tb_search-btn svg{
@@ -1053,11 +1049,9 @@ svg{
         color:rgba(44, 46, 58,0.8);
       }
 
-      
-   
+    
     .mcd_div.mcdiv_right{
         justify-content: end;
-      
     }
        
 
@@ -1065,18 +1059,17 @@ svg{
 
 
    .filter_status.select_rj_appr{
-    border-radius: var(--border-radius_5--);
-                       
-    padding: 0rem;
-    margin-right: 0.8rem;
-    background-color:var(--gainsbro);
-    padding: 0.1rem 0rem;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    border: 1px solid var(--moon-phases-c);
-    box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
-    background-color: var(--main-white--);
+        border-radius: var(--border-radius_5--);     
+        padding: 0rem;
+        margin-right: 0.8rem;
+        background-color:var(--gainsbro);
+        padding: 0.1rem 0rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        border: 1px solid var(--moon-phases-c);
+        box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
+        background-color: var(--main-white--);
 }
 
 
@@ -1089,6 +1082,7 @@ svg{
         transition: ease-in-out 0.5s;
         margin-bottom: 2rem;
         height: 80%;
+        overflow-y: hidden;
   
     }
         .mc_table_div{
@@ -1129,7 +1123,6 @@ svg{
             display: flex;
             align-items: center;
             justify-content: space-between;
-          
             
             padding: 1rem 0.7rem;
             margin: 0 1rem;
@@ -1170,122 +1163,83 @@ svg{
 
                 
             .db_js_table .mc_th_tr{  
-                background:linear-gradient(45deg,#d0d7e6,var(--white-blple--));
-             
+                background:linear-gradient(45deg,#d0d7e6,var(--white-blple--));            
             }
 
                    .mc_th{
 
-                    font-family: 'Poppins-Medium';  
-                    text-align: center;
-                    padding: 0.2rem; 
-                    cursor: pointer;
-                    font-size: 0.9rem;
-                    position: relative;
-                    font-weight: normal;
-                    color: var(--lusion-dark-b);
-                    width: 25%; 
-                    background-color: transparent;          
-                    box-sizing: border-box;
-                    word-wrap: break-word; 
-                    overflow-wrap: break-word;  
-                    white-space: normal; 
-                    background-color: transparent;
+                        font-family: 'Poppins-Medium';  
+                        text-align: center;
+                        padding: 0.2rem; 
+                        cursor: pointer;
+                        font-size: 0.9rem;
+                        position: relative;
+                        font-weight: normal;
+                        color: var(--lusion-dark-b);
+                        width: 25%; 
+                        background-color: transparent;          
+                        box-sizing: border-box;
+                        word-wrap: break-word; 
+                        overflow-wrap: break-word;  
+                        white-space: normal; 
+                        background-color: transparent;
 
                 }
                 
-                    .db_js_table .mc_data_tr{
-                        background-color: var(--gainsbro);
+                    .mc_th.th_status{
+                        width: 30%;
+                    }  
+                    .mc_th.th_action{
+                        width: 50%;
                     }
-      
-                    .db_js_table .mc_data_tr:nth-child(odd) {
+                    .mc_th.th_submission_date{
+                        width: 30%;
+                    }
+
+                    .db_js_table .td_output_js_resume a{
+                        cursor: pointer;
+                        color: var(--bluis--);
+                    }
+
+                    
+                    .db_js_table .td_output_js_action{
+                        width: 100%;
                         
-                        background-color: var(--main-white--);
-                    }
-                    
-                    .db_js_table .mc_data_tr:nth-child(even) {
-                        z-index: 2;
-                        background-color: var(--gainsbro);
-                    }
-                    
-                    .db_js_table .mc_data_tr:nth-child(even).darkmode_popup{
-                    
-                        background-color: var(--color-dark-shadow);
-                    }
-
-
-
-                    .db_js_table td{
-                        width: 25%;  
-                        padding: 1rem;
-                        font-size: 0.8rem;
-                        word-wrap: break-word; 
-                        overflow-wrap: break-word; 
-                        white-space: normal; 
-                        text-align: center;
+                    }     
+                        .td_output_js_action .tb_button_div{
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 100%;
                         
-                        box-sizing: border-box; 
-                
-                        color: var(--lusion-dark-b);
-                        background-color: transparent;
-                    }
-
-                                
-                                
-                                    .mc_th.th_status{
-                                        width: 30%;
-                                    }  
-                                    .mc_th.th_action{
-                                        width: 50%;
-                                    }
-                                    .mc_th.th_submission_date{
-                                        width: 30%;
-                                    }
-
-                                    .db_js_table .td_output_js_resume a{
-                                        cursor: pointer;
-                                        color: var(--bluis--);
-                                    }
-
-                                    
-                                    .db_js_table .td_output_js_action{
-                                        width: 100%;
-                                        
-                                    }     
-                                        .td_output_js_action .tb_button_div{
-                                            display: flex;
-                                            align-items: center;
-                                            justify-content: center;
-                                            width: 100%;
-                                      
-                                        }
-                                        .mc_tb_btn{
-                                            padding: 0.2rem 0.5rem;
-                                            cursor: pointer;
-                                            box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
-                                            text-decoration: none;
-                                            color: var(--moon-phases-b);
-                                            border-radius: var(--border-radius_5--);
-                                        }
-                                            .mc_tb_btn.approve-button{
-                                                margin-right: 0.5rem;
-                                                background-color: var(--color-success_b);
-                                            }
-                                              .mc_tb_btn.approve-button:hover{
-                                                    background:linear-gradient(45deg,var(--color-success_b),var(--main-white--));
-                                                }
-
-                                                .mc_tb_btn.reject-button{
-                                            background-color: var(--color-danger);
-                                        }              
-                                            .mc_tb_btn.reject-button:hover{
-                                                background:linear-gradient(45deg,var(--color-danger),var(--main-white--));
-                                            }
-
-            
-                                .db_js_table .mc_data_tr:hover{
-                                    background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                        }
+                        .mc_tb_btn{
+                            padding: 0.2rem 0.5rem;
+                            cursor: pointer;
+                            box-shadow: 0px 5px 10px 5px rgba(53,53,53,0.1);
+                            text-decoration: none;
+                            color: var(--moon-phases-b);
+                            border-radius: var(--border-radius_5--);
+                        }
+                            .mc_tb_btn.approve-button{
+                                margin-right: 0.5rem;
+                                background-color: var(--color-success_b);
+                            }
+                                .mc_tb_btn.approve-button:hover{
+                                    background:linear-gradient(45deg,var(--color-success_b),var(--main-white--));
                                 }
+
+                                .mc_tb_btn.reject-button{
+                            background-color: var(--color-danger);
+                        }              
+                            .mc_tb_btn.reject-button:hover{
+                                background:linear-gradient(45deg,var(--color-danger),var(--main-white--));
+                            }
+
+
+                .db_js_table .mc_data_tr:hover{
+                    background: linear-gradient(to left,var(--main-white--),var(--white-blple--)); 
+                }
 
                                 
              
@@ -1325,20 +1279,15 @@ svg{
         }
 
         .search_mc_data_tr:nth-child(odd) {
-            
             background-color: var(--main-white--);
         }
-        
+    
         .search_mc_data_tr:nth-child(even) {
-            z-index: 2;
+         
             background-color: var(--gainsbro);
         }
-        
-        .search_mc_data_tr:nth-child(even).darkmode_popup{
-        
-            background-color: var(--color-dark-shadow);
-        }
-
+       
+      
 
              .search_mc_data_tr .search_mc_tb_data {
                     width: 25%;  
@@ -1511,11 +1460,6 @@ svg{
       
     }
 
-
-
-
-        
-    
         #status_history_button{
             display: flex;
             align-items: end;
@@ -1792,65 +1736,91 @@ svg{
     
 
 
-    
-
-/*  DARKMODE CLASS FUNCTIONS --------------------------------------------------------------------- */
-#db_wrapper.darkmode_popup{
-    background-color: var(--color-dark-variant);
+svg.darkmode_popup{
+    fill: var(--main-white--);
 }
-    #db_bd_id.darkmode_popup{
-        background-color: var(--lusion-dark-b);
-    }
-
-    .db_template_wrapper.darkmode_popup{
-        background-color: var(--lusion-dark-b);
-    }
-
-
-    
-#db_header_logo_div_id.darkmode_popup{
-    background-color: var(--color-dark-variant);
-    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
+span.darkmode_popup{
+    color: var(--main-white--);
 }
-#db_header_logo_div_id span.darkmode_popup{
-        background-clip: text;
-    
-        background:
-        linear-gradient(
-        to left,
-        var(--moon-phases-c),
-        var(--white-blple--)
-
-        );
-
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent; 
+tr:nth-child(odd){
+    background:var(--moon-phases-b);
 }
-.text_a.darkmode_popup{
-    color: var(--main-white--)
+tr:nth-child(even){
+    background: var(--moon-phases-b);
 }
-.text_b.darkmode_popup{
+
+.darkmode_popup{
     color: var(--main-white--);
 }
 
+    /*  DARKMODE CLASS FUNCTIONS --------------------------------------------------------------------- */
+    #db_bd_id.darkmode_popup{
+        background-color: var(--lusion-dark-b);
+    }
+    .db_template_wrapper.darkmode_popup{
+        background-color: var(--lusion-dark-b);
+    }
+    .darkmode_popup#text_a{
+        color: var(--main-white--);
+    }
+    .darkmode_popup#text_g{
+        color: var(--main-white--);
+    }
+    
+    .darkmode_popup::-webkit-scrollbar{
+        background-color: var(--color-dark-variant);
+    }
+    .darkmode_popup::-webkit-scrollbar-thumb{
+        border-color: var(--color-dark-variant);
+    }
 
 
-#db_sidebar_id.darkmode_popup{
+    
+
+.container.darkmode_popup{
     background-color: var(--color-dark-variant);
-    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);    
+    box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.5);
 }
+    #db_header_logo_div_id span.darkmode_popup{
+            background-clip: text;
+        
+            background:
+            linear-gradient(
+            to left,
+            var(--moon-phases-c),
+            var(--white-blple--)
+
+            );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+    }
+
+ 
+
+    .darkmode_popup .search_mc_data_tr:nth-child(odd){
+            background-color: var(--color-dark-shadow-alpha);
+            color: var(--main-white--);
+        
+    }  
+    .darkmode_popup .search_mc_data_tr:nth-child(even){
+        background-color: var(--color-dark-shadow);
+        }
+    .darkmode_popup .search_mc_data_tr:hover{
+        background:linear-gradient(to right,var(--moon-phases-b),
+    var(--color-dark-variant));
+    }
+
+        .darkmode_popup .search_mc_data_tr td{
+            color: var(--main-white--);
+        }
+
+
     svg.darkmode_popup{
         fill: var(--main-white--);
     }
 
    
-
-    .sidebar span.darkmode_popup{
-        color: var(--main-white--);
-    }
-    .sidebar button.darkmode_popup{
-        color: var(--main-white--);
-    }
 
 
 
@@ -1878,53 +1848,6 @@ svg{
 
 
 
-#db_numbers_contents_id.darkmode_popup{
-    background-color: var(--lusion-dark-b); 
-}
-
-    #employee_number.darkmode_popup{
-        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
-       
-    }
-    
-
-
-    #jobseekers_number.darkmode_popup{
-        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
-    }
-
-    #jobpost_number.darkmode_popup{
-        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
-    }
-
-
-    .number_contents_b.darkmode_popup{
-        box-shadow: 3px 3px 3px 2px rgba(0,0,0,0.3);
-        background-color: transparent;
-    }
-   
-
-        .approved_jobseekers svg.darkmode_popup{
-            color: var(--main-white--);
-        }
-        .approved_jobseekers span.darkmode_popup{
-          color: var(--main-white--);
-        }
-        
-
-        .rejected_jobseekers span.darkmode_popup{
-        color: var(--main-white--);
-        }
-
-        .rejected_jobseekers svg.darkmode_popup{
-            color: var(--main-white--);
-        }
-    
-    
-
-
-
-
     
 #db_main_contents_id.darkmode_popup{
     background-color: var(--color-dark-variant);
@@ -1942,75 +1865,21 @@ svg{
     #db_tp_search_lbl_a.darkmode_popup{
         transition: 1s;
         background-color: var(--color-dark-variant);
-    }
-
-
-           
+    }     
     .select_rj_appr.darkmode_popup{
         background-color: var(--color-dark-variant);
         color: var(--main-white--);
         border: 2px solid var(--dark-shadow-friend);
         box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.5);
     }
-
-
-    .mc_table_div.darkmode_popup::-webkit-scrollbar{
-        background-color: var(--color-dark-variant);
-    }
-    
-
-    .mc_table_div.darkmode_popup::-webkit-scrollbar-thumb{
-        border: solid 4px var(--color-dark-variant);
-    }
-
-
-    .mc_th_tr.darkmode_popup{
-        background:linear-gradient(to right,var(--moon-phases-c),var(--color-dark-variant));
-    }
-
-        .mc_th_tr th.darkmode_popup{
-          
-            color: var(--main-white--); 
-        
-        }
-
-
-
-    .db_js_table .mc_data_tr:nth-child(odd).darkmode_popup{
-        z-index: 1;
-        background-color: var(--color-dark-shadow-alpha);
-
-        }
-
-    .db_js_table .mc_data_tr:nth-child(even).darkmode_popup{
-
-        z-index: 2;
-        background-color: var(--color-dark-shadow);
-
-        }
-            
-    .db_js_table .mc_data_tr:hover.darkmode_popup{
-        background:linear-gradient(to right,var(--moon-phases-b),
-        var(--color-dark-variant));
-    }
-
-    td.darkmode_popup{
-        color: var(--main-white--);
-    }
-
-
     .aside_mc_table_div.darkmode_popup::-webkit-scrollbar{
         background-color: var(--color-dark-variant);
-       
     }
     
 
     .aside_mc_table_div.darkmode_popup::-webkit-scrollbar-thumb{
         border: solid 4px var(--color-dark-variant);
     }
-
-
-  
 
     #status_history_icon.darkmode_popup{
         color: var(--main-white--);
@@ -2019,10 +1888,6 @@ svg{
         color: var(--main-white--);
     }
     
-
-    
-
-
 
 .aside.darkmode_popup{
   

@@ -656,8 +656,7 @@ a{
                     cursor: pointer;
                     border: 1px solid var(--moon-phases-c);
                     box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
-                    background-color: var(--main-white--);
-                   
+                    background-color: var(--main-white--);            
                 }
 
                 .tb_lbl_div.right_tb_lbl_div .tb_add_jobpost_link{

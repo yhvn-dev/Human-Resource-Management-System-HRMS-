@@ -40,14 +40,14 @@
 </head>
 
 
-        <body>
+        <body id="">
         
             <div class="db_wrapper" id="db_wrapper">
 
                 
                     <div class="backdrop bd_db" id="db_bd_id">
 
-                          
+                      
 
                     </div>
 
@@ -649,17 +649,19 @@
                                             <?php  
 
                                                 if(count($display_jobseekers) > 0){
+
                                                     // Loop through sorted results
                                                     foreach ($display_jobseekers as $js_result) {                                                    
                                                         echo '                                                      
                                                         <tr class="search_mc_data_tr">
+                                                        
                                                             <td class="search_mc_tb_data search_td_output_js_firstname"> ' . htmlspecialchars($js_result["firstname_"])  . ' </td>
                                                             <td class="search_mc_tb_data search_td_output_js_lastname">' . htmlspecialchars($js_result["lastname_"])  . ' </td>
                                                             <td class="search_mc_tb_data search_td_output_js_job_title">' . htmlspecialchars($js_result["job_title"])  . '</td>
                                                             <td class="search_mc_tb_data search_td_output_js_email">' . htmlspecialchars($js_result["email_"])  . '</td>
                                                             <td class="search_mc_tb_data search_td_output_js_phone_num">' . htmlspecialchars($js_result["phone_number_"]) . '</td>
                                                             <td class="search_mc_tb_data search_td_output_js_resume">
-                                                                <a href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js_result["resume_path_"]) . '" download class="resume-link">
+                                                                <a  href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js_result["resume_path_"]) . '" class="resume-link">
                                                                 ' . htmlspecialchars($js_result["resume_path_"]) . '
                                                                 </a>
                                                             </td>                                                      
@@ -673,6 +675,7 @@
                                                     </tr>
                                                     ';                         
                                                      }
+
                                                 }else{
                                                     echo 
                                                     ' tr>
@@ -888,7 +891,7 @@
             <script src="../HR_JS/db_darkmode.js"></script>
             <script src="../HR_JS/db_interaction_script.js"></script>
             <script src="../HR_JS/db_error_handling.js"></script>
-         
+            
             
         </body>
 
