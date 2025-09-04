@@ -15,14 +15,13 @@ require_once '../HR_Includes/Jobpost_Functions/jobpost_view.inc.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Posting From</title>
 
-
     <link rel="stylesheet" href="../HR_CSS/jobposting_form.css">  
     <link width="20" rel="icon" href="../../HRMS_Images/NodeLab LOGO 2.png" type="image/png"> 
 
 </head>
 
 
-        <body>
+        <body id="body">
 
 
             <div class="template jpf_wrapper">
@@ -42,7 +41,7 @@ require_once '../HR_Includes/Jobpost_Functions/jobpost_view.inc.php';
 
                 </div>
 
-                    <div class="jpf_container jpf_header">
+                    <div class="jpf_container jpf_header" id="jpf_header">
 
                         <div class="jp_left_header">
 
@@ -136,11 +135,7 @@ require_once '../HR_Includes/Jobpost_Functions/jobpost_view.inc.php';
 
 
                                    
-                                            
-
-
-
-
+                
                                             
                                         <?php add_jobpost_input() ?>
 

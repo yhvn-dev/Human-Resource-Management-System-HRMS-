@@ -293,15 +293,14 @@
                                             </div>
                                         
                                             <p class="right_h_contents " id="user_greetings"> <span id="hr_name" name="hr_name"><?php output_username() ?></span></p>
+              
+                                                <div class="darkmode_div" id="darkmode_div">
 
-
-                                            <!-- <div class="darkmode_div" id="darkmode_div">
-
-                                                <div class="sun_moon_toggle_button"  id="sun_moon_toggle_button">
-
+                                                    <div class="sun_moon_toggle_button"  id="sun_moon_toggle_button">
+                                                        
+                                                    </div>
+                        
                                                 </div>
-            
-                                            </div> -->
 
                                     </div>
 
@@ -1031,6 +1030,7 @@
 
         <script src="../HR_JS/employee_management_script.js"></script>
         <script src="../HR_JS/create_employee_error_handling.js"></script>
+        <script src="../HR_JS/jp_darkmode.js"></script>
                                             
       
          

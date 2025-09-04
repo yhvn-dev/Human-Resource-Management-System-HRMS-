@@ -589,8 +589,6 @@ a{
                         background-color: transparent;
                     }
 
-
-
                         #jp_inp_search_a:focus + #jp_tp_search_lbl_a,
                         #jp_inp_search_a:not(:placeholder-shown) + #jp_tp_search_lbl_a{
                             transform: translateY(-12px);
@@ -662,17 +660,14 @@ a{
                    
                 }
 
-                
-
-
                 .tb_lbl_div.right_tb_lbl_div .tb_add_jobpost_link{
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     margin: 0rem;
                     text-decoration: none;
-                    font-size: 1rem;
-                    padding: 0.5rem 1.5rem;
+                    font-size: 0.9rem;
+                     padding: 0.2rem 0.5rem;
                     border-radius: var(--border-radius_8--);
                     cursor: pointer;
                     box-shadow: 5px 5px 10px 5px rgba(53,53,53,0.1);
@@ -1024,7 +1019,7 @@ a{
                             }
                             
                                 
-                                .tbl-b-btn-container_b{
+                                .tbl-b- btn-container_b{
                                     display: flex;
                                     align-items: center;
                                     justify-content: center;

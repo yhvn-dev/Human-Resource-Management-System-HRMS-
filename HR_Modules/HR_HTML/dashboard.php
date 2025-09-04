@@ -488,95 +488,74 @@
 
                             <div class="mc_div mc_header">
 
-                                        <div class="mcd_div mcdiv_left">
+                                <div class="mcd_div mcdiv_left">
 
-                                            <span class="mc_header_text" id="mc_header_jstbl_txt">Jobseekers Table</span>
+                                    <span class="mc_header_text" id="mc_header_jstbl_txt">Jobseekers Table</span>
+                                        <?php 
 
+                                                $search_results = [];
+                                                $filter_status = isset($_POST['filter_status_inp']) ? $_POST['filter_status_inp'] : 'none';
+                                                $hr_search = isset($_POST["db_inp_search"]) ? htmlspecialchars(trim($_POST["db_inp_search"])) : ''; 
 
-                                                                     
-                                                 <?php 
+                                                
+                                                require_once '../../Includes/dbh.inc.php';
 
-                                                            $search_results = [];
-                                                            $filter_status = isset($_POST['filter_status_inp']) ? $_POST['filter_status_inp'] : 'none';
-                                                            $hr_search = isset($_POST["db_inp_search"]) ? htmlspecialchars(trim($_POST["db_inp_search"])) : ''; 
+                                                if (!isset($pdo)) {
+                                                    die("Database connection is not established.");
+                                                }
 
-                                                            
-                                                            require_once '../../Includes/dbh.inc.php';
-
-                                                            if (!isset($pdo)) {
-                                                                die("Database connection is not established.");
-                                                            }
-
-                                                            try {
-                                                            
+                                                try {
+                                                
 
 
-                                                                $query = "SELECT * FROM jobseekers_ WHERE 1=1";
+                                                    $query = "SELECT * FROM jobseekers_ WHERE 1=1";
 
 
-                                                                if (!empty($hr_search)) {
-                                                                    $query .= " AND job_title LIKE :job_title";
-                                                                }
+                                                    if (!empty($hr_search)) {
+                                                        $query .= " AND job_title LIKE :job_title";
+                                                    }
 
-                                                                // Add filter condition
-                                                                if ($filter_status !== 'none') {
-                                                                    $query .= " AND status = :status_filter";
-                                                                }
+                                                    // Add filter condition
+                                                    if ($filter_status !== 'none') {
+                                                        $query .= " AND status = :status_filter";
+                                                    }
 
-                                                                $stmt = $pdo->prepare($query);
+                                                    $stmt = $pdo->prepare($query);
 
-                                                                // Bind parameters dynamically
-                                                                if (!empty($hr_search)) {
-                                                                    $hr_search = "%" . $hr_search . "%";
-                                                                    $stmt->bindParam(":job_title", $hr_search);
-                                                                }
-                                                                
-                                                                
-                                                                if ($filter_status !== 'none') {
-                                                                    $stmt->bindParam(":status_filter", $filter_status);
-                                                                }
+                                                    // Bind parameters dynamically
+                                                    if (!empty($hr_search)) {
+                                                        $hr_search = "%" . $hr_search . "%";
+                                                        $stmt->bindParam(":job_title", $hr_search);
+                                                    }
+                                                    
+                                                    
+                                                    if ($filter_status !== 'none') {
+                                                        $stmt->bindParam(":status_filter", $filter_status);
+                                                    }
 
-                                                                $stmt->execute();
-                                                                $search_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                                                                $stmt = null;
+                                                    $stmt->execute();
+                                                    $search_results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                                                    $stmt = null;
 
-                                                            } catch (PDOException $e) {
-                                                                die("Query Failed: " . $e->getMessage());
-                                                            }
+                                                } catch (PDOException $e) {
+                                                    die("Query Failed: " . $e->getMessage());
+                                                }
 
-                                                            ?>
+                                                ?>
 
-                                                                
-                                    
-
-
-
-                                            
-                                                <form class="db_table_search" id="db_table_search_form_a" method="POST">
-
-                                                    <input type="text"  class="db_tb_inp_search" id="db_inp_search_a" name="db_inp_search" placeholder="">
-                                                    <label for="db_inp_search_a" class="db_tb_search_lbl" id="db_tp_search_lbl_a">Search by <span class="hl_text db_tb_search_lbl" id="hl_field_category">Applied Job</span></label>
-
-
-
-                                                        <button type="submit" class="search-btn" id="db_tb_search-btn">
-                                                            
-                                                            <svg xmlns="http://www.w3.org/2000/svg" id="search-btn-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.8675 18 18 14.8675 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z"></path></svg>
-                                                        
-                                                        </button>
-
-
-
-                                                </form>
-
-
-                                        </div>
+                                        <form class="db_table_search" id="db_table_search_form_a" method="POST">
+                                            <input type="text"  class="db_tb_inp_search" id="db_inp_search_a" name="db_inp_search" placeholder="">
+                                            <label for="db_inp_search_a" class="db_tb_search_lbl" id="db_tp_search_lbl_a">Search by <span class="hl_text db_tb_search_lbl" id="hl_field_category">Applied Job</span></label>
+                                                <button type="submit" class="search-btn" id="db_tb_search-btn">                                                            
+                                                    <svg xmlns="http://www.w3.org/2000/svg" id="search-btn-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.8675 18 18 14.8675 18 11C18 7.1325 14.8675 4 11 4C7.1325 4 4 7.1325 4 11C4 14.8675 7.1325 18 11 18ZM19.4853 18.0711L22.3137 20.8995L20.8995 22.3137L18.0711 19.4853L19.4853 18.0711Z"></path></svg>                                       
+                                                </button>
+                                        </form>
+                                    </div>
                                         
                                         <div class="mcd_div mcdiv_right">
 
 
-
-                                        
+                                      
                                     <form action="" class="filter_form" method="POST">
 
                                         <select class="filter_status select_rj_appr" name="filter_status_inp" id="" onchange="this.form.submit()">
@@ -615,8 +594,7 @@
                                             <?php   check_crem_for_errors()   ?>
 
                                             <?php  
-                                                    prompt_appprove_js_status_success()
-                                            
+                                                prompt_appprove_js_status_success()   
                                             ?>
                                             <?php
                                             
@@ -649,140 +627,61 @@
                                             
                                             </tr>
 
+                                            <?php 
 
-
-                                        <!-- SEARCH RESUTS =================================== -->
-                                            <?php
-
-                                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                                        if (empty($search_results)) {
-                                                            echo '<td colspan="9" class="noresults_td" id="noresults_td_a">
-                                                                    <p class="table_noresult">No Results Found</p>
-                                                                </td>';
-                                                        } else {
-                                                        
-                                                                        
-                                                                usort(   $jobseekers, function($a, $b) {
-                                                                    return $b['js_id'] - $a['js_id'];  
-                                                                });  
-
-                                                            // Loop through sorted results
-                                                            foreach ($search_results as $js_result) {
+                                                $display_jobseekers = [];
                                                             
-                                                                        echo '
-                                                                        
-                                                                        <tr class="search_mc_data_tr">
+                                                    if($_SERVER["REQUEST_METHOD"] == "POST"){
+                                                        $display_jobseekers = $search_results;
+                                                    }else{
+                                                        $display_jobseekers = $jobseekers;
+                                                    }
+                    
+                                                    usort($display_jobseekers, function($a,$b){
+                                                        return $b['js_id'] - $a['js_id'];
+                                                    });
 
-                                                                            <td class="search_mc_tb_data search_td_output_js_firstname"> ' . htmlspecialchars($js_result["firstname_"])  . ' </td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_lastname">' . htmlspecialchars($js_result["lastname_"])  . ' </td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_job_title">' . htmlspecialchars($js_result["job_title"])  . '</td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_email">' . htmlspecialchars($js_result["email_"])  . '</td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_phone_num">' . htmlspecialchars($js_result["phone_number_"]) . '</td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_resume">
-
-                                                                                    <a href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js_result["resume_path_"]) . '" download class="resume-link">
-                                                                                    ' . htmlspecialchars($js_result["resume_path_"]) . '
-                                                                                    </a>
-                                                                                    
-                                                                            </td>
-                                                                        
-                                                                            <td class="search_mc_tb_data search_td_output_js_status">' . htmlspecialchars($js_result["status"]) . '</td>
-                                                                            <td class="search_mc_tb_data search_td_output_js_action">
-
-                                                                            <div class="tb_button_div">
-
-                                                                                        <a href="jobseekers_validation_approve.php?id='.$js_result["js_id"].'" class="mc_tb_btn approve-button">Approve</a>
-
-                                                                                        <a href="jobseekers_validation_reject.php?id='.$js_result["js_id"].'" class="mc_tb_btn reject-button">Reject</a>
-                                                                                
-
-                                                                                </div>
-                                                                            
-                                                                            
-                                                                            </td>
-                                                                            
-
-                                                                    
-                                                                    </tr>
-
-                                                                    ';
-
-                                                                    
-                                                                        }
+                                                ?>
 
 
-                                                                    }
-                                                                }
-                                                            
-                                                    ?>
-                                                                                            
+                                                <!-- SEARCH RESUTS =================================== -->
 
+                                            <?php  
 
-
-
-
-
-
-
-
-
-
-
-
-                                                                                            
-
-
-
-                                                                     <?php 
-
-                                                                        usort($jobseekers, function($a, $b) {
-                                                                                    return $b['js_id'] - $a['js_id'];  
-                                                                                });
-
-                                                                                if($jobseekers && count($jobseekers) > 0){
-                                                                                    foreach($jobseekers as $js){
-                                                                                        
-                                                                                        echo '
-                                                                                            <tr class="mc_data_tr">
-                                                                                                <td class="mc_tb_data td_output_js_firstname">' . htmlspecialchars($js["firstname_"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_lastname">' . htmlspecialchars($js["lastname_"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_job_title">' . htmlspecialchars($js["job_title"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_email">' . htmlspecialchars($js["email_"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_resume">
-                                                                                                   
-
-                                                                                                    <a href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js["resume_path_"]) . '" download class="resume-link">
-                                                                                                        ' . htmlspecialchars($js["resume_path_"]) . '
-                                                                                                    </a>
-
-                                                                                                </td>
-                                                                                                <td class="mc_tb_data td_output_js_status">' . htmlspecialchars($js["status"]) . '</td>
-                                                                                                <td class="mc_tb_data td_output_js_action">
-                                                                                                    <div class="tb_button_div">
-                                                                                        
-                                                                                                
-                                                                                                        <a href="jobseekers_validation_approve.php?id=' . $js["js_id"] . '" class="mc_tb_btn approve-button">Approve</a>
-                                                                                                        <a href="jobseekers_validation_reject.php?id=' . $js["js_id"] . '" class="mc_tb_btn reject-button">Reject</a>
-
-
-                                                                                                    </div>
-                                                                                                </td>
-                                                                                            </tr>';
-                                                                                        
-                                                                                    }
-
-                                                                                    
-                                                                                } else {
-                                                                                  
-
-
-                                                                                }
-                                                                                ?>
-
-                                                                                    
-
-
+                                                if(count($display_jobseekers) > 0){
+                                                    // Loop through sorted results
+                                                    foreach ($display_jobseekers as $js_result) {                                                    
+                                                        echo '                                                      
+                                                        <tr class="search_mc_data_tr">
+                                                            <td class="search_mc_tb_data search_td_output_js_firstname"> ' . htmlspecialchars($js_result["firstname_"])  . ' </td>
+                                                            <td class="search_mc_tb_data search_td_output_js_lastname">' . htmlspecialchars($js_result["lastname_"])  . ' </td>
+                                                            <td class="search_mc_tb_data search_td_output_js_job_title">' . htmlspecialchars($js_result["job_title"])  . '</td>
+                                                            <td class="search_mc_tb_data search_td_output_js_email">' . htmlspecialchars($js_result["email_"])  . '</td>
+                                                            <td class="search_mc_tb_data search_td_output_js_phone_num">' . htmlspecialchars($js_result["phone_number_"]) . '</td>
+                                                            <td class="search_mc_tb_data search_td_output_js_resume">
+                                                                <a href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js_result["resume_path_"]) . '" download class="resume-link">
+                                                                ' . htmlspecialchars($js_result["resume_path_"]) . '
+                                                                </a>
+                                                            </td>                                                      
+                                                            <td class="search_mc_tb_data search_td_output_js_status">' . htmlspecialchars($js_result["status"]) . '</td>
+                                                            <td class="search_mc_tb_data search_td_output_js_action">
+                                                                <div class="tb_button_div">
+                                                                        <a href="jobseekers_validation_approve.php?id='.$js_result["js_id"].'" class="mc_tb_btn approve-button">Approve</a>
+                                                                        <a href="jobseekers_validation_reject.php?id='.$js_result["js_id"].'" class="mc_tb_btn reject-button">Reject</a>
+                                                                </div>  
+                                                            </td>          
+                                                    </tr>
+                                                    ';                         
+                                                     }
+                                                }else{
+                                                    echo 
+                                                    ' tr>
+                                                        <td colspan="10" class="noresults_td" id="noresults_td">
+                                                            <p class="table_noresult">No Results Found</p>
+                                                        </td>
+                                                    </tr>';
+                                                }                
+                                                ?>
                                         </table>                                                            
                                                         
 
@@ -820,8 +719,6 @@
 
                                          <span>NodeLab</span>
                                          
-                                    
-
                                     </div>
 
                                     <div class="vd vd_c">

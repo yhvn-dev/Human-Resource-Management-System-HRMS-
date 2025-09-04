@@ -1,7 +1,7 @@
 
 <?php
 
-
+    
 function  add_jobpost_input(){
 
     if(isset($_SESSION["jobpost_form_data"])){
@@ -519,7 +519,7 @@ function check_jp_form_errors(){
 
 ?>
 
-
+<script src="../../HR_JS/jpf_darkmode.js"></script>
 <script src="../../HR_JS/error_handling.js"></script>
 
 

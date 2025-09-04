@@ -8,7 +8,6 @@ function toggleClass(elements, className) {
 }
 
 
-
 // Helper function to add a class for a list of elements
 function addClass(elements, className) {
     elements.forEach(element => {

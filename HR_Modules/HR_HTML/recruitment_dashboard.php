@@ -31,6 +31,7 @@
 
     <link rel="stylesheet" href="../HR_CSS/recruitment_dashboard.css">
     <link width="20" rel="icon" href="../../HRMS_Images/NodeLab LOGO 2.png" type="image/png">
+    <link href="../../HRMS_Front_Page/HRMS_Job_List/doc_file_directory/">
 
 </head>
 
@@ -533,9 +534,16 @@
                                                         <td class="mc_tb_data td_output_js_lastname">' . htmlspecialchars($js["lastname_"]) . '</td>
                                                         <td class="mc_tb_data td_output_js_job_title">' . htmlspecialchars($js["job_title"]) . '</td>
                                                         <td class="mc_tb_data td_output_js_email">' . htmlspecialchars($js["email_"]) . '</td>
-                                                        <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td>
-                                                        <td class="mc_tb_data td_output_js_resume">' . htmlspecialchars($js["resume_path_"]) . '</td>
-                                                        <td class="mc_tb_data td_output_js_recruitment_date">' . htmlspecialchars($js["recruitment_date"]) . '</td>
+                                                        <td class="mc_tb_data td_output_js_phone_num">' . htmlspecialchars($js["phone_number_"]) . '</td> 
+                                                        <td class="mc_tb_data td_output_js_resume">
+                                                       
+                                                            <a href="http://localhost/HRM_System/HRMS_Front_Page/HRMS_Job_List/Job_List_Includes/doc_file_directory/' . htmlspecialchars($js["resume_path_"]) . '" download class="resume-link">
+                                                        ' . htmlspecialchars($js["resume_path_"]) . '
+                                                            </a>
+
+
+                                                        </td>
+                                                        <td class="mc_tb_data td_output_js_recruitment_date">'. htmlspecialchars($js["recruitment_date"]).'</td>
                                                         <td class="mc_tb_data td_output_js_status">' . htmlspecialchars($js["status"]) . '</td>
                                                         <td class="mc_tb_data td_output_js_action">
                                                             <div class="tb_button_div">

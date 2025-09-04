@@ -339,16 +339,12 @@
                                 }
 
 
-
-
-
-
                                 ?>
 
                             <form class="jp_table_search" id="jp_table_search_form_a" method="POST">
 
                                 <input type="text"  class="jp_tb_inp_search" id="jp_inp_search_a" name="jp_inp_search" placeholder="">
-                                <label for="jp_inp_search_a" class="jp_tb_search_lbl" id="jp_tp_search_lbl_a">Search by <span class="hl_text jp_tb_search_lbl" id="hl_field_category">Field Category </span></label>
+                                <label for="jp_inp_search_a" class="jp_tb_search_lbl" id="jp_tp_search_lbl_a">Search by Field Category </span></label>
 
                                 <button type="submit" class="search-btn" id="jp_tb_search-btn">
                                     
@@ -478,27 +474,27 @@
                                         if (count($display_jobs) > 0) {
                                             foreach ($display_jobs as $job) {
                                                 echo '<tr class="tba_output_jp_tr" id="tba_output_jp_tr">
-                                                        <td class="output_jp_tba_data tba_data_job_title editable">' . htmlspecialchars($job['job_title']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_job_description editable">' . htmlspecialchars($job['job_description']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_field_category editable">' . htmlspecialchars($job['field_category']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_min_age editable">' . htmlspecialchars($job['min_age']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_max_age editable">' . htmlspecialchars($job['max_age']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_job_location editable">' . htmlspecialchars($job['job_location']) . '</td>
-                                                        <td class="output_jp_tba_data tba_data_status">' . htmlspecialchars($job['status']) . '</td>
-                                                        <td class="tbl-button-action-div">
-                                                            <div class="tbl-a-btn-container">
-                                                                <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id=' . $job['jp_id'] . '" class="button_form tbl-post-button-form">
-                                                                    <button type="submit" class="tbla-button tbla-post-btn">Publish</button>
-                                                                </a>
-                                                                <a href="jobposting_edit_form.php?id=' . $job['jp_id'] . '" class="button_form tbl-edit-button-form">
-                                                                    <button class="tbla-button tbla-edit-btn">Edit</button>
-                                                                </a>
-                                                                <a href="jobposting_delete.php?id=' . $job['jp_id'] . '" class="button_form tbl-delete-button-form">
-                                                                    <button type="submit" class="tbla-button tbla-delete-btn">Delete</button>
-                                                                </a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>';
+                                                    <td class="output_jp_tba_data tba_data_job_title editable">' . htmlspecialchars($job['job_title']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_job_description editable">' . htmlspecialchars($job['job_description']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_field_category editable">' . htmlspecialchars($job['field_category']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_min_age editable">' . htmlspecialchars($job['min_age']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_max_age editable">' . htmlspecialchars($job['max_age']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_job_location editable">' . htmlspecialchars($job['job_location']) . '</td>
+                                                    <td class="output_jp_tba_data tba_data_status">' . htmlspecialchars($job['status']) . '</td>
+                                                    <td class="tbl-button-action-div">
+                                                        <div class="tbl-a-btn-container">
+                                                            <a href="../../HRMS_Front_Page/HRMS_Job_List/Job_List_Front_Page/Job_List_FP_HTML/jobpost_validation.php?id=' . $job['jp_id'] . '" class="button_form tbl-post-button-form">
+                                                                <button type="submit" class="tbla-button tbla-post-btn">Publish</button>
+                                                            </a>
+                                                            <a href="jobposting_edit_form.php?id=' . $job['jp_id'] . '" class="button_form tbl-edit-button-form">
+                                                                <button class="tbla-button tbla-edit-btn">Edit</button>
+                                                            </a>
+                                                            <a href="jobposting_delete.php?id=' . $job['jp_id'] . '" class="button_form tbl-delete-button-form">
+                                                                <button type="submit" class="tbla-button tbla-delete-btn">Delete</button>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>';
                                             }
                                         } else {
                                             echo '<tr><td colspan="8">No results found</td></tr>';
